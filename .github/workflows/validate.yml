@@ -1,0 +1,53 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install pyyaml
+      
+      - name: Generate catalog
+        run: python scripts/generate_catalog.py
+      
+      - name: Validate skills
+        run: python scripts/validate.py
+      
+      - name: Check catalog is up to date
+        run: |
+          if ! git diff --exit-code catalog.yaml; then
+            echo "::error::catalog.yaml is stale. Run 'python scripts/generate_catalog.py' and commit."
+            exit 1
+          fi
+      
+      - name: Lint shell scripts
+        run: |
+          if [ -f install.sh ]; then
+            shellcheck install.sh || true
+          fi
+      
+      - name: Check for secrets
+        run: |
+          # Basic secret scanning
+          ! grep -rE '(sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36,}|AKIA[A-Z0-9]{16})' skills/ --include='*.md' || {
+            echo "::error::Potential secrets detected in skill files"
+            exit 1
+          }
+      
+      - name: Check for empty reference files
+        run: |
+          find skills/ -name '*.md' -size 0 -print | while read f; do
+            echo "::warning file=$f::Empty reference file"
+          done

@@ -1,0 +1,37 @@
+# Cursor Project Rules — Security Agent Skills
+
+## Overview
+
+This repository provides a curated library of security testing skills
+for AI agents. Skills are organized by domain under `skills/`.
+
+## Skill Discovery
+
+When a security-related task is detected, Cursor should:
+
+1. Check `skills/<domain>/<skill-name>/SKILL.md` for relevant guidance.
+2. Follow any references, scripts, or validation steps linked from the skill.
+3. Prefer repo-local skill documentation over generic heuristics.
+
+## Domains
+
+- `skills/recon/` — OSINT, reconnaissance, subdomain discovery
+- `skills/web-pentest/` — web application penetration testing
+- `skills/network-pentest/` — network-level penetration testing
+- `skills/exploit-dev/` — exploit development and vulnerability research
+- `skills/reverse-engineering/` — binary analysis, decompilation, RE
+- `skills/ctf/` — capture-the-flag methodologies and toolkits
+- `skills/post-exploitation/` — post-exploitation operations
+- `skills/cloud-security/` — cloud security assessment
+- `skills/hardware-iot/` — hardware hacking and IoT security
+- `skills/security-orchestrator/` — cross-domain attack chain coordination
+
+## Installation
+
+Run `./install.sh --agent cursor` to install skills into `.cursor/skills/`.
+Use `--copy` for copy mode (default is symlink).
+
+## Catalog
+
+See `catalog.yaml` for the machine-readable index of all skills,
+domains, and metadata.

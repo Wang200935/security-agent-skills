@@ -4,9 +4,9 @@
 
 <h1 align="center">security-agent-skills</h1>
 
-<h3 align="center">Cybersecurity Skills Router · 資安技能路由包</h3>
+<h3 align="center">安全代理技能路由包 · Cybersecurity Skills Router</h3>
 
-<p align="center"><em>79 skills · 9 domains · 8 agents — built from real engagements, not theory.</em></p>
+<p align="center"><em>79 个技能 · 9 大领域 · 8 个 AI 代理 — 来自真实攻防，而非纸上谈兵。</em></p>
 
 <p align="center">
   <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/badge/release-v2.0.0-blue" alt="release"></a>
@@ -18,83 +18,83 @@
 </p>
 
 <p align="center">
-  <a href="#about">About</a> ·
-  <a href="#getting-started">Getting Started</a> ·
-  <a href="#skill-categories">Categories</a> ·
-  <a href="#usage">Usage</a> ·
-  <a href="#compatibility">Compatibility</a> ·
-  <a href="#contributing">Contributing</a>
+  <a href="#关于">关于</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#技能分类">技能分类</a> ·
+  <a href="#使用说明">使用说明</a> ·
+  <a href="#兼容性">兼容性</a> ·
+  <a href="#贡献">贡献</a>
 </p>
 
 <p align="center">
   🌐
+  <a href="README.md">English</a> ·
   <a href="README_zh.md">繁體中文</a> ·
-  <a href="README_zh_CN.md">简体中文</a> ·
   <a href="README_ja.md">日本語</a>
 </p>
 
 ---
 
-## About
+## 关于
 
-When an AI agent (Claude Code, Codex, Cursor, Gemini CLI, Windsurf, GitHub Copilot, OpenClaw, or Hermes Agent) encounters a security task — an APK to reverse, a web app to pentest, a CTF challenge to solve, or a binary to analyze — this pack routes it to the right methodology, payloads, and commands instead of guessing.
+当 AI 代理（Claude Code、Codex、Cursor、Gemini CLI、Windsurf、GitHub Copilot、OpenClaw 或 Hermes Agent）遇到安全任务——逆向 APK、渗透测试 Web 应用、解 CTF 题目或分析二进制文件时——本套件会自动路由到正确的方法论、攻击载荷和命令，而不是盲目猜测。
 
 ```
-User task → security-orchestrator (master router · intent analysis)
-         → specialized skill activated (methodology + payloads + commands)
-         → execution + evidence collection
-         → reporting
+用户任务 → security-orchestrator（主路由 · 意图分析）
+         → 启动对应专业技能（方法论 + 载荷 + 命令）
+         → 执行 + 证据收集
+         → 报告生成
 ```
 
-**Why this exists:**
+**为什么需要这个项目：**
 
-- AI agents don't know whether to use nmap, sqlmap, Burp Suite, or Ghidra for a given task
-- Web, network, binary, CTF, and hardware tasks each need different playbooks
-- The same mistakes get repeated because experience isn't reused
-- Payloads, tool references, and methodologies are scattered across bookmarks and notes
+- AI 代理不知道该用 nmap、sqlmap、Burp Suite 还是 Ghidra 来处理给定任务
+- Web、网络、二进制、CTF 和硬件任务各自需要不同的方法论
+- 同样的错误反复出现，因为经验没有被复用
+- 攻击载荷、工具参考和方法论散落在书签和笔记中
 
-Primary router: [`skills/security-orchestrator/SKILL.md`](skills/security-orchestrator/SKILL.md)
+主路由：[`skills/security-orchestrator/SKILL.md`](skills/security-orchestrator/SKILL.md)
 
-### Current Status
+### 当前状态
 
-| Metric | Value |
-|:-------|------:|
-| Total skills | 79 |
-| Domains | 9 |
-| Master router | 1 (security-orchestrator) |
-| Supported agents | 8 |
-| Reference files | 214+ |
-| Integrated repos | 479+ |
-| Skill format | SKILL.md (Agent Skills open standard) |
+| 指标 | 数值 |
+|:-----|-----:|
+| 技能总数 | 79 |
+| 领域数 | 9 |
+| 主路由 | 1（security-orchestrator） |
+| 支持的代理 | 8 |
+| 参考文件 | 214+ |
+| 集成仓库 | 479+ |
+| 技能格式 | SKILL.md（Agent Skills 开放标准） |
 
 ---
 
-## Getting Started
+## 快速开始
 
-### Prerequisites
+### 前置依赖
 
-- A supported AI coding agent (Claude Code, Codex, Cursor, Gemini CLI, Windsurf, Copilot, OpenClaw, or Hermes)
-- `bash` for the install script
-- Some skills reference tools like nmap, sqlmap, Ghidra, IDA, Frida, etc.
+- 一个支持的 AI 编码代理（Claude Code、Codex、Cursor、Gemini CLI、Windsurf、Copilot、OpenClaw 或 Hermes）
+- `bash`（用于安装脚本）
+- 部分技能引用了 nmap、sqlmap、Ghidra、IDA、Frida 等工具
 
-### Installation
+### 安装
 
 ```bash
 git clone https://github.com/Wang200935/security-agent-skills.git
 cd security-agent-skills
 
-# Install for your agent
+# 为你的代理安装
 ./install.sh --agent claude-code
 
-# Or install for all detected agents
+# 或安装到所有检测到的代理
 ./install.sh --all
 
-# List available skills
+# 列出所有可用技能
 ./install.sh --list
 ```
 
-| Agent | Flag |
-|:------|:-----|
+| 代理 | 参数 |
+|:-----|:-----|
 | Claude Code | `--agent claude-code` |
 | Codex / OpenAI | `--agent codex` |
 | Cursor IDE | `--agent cursor` |
@@ -106,47 +106,47 @@ cd security-agent-skills
 
 ---
 
-## Skill Categories
+## 技能分类
 
-### 🔍 Recon & OSINT (12 skills)
+### 🔍 侦察 & OSINT（12 个技能）
 `osint` · `aliens-eye` · `email-osint` · `spiderfoot-osint` · `parallel-intel` · `vulnclaw-osint-recon` · `vulnclaw-recon` · `darkweb-research-env` · `vulnclaw-vuln-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
 
-### 🌐 Web Pentest (14 skills)
+### 🌐 Web 渗透测试（14 个技能）
 `web-app-pentest` · `api-security-testing` · `client-side-auth-bypass` · `vulnclaw-web-pentest` · `vulnclaw-web-security-advanced` · `vulnclaw-waf-bypass` · `vulnclaw-ctf-web` · `ctf-pwn-web-methodology` · `full-stack-vulnerability-research` · `sql-server-exploitation` · `vulnclaw-client-reverse` · `vulnclaw-android-pentest` · `playwright-browser`
 
-### 🖥️ Network Pentest (6 skills)
+### 🖥️ 网络渗透测试（6 个技能）
 `network-pentest` · `pentest` · `pentest-tool-installation` · `vulnclaw-pentest-flow` · `vulnclaw-pentest-tools` · `vulnclaw-rapid-checklist`
 
-### 💥 Exploit Development (10 skills)
+### 💥 漏洞开发（10 个技能）
 `exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `vulnclaw-exploitation` · `vulnclaw-crypto-toolkit` · `vulnclaw-ctf-crypto` · `cryptography` · `ctf-cryptography` · `ctf-encoding-realignment` · `ctf-pwn-binary-exploitation`
 
-### 🔧 Reverse Engineering (3 skills)
+### 🔧 逆向工程（3 个技能）
 `reverse-engineering` · `ctf-reverse-engineering` · `ctf-forensics`
 
-### 🚩 CTF (12 skills)
+### 🚩 CTF（12 个技能）
 `ctf-playbook` · `ctf-general` · `ctf-misc` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-artifact-discipline` · `natural-ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `vulnclaw-ctf-misc`
 
-### 🎯 Post-Exploitation (6 skills)
+### 🎯 后渗透（6 个技能）
 `vulnclaw-post-exploitation` · `vulnclaw-intranet-pentest-advanced` · `overclock-combat-pentest` · `professional-pentest-mastery` · `strix-pentest` · `vulnclaw-reporting`
 
-### ☁️ Cloud & AI Security (7 skills)
+### ☁️ 云 & AI 安全（7 个技能）
 `vulnclaw-ai-mcp-security` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `claude-code-security-review` · `security-audit` · `hackingtool`
 
-### 🔌 Hardware & IoT (12 skills)
+### 🔌 硬件 & IoT（12 个技能）
 `hardware-iot-hacking` · `bt-classic-segmented-sweep` · `esp32-wifi-killer-v12` · `nrf24-bitbang-driver` · `rfclown-multi-protocol-jammer` · `esp32-dualband-wifi-jammer` · `esp32-serial-diagnostics` · `flipper-zero-back` · `flipper-zero-firmware-modification` · `rf-clown-master` · `smart-card-reader-driver-debugging` · `smart-card-usb-direct`
 
 ---
 
-## Usage
+## 使用说明
 
-### The Orchestrator
+### 路由器
 
-`security-orchestrator` is the master router. When a user asks about any security task, it:
-1. Analyzes intent
-2. Routes to the right specialized skill(s)
-3. Can trigger parallel skill loading for speed
+`security-orchestrator` 是主路由。当用户提出任何安全相关问题时，它会：
+1. 分析意图
+2. 路由到正确的专业技能
+3. 可并行加载多个技能以提升速度
 
-### Routing Logic
+### 路由逻辑
 
 ```
 "scan this target"         → recon + web-app-pentest
@@ -165,56 +165,56 @@ cd security-agent-skills
 "pentest report"           → post-exploitation (vulnclaw-reporting)
 ```
 
-### Parallel Execution
+### 并行执行
 
-For maximum speed, load multiple skills in parallel:
-- **Full pentest**: recon + web-app-pentest + network-pentest + post-exploitation
-- **Bug bounty**: recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
-- **CTF solve**: ctf-general → routes to ctf-web / ctf-crypto / ctf-misc / ctf-reverse as needed
-- **Internal pentest**: network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
-- **Hardware assessment**: hardware-iot-hacking + reverse-engineering
+为最大化速度，可并行加载多个技能：
+- **完整渗透测试**：recon + web-app-pentest + network-pentest + post-exploitation
+- **Bug Bounty**：recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
+- **CTF 解题**：ctf-general → 按需路由到 ctf-web / ctf-crypto / ctf-misc / ctf-reverse
+- **内网渗透**：network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
+- **硬件评估**：hardware-iot-hacking + reverse-engineering
 
-### Selective Install
+### 选择性安装
 
 ```bash
-# Install only specific domains
+# 只安装特定领域
 ./install.sh --agent claude-code --domains web-pentest,exploit-dev
 
-# Install only CTF skills
+# 只安装 CTF 技能
 ./install.sh --agent claude-code --domains ctf
 
-# Install only the orchestrator
+# 只安装路由器
 ./install.sh --agent claude-code --skills security-orchestrator
 ```
 
-### Skill Structure
+### 技能结构
 
-Every skill follows the [Agent Skills open standard](https://agentskills.io):
+每个技能遵循 [Agent Skills 开放标准](https://agentskills.io)：
 
 ```
 skills/
-├── security-orchestrator/          # Master router
+├── security-orchestrator/          # 主路由
 │   └── SKILL.md
 ├── recon/
 │   ├── osint/
-│   │   ├── SKILL.md                # Instructions + YAML frontmatter
-│   │   ├── references/             # Deep knowledge files
-│   │   └── scripts/                # Helper automation
+│   │   ├── SKILL.md                # 说明 + YAML frontmatter
+│   │   ├── references/             # 深度知识文件
+│   │   └── scripts/                # 辅助自动化脚本
 │   └── ...
 └── ...
 ```
 
-### Rules Library
+### 规则库
 
-Shared knowledge in `rules/` loaded across skills:
+`rules/` 目录中存放跨技能共享的知识：
 
-| File | Contents |
-|:-----|:---------|
-| `rules/security-rules.md` | Payloads (XSS/SSRF/SQLi/SSTI), WAF bypass ladder, hunting rules, top 10 mistakes |
+| 文件 | 内容 |
+|:-----|:-----|
+| `rules/security-rules.md` | 攻击载荷（XSS/SSRF/SQLi/SSTI）、WAF 绕过阶梯、漏洞挖掘规则、十大常见错误 |
 
-### Provider Configs
+### 代理配置
 
-Pre-configured instruction files in `providers/` for each agent:
+`providers/` 目录中为每个代理预配置了指令文件：
 
 ```
 providers/
@@ -228,13 +228,13 @@ providers/
 
 ---
 
-## Compatibility
+## 兼容性
 
-| Agent | Install location |
-|:------|:-----------------|
-| Claude Code | `.claude/skills/` or `~/.claude/skills/` |
-| Codex | `.codex/skills/` or `AGENTS.md` |
-| Cursor | `.cursor/skills/` or `.cursorrules` |
+| 代理 | 安装位置 |
+|:-----|:---------|
+| Claude Code | `.claude/skills/` 或 `~/.claude/skills/` |
+| Codex | `.codex/skills/` 或 `AGENTS.md` |
+| Cursor | `.cursor/skills/` 或 `.cursorrules` |
 | Gemini CLI | `.gemini/skills/` |
 | Windsurf | `.windsurf/skills/` |
 | GitHub Copilot | `.github/copilot-instructions.md` |
@@ -243,22 +243,22 @@ providers/
 
 ---
 
-## Contributing
+## 贡献
 
-PRs welcome. New skills must include:
-1. `SKILL.md` with required YAML frontmatter (`name`, `description`)
-2. At least one `references/` file with real knowledge (not AI-generated)
-3. Trigger conditions in `description` field
-4. Tested in at least one agent before submitting
+欢迎提交 PR。新技能必须包含：
+1. `SKILL.md`，带必需的 YAML frontmatter（`name`、`description`）
+2. 至少一个 `references/` 文件，包含真实知识（非 AI 生成）
+3. `description` 字段中写明触发条件
+4. 提交前至少在一个代理中测试过
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## License
-
-[MIT](LICENSE) — Use for authorized security testing only. Follow responsible disclosure.
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ---
 
-> 🌐 繁體中文 · [简体中文](README_zh_CN.md) · [日本語](README_ja.md)
+## 许可证
+
+[MIT](LICENSE) — 仅用于授权的安全测试。请遵循负责任披露原则。
+
+---
+
+> 🌐 [English](README.md) · [繁體中文](README_zh.md) · [日本語](README_ja.md)

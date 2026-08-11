@@ -9,11 +9,11 @@ SOURCE_SKILLS_DIR="$REPO_ROOT/skills"
 MODE="symlink"           # symlink | copy
 CLAUDE_SCOPE="project"   # project | global
 FORCE=0
+DRY_RUN=0
 NON_INTERACTIVE=0
 SHOW_LIST=0
 INSTALL_ALL=0
 
-# Parsed agent requests. Values are normalized agent keys.
 REQUESTED_AGENTS=()
 
 AGENT_KEYS=(
@@ -81,31 +81,65 @@ is_interactive() {
   [[ -t 0 && -t 1 && $NON_INTERACTIVE -eq 0 ]]
 }
 
-warn_existing() {
+# Check if a path has existing real content (not just empty dir)
+has_existing_content() {
   local path="$1"
-  local label="$2"
-  if [[ -e "$path" || -L "$path" ]]; then
-    if [[ -L "$path" ]]; then
-      local current
-      current="$(readlink "$path" || true)"
-      echo "[warn] $label already exists as symlink: $path -> $current"
-    else
-      echo "[warn] $label already exists: $path"
-    fi
+  if [[ -L "$path" ]]; then
+    return 0
+  fi
+  if [[ -f "$path" ]]; then
+    return 0
+  fi
+  if [[ -d "$path" ]]; then
+    local count
+    count=$(find "$path" -maxdepth 1 -mindepth 1 2>/dev/null | wc -l | tr -d ' ')
+    [[ "$count" -gt 0 ]]
+    return $?
+  fi
+  return 1
+}
+
+# Is this path managed by us? Check for our manifest marker.
+is_managed_by_us() {
+  local path="$1"
+  local manifest_file="${path%/}.security-agent-skills-manifest"
+  if [[ -d "$path" ]]; then
+    [[ -f "${path}/.security-agent-skills-manifest" ]]
+    return $?
+  fi
+  return 1
+}
+
+# Timestamped backup
+backup_path() {
+  local path="$1"
+  if [[ ! -e "$path" && ! -L "$path" ]]; then
+    return 0
+  fi
+  local backup="${path}.backup-$(date +%Y%m%d-%H%M%S)"
+  if [[ $DRY_RUN -eq 1 ]]; then
+    echo "[dry-run] Would backup $path -> $backup"
+  else
+    mv "$path" "$backup"
+    echo "[backup] $path -> $backup"
   fi
 }
 
 confirm_overwrite() {
   local path="$1"
   local label="$2"
+
   if [[ ! -e "$path" && ! -L "$path" ]]; then
     return 0
   fi
 
-  warn_existing "$path" "$label"
-
-  if [[ $FORCE -eq 1 || $NON_INTERACTIVE -eq 1 ]]; then
+  if [[ $FORCE -eq 1 ]]; then
     return 0
+  fi
+
+  if [[ $NON_INTERACTIVE -eq 1 ]]; then
+    echo "[skip] $label — existing data at $path (use --force to overwrite)"
+    return 1
   fi
 
   local reply
@@ -113,17 +147,79 @@ confirm_overwrite() {
   [[ "${reply,,}" == "y" || "${reply,,}" == "yes" ]]
 }
 
-remove_path() {
-  local path="$1"
-  if [[ -L "$path" || -f "$path" ]]; then
-    rm -f "$path"
-  elif [[ -d "$path" ]]; then
-    rm -rf "$path"
+# Install a single skill directory into dest root, additively.
+# Usage: install_single_skill <source_skill_dir> <dest_root> <skill_name>
+install_single_skill() {
+  local src="$1"
+  local dest_root="$2"
+  local skill_name="$3"
+  local dest="$dest_root/$skill_name"
+
+  if [[ ! -d "$src" ]]; then
+    echo "[error] Source skill not found: $src" >&2
+    return 1
   fi
+
+  # If dest exists and is managed by us, replace OK
+  # If dest exists and is NOT managed by us:
+  #   --force: backup + replace
+  #   else: skip with warning
+  if has_existing_content "$dest"; then
+    if is_managed_by_us "$dest"; then
+      # Our own previous install — safe to replace
+      if [[ $DRY_RUN -eq 1 ]]; then
+        echo "[dry-run] Would update managed skill: $skill_name"
+      else
+        rm -rf "$dest"
+      fi
+    elif [[ $FORCE -eq 1 ]]; then
+      backup_path "$dest"
+      if [[ $DRY_RUN -eq 0 ]]; then
+        rm -rf "$dest"
+      fi
+    elif [[ $NON_INTERACTIVE -eq 1 ]]; then
+      echo "[skip] $skill_name — existing non-managed data at $dest (use --force)"
+      return 0
+    else
+      local reply
+      read -r -p "Skill '$skill_name' already exists at $dest (not ours). Overwrite? [y/N] " reply
+      if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
+        echo "[skip] $skill_name"
+        return 0
+      fi
+      backup_path "$dest"
+      if [[ $DRY_RUN -eq 0 ]]; then
+        rm -rf "$dest"
+      fi
+    fi
+  fi
+
+  if [[ $DRY_RUN -eq 1 ]]; then
+    echo "[dry-run] Would install skill: $skill_name -> $dest ($MODE)"
+    return 0
+  fi
+
+  mkdir -p "$dest_root"
+
+  if [[ "$MODE" == "symlink" ]]; then
+    ln -s "$src" "$dest"
+  else
+    if command -v rsync >/dev/null 2>&1; then
+      rsync -a "$src/" "$dest/"
+    else
+      cp -R "$src" "$dest"
+    fi
+  fi
+
+  # Write manifest marker so we can identify our installs later
+  touch "${dest_root}/.security-agent-skills-manifest"
+  echo "$skill_name" >> "${dest_root}/.security-agent-skills-manifest"
+  return 0
 }
 
-install_skills_tree() {
-  local dest="$1"
+# Install all skills additively into dest root
+install_skills_additive() {
+  local dest_root="$1"
   local label="$2"
 
   if [[ ! -d "$SOURCE_SKILLS_DIR" ]]; then
@@ -131,27 +227,126 @@ install_skills_tree() {
     exit 1
   fi
 
-  if ! confirm_overwrite "$dest" "$label"; then
-    echo "[skip] $label"
-    return 0
+  # Check if dest_root itself exists with non-managed content
+  if has_existing_content "$dest_root" && ! is_managed_by_us "$dest_root"; then
+    if [[ $FORCE -eq 1 ]]; then
+      echo "[warn] $label: destination has existing non-managed content. --force will backup conflicts per-skill, not nuke the root."
+    elif [[ $NON_INTERACTIVE -eq 1 ]]; then
+      echo "[warn] $label: destination $dest_root has existing content. Installing additively (existing skills will be skipped unless --force)."
+    fi
   fi
 
-  mkdir -p "$(dirname "$dest")"
+  if [[ $DRY_RUN -eq 1 ]]; then
+    echo "[dry-run] Would install skills additively to: $dest_root ($MODE)"
+  fi
 
-  if [[ "$MODE" == "symlink" ]]; then
-    remove_path "$dest"
-    ln -s "$SOURCE_SKILLS_DIR" "$dest"
-    echo "[ok] $label -> symlinked $dest -> $SOURCE_SKILLS_DIR"
-  else
-    mkdir -p "$dest"
-    if command -v rsync >/dev/null 2>&1; then
-      rsync -a --delete "$SOURCE_SKILLS_DIR/" "$dest/"
-    else
-      rm -rf "$dest"
-      mkdir -p "$(dirname "$dest")"
-      cp -R "$SOURCE_SKILLS_DIR" "$dest"
-    fi
-    echo "[ok] $label -> copied to $dest"
+  mkdir -p "$dest_root" 2>/dev/null || true
+
+  local installed=0
+  local skipped=0
+  local total=0
+
+  shopt -s nullglob
+  for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
+    [[ -d "$category_dir" ]] || continue
+    for skill_dir in "$category_dir"*/; do
+      [[ -d "$skill_dir" ]] || continue
+      local skill_name
+      skill_name="$(basename "$skill_dir")"
+      total=$((total + 1))
+      if install_single_skill "$skill_dir" "$dest_root" "$skill_name"; then
+        installed=$((installed + 1))
+      else
+        skipped=$((skipped + 1))
+      fi
+    done
+  done
+  shopt -u nullglob
+
+  if [[ $DRY_RUN -eq 0 ]]; then
+    echo "[ok] $label: $installed installed, $skipped skipped, $total total"
+  fi
+}
+
+# Gemini-specific: flatten to single level (no category nesting)
+install_skills_gemini() {
+  local dest_root="$1"
+  local label="$2"
+
+  if [[ ! -d "$SOURCE_SKILLS_DIR" ]]; then
+    echo "[error] Skills source directory not found: $SOURCE_SKILLS_DIR" >&2
+    exit 1
+  fi
+
+  # Gemini discovers skills at <root>/<skill-name>/SKILL.md — one level deep.
+  # Our source tree has skills/<category>/<skill-name>/SKILL.md — two levels.
+  # So we must flatten: install each skill directly under dest_root/<skill-name>/.
+
+  if [[ $DRY_RUN -eq 1 ]]; then
+    echo "[dry-run] Would install Gemini-flattened skills to: $dest_root"
+  fi
+
+  mkdir -p "$dest_root" 2>/dev/null || true
+
+  local installed=0
+  local skipped=0
+  local total=0
+
+  shopt -s nullglob
+  for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
+    [[ -d "$category_dir" ]] || continue
+    for skill_dir in "$category_dir"*/; do
+      [[ -d "$skill_dir" ]] || continue
+      local skill_name
+      skill_name="$(basename "$skill_dir")"
+      total=$((total + 1))
+
+      local dest="$dest_root/$skill_name"
+
+      if has_existing_content "$dest"; then
+        if is_managed_by_us "$dest"; then
+          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
+        elif [[ $FORCE -eq 1 ]]; then
+          backup_path "$dest"
+          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
+        elif [[ $NON_INTERACTIVE -eq 1 ]]; then
+          echo "[skip] $skill_name (Gemini) — existing at $dest"
+          skipped=$((skipped + 1))
+          continue
+        else
+          local reply
+          read -r -p "Skill '$skill_name' exists at $dest (Gemini). Overwrite? [y/N] " reply
+          if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
+            echo "[skip] $skill_name (Gemini)"
+            skipped=$((skipped + 1))
+            continue
+          fi
+          backup_path "$dest"
+          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
+        fi
+      fi
+
+      if [[ $DRY_RUN -eq 1 ]]; then
+        echo "[dry-run] Would install (flattened): $skill_name -> $dest"
+      else
+        if [[ "$MODE" == "symlink" ]]; then
+          ln -s "$skill_dir" "$dest"
+        else
+          if command -v rsync >/dev/null 2>&1; then
+            rsync -a "$skill_dir/" "$dest/"
+          else
+            cp -R "$skill_dir" "$dest"
+          fi
+        fi
+      fi
+      installed=$((installed + 1))
+    done
+  done
+  shopt -u nullglob
+
+  if [[ $DRY_RUN -eq 0 ]]; then
+    touch "${dest_root}/.security-agent-skills-manifest"
+    echo "[ok] $label (Gemini flattened): $installed installed, $skipped skipped, $total total"
   fi
 }
 
@@ -159,34 +354,51 @@ install_copilot_instructions() {
   local dest="$1"
   local label="GitHub Copilot instructions"
 
-  if ! confirm_overwrite "$dest" "$label"; then
-    echo "[skip] $label"
+  if [[ -f "$dest" ]]; then
+    if [[ $FORCE -eq 1 ]]; then
+      backup_path "$dest"
+    elif [[ $NON_INTERACTIVE -eq 1 ]]; then
+      echo "[skip] $label — existing file at $dest (use --force)"
+      return 0
+    else
+      local reply
+      read -r -p "Overwrite $label at $dest? [y/N] " reply
+      if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
+        echo "[skip] $label"
+        return 0
+      fi
+      backup_path "$dest"
+    fi
+  fi
+
+  if [[ $DRY_RUN -eq 1 ]]; then
+    echo "[dry-run] Would write: $dest"
     return 0
   fi
 
   mkdir -p "$(dirname "$dest")"
-  cat > "$dest" <<EOF
+  cat > "$dest" <<'EOF'
 # Security Agent Skills for GitHub Copilot
 
 This repository contains a curated security skill library under:
 
-- \\`./skills/recon/\\`
-- \\`./skills/web-advanced-pentest/\\`
-- \\`./skills/network-pentest/\\`
-- \\`./skills/exploit-dev/\\`
-- \\`./skills/reverse-engineering/\\`
-- \\`./skills/ctf/\\`
-- \\`./skills/post-exploitation/\\`
-- \\`./skills/cloud-security/\\`
-- \\`./skills/hardware-iot/\\`
+- `./skills/recon/`
+- `./skills/web-pentest/`
+- `./skills/network-pentest/`
+- `./skills/exploit-dev/`
+- `./skills/reverse-engineering/`
+- `./skills/ctf/`
+- `./skills/post-exploitation/`
+- `./skills/cloud-security/`
+- `./skills/hardware-iot/`
 
 When working on a security-related task in this repo:
 1. Find the most relevant skill category.
-2. Open the matching \\`SKILL.md\\` before editing or suggesting changes.
+2. Open the matching `SKILL.md` before editing or suggesting changes.
 3. Follow any linked references, scripts, or validation steps in that skill.
 4. Prefer the repo-local skill documentation over generic heuristics.
 
-Skills root: \\`$REPO_ROOT/skills\\`
+For native Copilot Agent Skills, skills are also installed to `.agents/skills/`.
 EOF
   echo "[ok] $label -> wrote $dest"
 }
@@ -201,12 +413,16 @@ install_agent() {
   case "$agent" in
     github-copilot)
       install_copilot_instructions "$target"
+      # Also install native skills to .agents/skills
+      local agents_target="$REPO_ROOT/.agents/skills"
+      install_skills_additive "$agents_target" "$label (native skills)"
       ;;
-    claude-code)
-      install_skills_tree "$target" "$label"
+    gemini-cli)
+      # Gemini requires flattened single-level layout for discovery
+      install_skills_gemini "$target" "$label"
       ;;
-    codex|cursor|gemini-cli|windsurf|openclaw|hermes-agent)
-      install_skills_tree "$target" "$label"
+    claude-code|codex|cursor|windsurf|openclaw|hermes-agent)
+      install_skills_additive "$target" "$label"
       ;;
     *)
       echo "[error] Unknown agent: $agent" >&2
@@ -248,24 +464,93 @@ list_skills() {
   echo "Total: $total skills"
 }
 
+uninstall_agent() {
+  local agent="$1"
+  local label
+  label="$(agent_label "$agent")"
+  local target
+  target="$(skills_root_for_agent "$agent")"
+
+  if [[ ! -d "$target" ]]; then
+    # Check for copilot instructions file
+    if [[ "$agent" == "github-copilot" && -f "$target" ]]; then
+      backup_path "$target"
+      echo "[ok] Removed $label instructions"
+    else
+      echo "[skip] $label — nothing installed at $target"
+    fi
+    return 0
+  fi
+
+  local manifest="${target}/.security-agent-skills-manifest"
+
+  if [[ ! -f "$manifest" ]]; then
+    echo "[skip] $label — $target is not managed by security-agent-skills (no manifest). Use --force to remove anyway."
+    if [[ $FORCE -eq 1 ]]; then
+      backup_path "$target"
+      echo "[ok] Removed $label (forced)"
+    fi
+    return 0
+  fi
+
+  # Read manifest and remove only our skills
+  local removed=0
+  while IFS= read -r skill_name; do
+    local skill_path="$target/$skill_name"
+    if [[ -e "$skill_path" || -L "$skill_path" ]]; then
+      if [[ $DRY_RUN -eq 1 ]]; then
+        echo "[dry-run] Would remove: $skill_path"
+      else
+        rm -f "$skill_path"
+        rm -rf "$skill_path"
+      fi
+      removed=$((removed + 1))
+    fi
+  done < "$manifest"
+
+  # Remove manifest itself
+  if [[ $DRY_RUN -eq 0 ]]; then
+    rm -f "$manifest"
+  fi
+
+  echo "[ok] $label: $removed skills removed from $target"
+}
+
 usage() {
   cat <<EOF
 Usage:
   $0                     # interactive menu
   $0 --list              # list available skills
-  $0 --agent NAME        # install one agent non-interactively
+  $0 --agent NAME        # install one agent (repeatable)
   $0 --all               # install every supported agent
+  $0 --uninstall NAME    # remove skills installed by this tool
 
 Options:
   --agent NAME           Agent to install (repeatable)
                          claude-code | codex | cursor | gemini-cli | windsurf | github-copilot | openclaw | hermes-agent
   --all                  Install every supported agent
   --list                 Show available skills by category
-  --copy                 Copy the skills directory instead of symlinking it
+  --copy                 Copy the skills directory instead of symlinking
   --symlink              Symlink the skills directory (default)
-  --global               Install Claude Code skills to ~/.claude/skills instead of repo-local .claude/skills
-  --force                Overwrite existing installs without prompting
+  --global               Install Claude Code skills to ~/.claude/skills
+  --force                Overwrite existing non-managed skills (backs up first)
+  --dry-run              Show what would happen without making changes
+  --uninstall NAME       Remove skills installed by this tool for the given agent
   -h, --help             Show this help
+
+Safety:
+  This installer is ADDITIVE. It never deletes an agent's entire skills directory.
+  Each skill is installed individually. Existing skills not managed by this tool
+  are left alone unless --force is given (a .backup-<timestamp> is created first).
+
+  A manifest file (.security-agent-skills-manifest) tracks which skills this
+  tool installed, enabling clean --uninstall.
+
+  Gemini CLI: skills are flattened to a single-level directory for proper
+  discovery (Gemini only discovers skills one level deep).
+
+  GitHub Copilot: writes copilot-instructions.md AND installs native Agent
+  Skills to .agents/skills/.
 EOF
 }
 
@@ -301,6 +586,15 @@ parse_args() {
         FORCE=1
         shift
         ;;
+      --dry-run)
+        DRY_RUN=1
+        shift
+        ;;
+      --uninstall)
+        [[ $# -ge 2 ]] || { echo "[error] --uninstall requires a value" >&2; exit 1; }
+        UNINSTALL_AGENT="$(normalize_agent "$2")"
+        shift 2
+        ;;
       -h|--help)
         usage
         exit 0
@@ -326,6 +620,7 @@ interactive_menu() {
     echo "  7) OpenClaw"
     echo "  8) Hermes Agent"
     echo "  9) All"
+    echo "  u) Uninstall"
     echo "  0) Exit"
     printf 'Select an option: '
     local choice
@@ -340,6 +635,18 @@ interactive_menu() {
       7) install_agent "openclaw" ;;
       8) install_agent "hermes-agent" ;;
       9) for agent in "${AGENT_KEYS[@]}"; do install_agent "$agent"; done ;;
+      u)
+        printf 'Agent to uninstall: '
+        local agent_name
+        read -r agent_name
+        local normalized
+        normalized="$(normalize_agent "$agent_name" 2>/dev/null || true)"
+        if [[ -z "$normalized" ]]; then
+          echo "Unknown agent: $agent_name"
+        else
+          uninstall_agent "$normalized"
+        fi
+        ;;
       0) exit 0 ;;
       *) echo "Invalid choice: $choice" ;;
     esac
@@ -355,8 +662,12 @@ main() {
     exit 0
   fi
 
+  if [[ ${UNINSTALL_AGENT+x} ]]; then
+    uninstall_agent "$UNINSTALL_AGENT"
+    exit 0
+  fi
+
   if [[ $INSTALL_ALL -eq 1 ]]; then
-    NON_INTERACTIVE=1
     for agent in "${AGENT_KEYS[@]}"; do
       install_agent "$agent"
     done
@@ -364,7 +675,6 @@ main() {
   fi
 
   if [[ ${#REQUESTED_AGENTS[@]} -gt 0 ]]; then
-    NON_INTERACTIVE=1
     for agent in "${REQUESTED_AGENTS[@]}"; do
       install_agent "$agent"
     done

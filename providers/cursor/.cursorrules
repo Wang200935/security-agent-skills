@@ -1,0 +1,24 @@
+# Cursor Security Skills
+
+This project provides 79 security skills for Cursor IDE.
+
+## Installation
+```bash
+./install.sh --agent cursor
+```
+
+This copies skills to `.cursor/skills/` and writes rules to `.cursorrules`.
+
+## Skill Loading
+Load `skills/security-orchestrator/SKILL.md` for automatic routing to specialized skills based on user intent.
+
+## Categories
+- recon (OSINT, reconnaissance, dark web)
+- web-pentest (OWASP, API security, WAF bypass)
+- network-pentest (AD, cloud, container escape)
+- exploit-dev (zero-day, fuzzing, kernel, crypto)
+- reverse-engineering (Ghidra, IDA, radare2)
+- ctf (challenges, writeups, training)
+- post-exploitation (lateral movement, persistence)
+- cloud-security (AI/MCP, code audit)
+- hardware-iot (UART/JTAG, firmware, SDR)

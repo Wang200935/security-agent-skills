@@ -1,0 +1,53 @@
+# ChatGPT Web Relay Configuration for Hermes
+# Copy this to ~/.hermes/chatgpt_web_relay.yaml and customize
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Browser Profile (PERSISTENT - keeps you logged in)
+# ──────────────────────────────────────────────────────────────────────────────
+# Use a DEDICATED directory, NOT your main Chrome profile
+# This avoids conflicts with your personal browsing
+user_data_dir: "~/.hermes/browser_profiles/chatgpt_relay"
+
+# Chrome executable channel
+# "chrome" = use real Google Chrome (recommended, bypasses Turnstile/Cloudflare)
+# null/omit = use Playwright's bundled Chromium
+channel: "chrome"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Browser Behavior
+# ──────────────────────────────────────────────────────────────────────────────
+headless: false          # false = headed (visible), true = headless
+                         # Headed is MORE reliable for Cloudflare/Turnstile
+stealth: true            # Apply playwright-stealth patches
+disable_blink_features: true  # Disable AutomationControlled flag
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Default Model Settings
+# ──────────────────────────────────────────────────────────────────────────────
+# Available models (match ChatGPT web UI labels):
+#   gpt-5.5-pro-extended   → "GPT-5.5 Pro Extended"
+#   gpt-5.4-thinking-light → "GPT-5.4 Thinking Light"  
+#   deep-research          → "Deep Research"
+#   gpt-4o                 → "GPT-4o"
+#   gpt-4o-mini            → "GPT-4o mini"
+#   o1-pro                 → "o1 Pro"
+#   o1                     → "o1"
+default_model: "gpt-5.5-pro-extended"
+default_effort: "high"     # For thinking models: "low", "medium", "high"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Timeouts (milliseconds)
+# ──────────────────────────────────────────────────────────────────────────────
+navigation_timeout: 60000      # Page load timeout
+response_timeout: 300000       # Response streaming timeout (5 min)
+                               # Deep Research uses 600000 (10 min) internally
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Target URL
+# ──────────────────────────────────────────────────────────────────────────────
+chatgpt_url: "https://chatgpt.com"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Debug
+# ──────────────────────────────────────────────────────────────────────────────
+debug: false

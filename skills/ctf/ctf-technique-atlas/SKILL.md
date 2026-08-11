@@ -2,7 +2,6 @@
 name: ctf-technique-atlas
 description: Deep CTF technique atlas for mapping challenge clues to concrete attack patterns, tools, scripts, and next probes across Web, Crypto, Forensics, Reverse, Pwn, Misc/Jail, OSINT, Mobile, Cloud, Blockchain, Hardware/RF/ICS, Game/Protocol, and AI/ML. Use when the user asks to strengthen CTF solving ability, research all CTF techniques, classify an unknown CTF challenge, or choose the next attack path.
 version: 1.0.0
-author: Hermes Agent
 license: MIT
 metadata:
   hermes:

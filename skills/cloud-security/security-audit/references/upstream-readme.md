@@ -9,7 +9,7 @@ This is the skill that seeded Cloudflare's vulnerability discovery harness, desc
 The skill runs a structured audit in six phases:
 
 1. **Recon** -- parallel research agents map the application's architecture, trust boundaries, and input surfaces. Produces `architecture.md`.
-2. **Hunt** -- parallel general agents attack the codebase from different angles (injection, access control, business logic, cryptography, feature abuse, chained attacks, and a wildcard). Each agent can spawn sub-agents to dig deeper.
+2. **Hunt** -- parallel general agents attack the codebase from different angles (injection, access control, business logic, cryptography-fundamentals, feature abuse, chained attacks, and a wildcard). Each agent can spawn sub-agents to dig deeper.
 3. **Validate** -- separate agents try to *disprove* each finding. Adversarial review kills false positives.
 4. **Report** -- produces `REPORT.md` (human-readable) and `FINDINGS-DETAIL.md` (detailed traces for MEDIUM+ findings).
 5. **Structured output** -- writes `findings.json` conforming to `report-schema.json`, validated by `validate-findings.cjs`.

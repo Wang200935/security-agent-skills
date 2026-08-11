@@ -341,7 +341,7 @@ Check solve section for steganography.
 
 - [Backdoor](https://backdoor.sdslabs.co/) - Security Platform by SDSLabs.
 - [Crackmes](https://crackmes.one/) - Reverse Engineering Challenges.
-- [CryptoHack](https://cryptohack.org/) - Fun cryptography challenges.
+- [CryptoHack](https://cryptohack.org/) - Fun cryptography-fundamentals challenges.
 - [echoCTF.RED](https://echoctf.red/) - Online CTF with a variety of targets to attack.
 - [Exploit Exercises](https://exploit-exercises.lains.space/) - Variety of VMs to learn variety of computer security issues.
 - [Exploit.Education](http://exploit.education) - Variety of VMs to learn variety of computer security issues.
@@ -354,7 +354,7 @@ Check solve section for steganography.
 - [IO](http://io.netgarage.org/) - Wargame for binary challenges.
 - [Microcorruption](https://microcorruption.com) - Embedded security CTF.
 - [Over The Wire](http://overthewire.org/wargames/) - Wargame maintained by OvertheWire Community.
-- [PentesterLab](https://pentesterlab.com/) - Variety of VM and online challenges (paid).
+- [PentesterLab](https://advanced-pentesterlab.com/) - Variety of VM and online challenges (paid).
 - [PicoCTF](https://2019game.picoctf.com) - All year round ctf game. Questions from the yearly picoCTF competition.
 - [PWN Challenge](http://pwn.eonew.cn/) - Binary Exploitation Wargame.
 - [Pwnable.kr](http://pwnable.kr/) - Pwn Game.

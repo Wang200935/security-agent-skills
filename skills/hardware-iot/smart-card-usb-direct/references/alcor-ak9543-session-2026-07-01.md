@@ -118,7 +118,7 @@ IC_CheckPass_4442hex(handle, "ffffff\0")
 ```
 
 ## Cross-References
-- `smart-card-reader-driver-debugging` skill → complete driver binding tactics
+- `smart-card-driver-debug` skill → complete driver binding tactics
 - `smart-card-usb-direct` skill → vendor DLL API patterns and pitfalls
 - `references/windows-driver-binding-tactics.md` → all binding methods tested
 - `references/alcor-au9540-driver-notes.md` → driver internals, bitness, INF structure

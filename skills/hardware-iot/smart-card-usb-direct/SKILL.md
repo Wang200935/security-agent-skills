@@ -6,7 +6,6 @@ description: >
   DCULC, SpringCard, and similar Chinese OEM readers for synchronous memory cards
   (SLE4442, SLE4428, AT24Cxx, AT88SCxxx).
 version: 1.0.0
-author: Nous Research
 tags: [smart-card, usb, synchronous-card, vendor-dll, pcsclite-bypass, SLE4442, AL9543]
 ---
 

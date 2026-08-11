@@ -2,15 +2,13 @@
 name: ai-mcp-security
 description: "AI 与 MCP 安全评估 — Prompt 注入、工具滥用、MCP 信任边界、Agent 权限逃逸、数据泄露、模型风险、GAARM 风险矩阵。Use when testing LLM-based applications, MCP servers, agent orchestration systems, AI plugins, RAG pipelines, or any system where an LLM acts on untrusted inputs or tool calls."
 version: 2.0.0
-author: VulnClaw contributors; ported for Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [red-teaming, ai-security, mcp-security, llm-security, prompt-injection, agent-security]
     related_skills: [cybersecurity, web-app-pentest, pentest, reverse-engineering]
-    origin: imported from VulnClaw (https://github.com/Unclecheng-li/VulnClaw), refactored 2026-06-20
----
+    origin: im---
 
 # AI 与 MCP 安全评估 Skill
 
@@ -78,16 +76,14 @@ metadata:
 - `references/ai-model-security.md` — AI 模型安全
 - `references/gaarm-risk-matrix.md` — GAARM 风险矩阵
 
-
 ## Hermes 使用適配
 
-- 內容源自 VulnClaw 專案技能，已整合進 Hermes 資安 skill tree。僅在**已授權**滲透測試、CTF、內部安全評估或防禦驗證範圍內使用。
+- 內容源自  專案技能，已整合進 Hermes 資安 skill tree。僅在**已授權**滲透測試、CTF、內部安全評估或防禦驗證範圍內使用。
 - 原文若提到 `fetch`，在 Hermes 中優先使用 `web_extract`、`browser` 或 `terminal(curl/HTTPie)` 取得真實回應。
 - 原文若提到 `python_execute`，在 Hermes 中使用 `execute_code` 或 `terminal(python3 ...)`；計算、編碼、hash、PoC 驗證必須用工具實測，不靠猜。
 - 原文若提到 MCP/Burp/adb/frida/jadx/chrome_devtools 等外部工具：先確認本機是否安裝或可用；不可用時以 Hermes 現有 `web`、`browser`、`terminal`、`file`、`vision` 工具替代，並明確標註限制。
 - 下一次滲透任務中，先載入 `cybersecurity` umbrella 做總路由，再依場景載入本 skill（AI/MCP surface）與其他專項 skill（web、pentest、reverse-engineering）。
 - **建議搭配閱讀**：`cybersecurity`（總路由）→ `web-app-pentest`（若 AI 透過 Web 前端暴露）→ `pentest`（Post-exploit 提權鏈）→ `reverse-engineering`（若需分析 MCP client binary）。
-
 
 ## 2025-2026 AI/MCP Security Updates
 
@@ -218,11 +214,11 @@ Key categories from ZioSec research:
 6. **Multimodal** — Image-based injection, audio prompts
 7. **Supply Chain** — Malicious models, poisoned datasets, backdoored plugins
 
-See: https://ziosec.com/blog/ai-jailbreak-techniques-in-2026-a-complete-technical-guide-ziosec
+See: 
 
 ---
 
 ## 來源與維護
 
-- Upstream: https://github.com/Unclecheng-li/VulnClaw
+- Upstream: https://
 - 原始 skill 已保存於 `references/upstream-skill.md`；README/LICENSE 已保存於 `references/`。

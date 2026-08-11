@@ -112,31 +112,31 @@ cd security-agent-skills
 ## 技能カテゴリ
 
 ### 🔍 偵察・OSINT (12 skills)
-`osint` · `aliens-eye` · `email-osint` · `spiderfoot-osint` · `parallel-intel` · `vulnclaw-osint-recon` · `vulnclaw-recon` · `darkweb-research-env` · `vulnclaw-vuln-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
+`osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
 
 ### 🌐 Web ペネトレーションテスト (14 skills)
-`web-app-pentest` · `api-security-testing` · `client-side-auth-bypass` · `vulnclaw-web-pentest` · `vulnclaw-web-security-advanced` · `vulnclaw-waf-bypass` · `vulnclaw-ctf-web` · `ctf-pwn-web-methodology` · `full-stack-vulnerability-research` · `sql-server-exploitation` · `vulnclaw-client-reverse` · `vulnclaw-android-pentest` · `playwright-browser`
+`web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
 
 ### 🖥️ ネットワーク・ペネトレーションテスト (6 skills)
-`network-pentest` · `pentest` · `pentest-tool-installation` · `vulnclaw-pentest-flow` · `vulnclaw-pentest-tools` · `vulnclaw-rapid-checklist`
+`network-pentest` · `advanced-pentest` · `pentest-tool-setup` · `pentest-workflow` · `pentest-tool-reference` · `pentest-quick-checklist`
 
 ### 💥 エクスプロイト開発 (10 skills)
-`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `vulnclaw-exploitation` · `vulnclaw-crypto-toolkit` · `vulnclaw-ctf-crypto` · `cryptography` · `ctf-cryptography` · `ctf-encoding-realignment` · `ctf-pwn-binary-exploitation`
+`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `exploit-poc-builder` · `crypto-toolkit` · `crypto-ctf-attacks` · `cryptography-fundamentals` · `crypto-attack-patterns` · `encoding-realignment` · `binary-exploitation`
 
 ### 🔧 リバースエンジニアリング (3 skills)
-`reverse-engineering` · `ctf-reverse-engineering` · `ctf-forensics`
+`reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
 
 ### 🚩 CTF (12 skills)
-`ctf-playbook` · `ctf-general` · `ctf-misc` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-artifact-discipline` · `natural-ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `vulnclaw-ctf-misc`
+`ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
 
 ### 🎯 ポストエクスプロイト (6 skills)
-`vulnclaw-post-exploitation` · `vulnclaw-intranet-pentest-advanced` · `overclock-combat-pentest` · `professional-pentest-mastery` · `strix-pentest` · `vulnclaw-reporting`
+`post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
 
 ### ☁️ クラウド・AI セキュリティ (7 skills)
-`vulnclaw-ai-mcp-security` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `claude-code-security-review` · `security-audit` · `hackingtool`
+`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
 
 ### 🔌 ハードウェア・IoT (12 skills)
-`hardware-iot-hacking` · `bt-classic-segmented-sweep` · `esp32-wifi-killer-v12` · `nrf24-bitbang-driver` · `rfclown-multi-protocol-jammer` · `esp32-dualband-wifi-jammer` · `esp32-serial-diagnostics` · `flipper-zero-back` · `flipper-zero-firmware-modification` · `rf-clown-master` · `smart-card-reader-driver-debugging` · `smart-card-usb-direct`
+`hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
 
 ---
 
@@ -156,33 +156,33 @@ cd security-agent-skills
 "scan this target"         → recon + web-app-pentest
 "exploit this bug"         → exploit-development
 "reverse this binary"      → reverse-engineering
-"CTF challenge"            → ctf (ctf-general routes further)
+"CTF challenge"            → ctf (ctf-orchestrator routes further)
 "enumerate network"        → network-pentest
-"OSINT on person/domain"   → recon (osint)
-"bypass WAF"              → web-pentest (vulnclaw-waf-bypass)
+"OSINT on person/domain"   → recon (osint-framework)
+"bypass WAF"              → web-advanced-pentest (waf-bypass-techniques)
 "privilege escalation"     → post-exploitation
 "audit this code"          → cloud-security (security-audit)
 "hack IoT device"          → hardware-iot
 "AI security / MCP"        → cloud-security (ai-mcp-security)
 "fuzz this target"         → exploit-dev (zero-day-hunting)
-"crack this hash"          → exploit-dev (cryptography)
-"pentest report"           → post-exploitation (vulnclaw-reporting)
+"crack this hash"          → exploit-dev (cryptography-fundamentals)
+"advanced-pentest report"           → post-exploitation (pentest-report-generator)
 ```
 
 ### 並列実行
 
 最大速度を出すには、複数の skill を並列で読み込みます。
 - **フルペネトレーションテスト**: recon + web-app-pentest + network-pentest + post-exploitation
-- **バグバウンティ**: recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
-- **CTF 解答**: ctf-general → 必要に応じて ctf-web / ctf-crypto / ctf-misc / ctf-reverse に振り分け
-- **社内ペネトレーションテスト**: network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
+- **バグバウンティ**: recon + web-app-pentest + exploit-dev + waf-bypass-techniques
+- **CTF 解答**: ctf-orchestrator → 必要に応じて ctf-web / ctf-crypto / ctf-misc-toolkit / ctf-reverse に振り分け
+- **社内ペネトレーションテスト**: network-pentest + post-exploitation + intranet-pentest-advanced
 - **ハードウェア評価**: hardware-iot-hacking + reverse-engineering
 
 ### 選択的インストール
 
 ```bash
 # 特定のドメインだけをインストール
-./install.sh --agent claude-code --domains web-pentest,exploit-dev
+./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
 
 # CTF skill だけをインストール
 ./install.sh --agent claude-code --domains ctf
@@ -200,7 +200,7 @@ skills/
 ├── security-orchestrator/          # メインルーター
 │   └── SKILL.md
 ├── recon/
-│   ├── osint/
+│   ├── osint-framework/
 │   │   ├── SKILL.md                # 指示 + YAML frontmatter
 │   │   ├── references/             # 深い知識をまとめたファイル
 │   │   └── scripts/                # 補助自動化

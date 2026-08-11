@@ -3,7 +3,7 @@ name: security-orchestrator
 description: "Master router for all security operations — 79 skills across 9 domains: recon/OSINT, web pentest, network pentest, exploit development, reverse engineering, CTF, post-exploitation, cloud security, and hardware/IoT hacking. Load this first for any security task to get intelligent routing to the right specialized skill."
 version: 2.0.0
 category: security
-tags: [security, pentest, red-team, ctf, osint, exploit, reverse-engineering, zero-day, hardware, cloud-security]
+tags: [security, advanced-pentest, red-team, ctf, osint-framework, exploit, reverse-engineering, zero-day, hardware, cloud-security]
 ---
 
 # Security Orchestrator — Master Router v2.0
@@ -18,15 +18,15 @@ Load this skill when the user asks about ANY security-related task. It routes to
 
 | Skill | Purpose |
 |:------|:--------|
-| `osint` | Complete OSINT framework — SOCMINT, DNS/domain recon, email/phone intelligence, geolocation, dark web |
-| `aliens-eye` | AI-OSINT username scanner — 840+ platforms with ML-based matching |
-| `email-osint` | Email-first OSINT — 7-track parallel workflow |
-| `spiderfoot-osint` | SpiderFoot 4.0 OSINT automation |
-| `parallel-intel` | Parallel intelligence gathering — web_search + web_extract batch |
-| `vulnclaw-osint-recon` | OSINT collection — four-dimension model (server→website→domain→people) |
-| `vulnclaw-recon` | Passive + active reconnaissance flow |
-| `darkweb-research-env` | Dark web research environment via Tor SOCKS5 |
-| `vulnclaw-vuln-discovery` | Vulnerability scanning flow |
+| `osint-framework` | Complete OSINT framework — SOCMINT, DNS/domain recon, email/phone intelligence, geolocation, dark web |
+| `username-scanner` | AI-OSINT username scanner — 840+ platforms with ML-based matching |
+| `email-osint-investigation` | Email-first OSINT — 7-track parallel workflow |
+| `spiderfoot-automation` | SpiderFoot 4.0 OSINT automation |
+| `parallel-intel-gathering` | Parallel intelligence gathering — web_search + web_extract batch |
+| `osint-recon-model` | OSINT collection — four-dimension model (server→website→domain→people) |
+| `reconnaissance-ops` | Passive + active reconnaissance flow |
+| `darkweb-research` | Dark web research environment via Tor SOCKS5 |
+| `vulnerability-discovery` | Vulnerability scanning flow |
 | `chatgpt-web-relay` | Relay prompts to ChatGPT web UI for research |
 | `local-network-recon` | Local network device discovery and identification |
 | `network-device-recon` | Network device port scanning and service identification |
@@ -35,19 +35,19 @@ Load this skill when the user asks about ANY security-related task. It routes to
 
 | Skill | Purpose |
 |:------|:--------|
-| `web-app-pentest` | Full OWASP 2025 web app pentesting — SQLi, XSS, SSRF, SSTI, etc. |
+| `web-app-pentest` | Full OWASP 2025 web app penetration testing — SQLi, XSS, SSRF, SSTI, etc. |
 | `api-security-testing` | API security — REST, GraphQL, WebSocket, gRPC |
-| `client-side-auth-bypass` | Reverse and bypass client-side JS authentication |
-| `vulnclaw-web-pentest` | Web pentest full flow — stack fingerprinting, dir enum, auth testing |
-| `vulnclaw-web-security-advanced` | Advanced web security — injection families, protocol, auth, file, modern attack surfaces |
-| `vulnclaw-waf-bypass` | WAF bypass techniques library |
-| `vulnclaw-ctf-web` | CTF web attack knowledge — PHP weak comparison, command injection, SSTI, deserialization |
-| `ctf-pwn-web-methodology` | CTF pwn/web solving methodology |
-| `full-stack-vulnerability-research` | Framework vulnerability research — frontend/backend frameworks, DB engines, GraphQL, API Gateway |
+| `client-auth-bypass` | Reverse and bypass client-side JS authentication |
+| `web-app-assessment` | Web advanced-pentest full flow — stack fingerprinting, dir enum, auth testing |
+| `web-security-advanced` | Advanced web security — injection families, protocol, auth, file, modern attack surfaces |
+| `waf-bypass-techniques` | WAF bypass techniques library |
+| `ctf-web-attacks` | CTF web attack knowledge — PHP weak comparison, command injection, SSTI, deserialization |
+| `ctf-web-pwn-methodology` | CTF pwn/web solving methodology |
+| `framework-vulnerability-research` | Framework vulnerability research — frontend/backend frameworks, DB engines, GraphQL, API Gateway |
 | `sql-server-exploitation` | SQL injection on MSSQL — xp_cmdshell, information_schema, lateral |
-| `vulnclaw-client-reverse` | Client-side reverse engineering — signature recovery, encrypted restoration, request chain tracing |
-| `vulnclaw-android-pentest` | Android app pentest — APK analysis, hook, automated testing, runtime driver, signature recovery |
-| `playwright-browser` | Playwright browser automation for security testing and OSINT |
+| `client-reverse-engineering` | Client-side reverse engineering — signature recovery, encrypted restoration, request chain tracing |
+| `android-pentest` | Android app advanced-pentest — APK analysis, hook, automated testing, runtime driver, signature recovery |
+| `browser-automation-security` | Playwright browser automation for security testing and OSINT |
 | `devops/playwright-cli` | Playwright CLI workflow for browser automation |
 
 ### 3. Network Pentest (6 skills)
@@ -55,11 +55,11 @@ Load this skill when the user asks about ANY security-related task. It routes to
 | Skill | Purpose |
 |:------|:--------|
 | `network-pentest` | Port scanning, service enumeration, network exploitation |
-| `pentest` | Advanced pentest — AD attacks, cloud pentesting, container escape, privilege escalation, C2, EDR evasion |
-| `pentest-tool-installation` | Install/troubleshoot pentesting tools |
-| `vulnclaw-pentest-flow` | Full pentest flow orchestration — recon to report generation |
-| `vulnclaw-pentest-tools` | Pentest tool reference — encoding/decoding, reverse shells, credentials, privilege, tunnels |
-| `vulnclaw-rapid-checklist` | Quick pentest checklist + payload families |
+| `advanced-pentest` | Advanced advanced-pentest — AD attacks, cloud penetration testing, container escape, privilege escalation, C2, EDR evasion |
+| `pentest-tool-setup` | Install/troubleshoot penetration testing tools |
+| `pentest-workflow` | Full advanced-pentest flow orchestration — recon to report generation |
+| `pentest-tool-reference` | Pentest tool reference — encoding/decoding, reverse shells, credentials, privilege, tunnels |
+| `pentest-quick-checklist` | Quick advanced-pentest checklist + payload families |
 
 ### 4. Exploit Development (10 skills)
 
@@ -68,13 +68,13 @@ Load this skill when the user asks about ANY security-related task. It routes to
 | `exploit-development` | Vulnerability to working exploit — ROP, heap, format strings, shellcode |
 | `zero-day-hunting` | Zero-day methodology — AFL++, libFuzzer, syzkaller, crash triage, CVE submission |
 | `kernel-exploitation` | Linux kernel exploitation — SLUB/SLAB, use-after-free, race conditions, SMEP/SMAP bypass |
-| `vulnclaw-exploitation` | PoC construction and exploitation of discovered vulnerabilities |
-| `vulnclaw-crypto-toolkit` | Encode/decode + crypto toolkit — base64/URL/Hex, MD5/SHA, AES/DES, RSA |
-| `vulnclaw-ctf-crypto` | CTF crypto attacks — RSA (small exp, common modulus, Wiener, Coppersmith), AES padding, ECC |
-| `cryptography` | Deep cryptography knowledge base |
-| `ctf-cryptography` | CTF crypto challenge solving |
-| `ctf-encoding-realignment` | Custom alphabet/unusual encoding realignment |
-| `ctf-pwn-binary-exploitation` | Binary exploitation — stack/heap overflow, ROP, format string |
+| `exploit-poc-builder` | PoC construction and exploitation of discovered vulnerabilities |
+| `crypto-toolkit` | Encode/decode + crypto toolkit — base64/URL/Hex, MD5/SHA, AES/DES, RSA |
+| `crypto-ctf-attacks` | CTF crypto attacks — RSA (small exp, common modulus, Wiener, Coppersmith), AES padding, ECC |
+| `cryptography-fundamentals` | Deep cryptography-fundamentals knowledge base |
+| `crypto-attack-patterns` | CTF crypto challenge solving |
+| `encoding-realignment` | Custom alphabet/unusual encoding realignment |
+| `binary-exploitation` | Binary exploitation — stack/heap overflow, ROP, format string |
 
 ### 5. Reverse Engineering (3 skills)
 
@@ -82,61 +82,61 @@ Load this skill when the user asks about ANY security-related task. It routes to
 |:------|:--------|
 | `reverse-engineering` | Complete RE — Ghidra, IDA, radare2, angr, firmware extraction, binary analysis |
 | `ctf-reverse-engineering` | CTF reverse engineering challenges — binaries, obfuscation, anti-debug |
-| `ctf-forensics` | CTF forensics — file type identification, steganography, memory/disk forensics |
+| `digital-forensics` | CTF forensics — file type identification, steganography, memory/disk forensics |
 
 ### 6. CTF (12 skills)
 
 | Skill | Purpose |
 |:------|:--------|
 | `ctf-playbook` | CTF playbook — web, crypto, pwn, reverse, forensics, misc |
-| `ctf-general` | Orchestrate CTF challenge solving across all categories |
-| `ctf-misc` | CTF misc — Python/Bash jail escapes, encoding chains, QR/audio/image steganography |
+| `ctf-orchestrator` | Orchestrate CTF challenge solving across all categories |
+| `ctf-misc-toolkit` | CTF misc — Python/Bash jail escapes, encoding chains, QR/audio/image steganography |
 | `ctf-technique-atlas` | Deep technique atlas — map challenge clues to techniques |
 | `ctf-training-loop` | Systematic CTF training workflow |
 | `ctf-web-exploitation` | CTF web exploitation — HTTP behavior triage, injection, auth bypass |
-| `ctf-writeup-artifact-discipline` | CTF write-ups with authentic evidence, screenshots |
-| `natural-ctf-writeup-screenshots` | Natural-looking CTF screenshots |
+| `ctf-writeup-discipline` | CTF write-ups with authentic evidence, screenshots |
+| `ctf-writeup-screenshots` | Natural-looking CTF screenshots |
 | `ctf-kernel-exploitation` | CTF kernel pwn — syscalls, drivers, ioctl, kernel ROP |
-| `vulnclaw-ctf-misc` | CTF misc knowledge — jail escapes, encoding, steganography |
+| `ctf-jail-escape` | CTF misc knowledge — jail escapes, encoding, steganography |
 
 ### 7. Post-Exploitation (6 skills)
 
 | Skill | Purpose |
 |:------|:--------|
-| `vulnclaw-post-exploitation` | Post-exploitation — internal info gathering, lateral movement |
-| `vulnclaw-intranet-pentest-advanced` | Intranet pentest advanced — lateral movement, credential theft, persistence, tunnels, AD, ADCS, Exchange/SharePoint |
-| `overclock-combat-pentest` | Overclock combat mode — 10-year deep pentest knowledge, cloud-native escape, framework exploitation, protocol malformation |
-| `professional-pentest-mastery` | Full pentest system — recon to zero-day hunting, PayloadsAllTheThings + HackTricks integrated |
-| `strix-pentest` | Open-source AI multi-agent pentesting tool |
-| `vulnclaw-reporting` | Structured pentest report + PoC generation |
+| `post-exploitation-ops` | Post-exploitation — internal info gathering, lateral movement |
+| `intranet-pentest-advanced` | Intranet advanced-pentest advanced — lateral movement, credential theft, persistence, tunnels, AD, ADCS, Exchange/SharePoint |
+| `advanced-attack-chains` | Overclock combat mode — 10-year deep advanced-pentest knowledge, cloud-native escape, framework exploitation, protocol malformation |
+| `professional-pentest-guide` | Full advanced-pentest system — recon to zero-day hunting, PayloadsAllTheThings + HackTricks integrated |
+| `autonomous-pentest-scanner` | Open-source AI multi-agent penetration testing tool |
+| `pentest-report-generator` | Structured advanced-pentest report + PoC generation |
 
 ### 8. Cloud & AI Security (7 skills)
 
 | Skill | Purpose |
 |:------|:--------|
-| `vulnclaw-ai-mcp-security` | AI & MCP security — prompt injection, tool abuse, MCP trust boundaries, agent privilege escalation |
+| `ai-ml-security-assessment` | AI & MCP security — prompt injection, tool abuse, MCP trust boundaries, agent privilege escalation |
 | `ai-mcp-security` | AI/MCP security assessment — prompt injection, data leakage, model risk |
 | `modern-attack-surfaces` | Modern attack surfaces — LLM jailbreaking, MCP abuse, agent trust, supply chain |
 | `security-and-hardening` | Hardens code against vulnerabilities — input validation, auth, crypto, secrets |
-| `claude-code-security-review` | Security-focused code review for Claude Code |
+| `security-code-review` | Security-focused code review for Claude Code |
 | `security-audit` | Security audit of codebases — web apps, APIs, services |
-| `hackingtool` | 21-category, 173-tool offensive security toolkit |
+| `offensive-toolkit` | 21-category, 173-tool offensive security toolkit |
 
 ### 9. Hardware & IoT (12 skills)
 
 | Skill | Purpose |
 |:------|:--------|
 | `hardware-iot-hacking` | Hardware & IoT hacking — UART/JTAG/SPI/I2C, firmware, SDR/RFID/NFC/BLE/Zigbee |
-| `bt-classic-segmented-sweep` | Bluetooth Classic (BR/EDR) segmented sweep technique |
-| `esp32-wifi-killer-v12` | ESP32 targeted WiFi deauth + nRF24 2.4GHz jammer v12 |
-| `nrf24-bitbang-driver` | Bit-bang SPI driver for nRF24L01+ on ESP32 |
-| `rfclown-multi-protocol-jammer` | OLED-menu multi-protocol 2.4GHz jammer based on RF-Clown |
-| `esp32-dualband-wifi-jammer` | ESP32 dual-band (2.4GHz + 5GHz) WiFi jammer |
-| `esp32-serial-diagnostics` | ESP32 serial diagnostics in non-TTY environments |
-| `flipper-zero-back` | Complete 3-layer backup of Flipper Zero |
-| `flipper-zero-firmware-modification` | Flash/replace/reflash Flipper Zero firmware |
-| `rf-clown-master` | RF-Clown v2 complete port — 3×nRF24 source analysis, firmware porting |
-| `smart-card-reader-driver-debugging` | Debug/configure smart card readers for synchronous memory cards |
+| `bluetooth-jammer-sweep` | Bluetooth Classic (BR/EDR) segmented sweep technique |
+| `wifi-deauth-jammer` | ESP32 targeted WiFi deauth + nRF24 2.4GHz jammer v12 |
+| `nrf24-bitbang-spi` | Bit-bang SPI driver for nRF24L01+ on ESP32 |
+| `rf-multi-protocol-jammer` | OLED-menu multi-protocol 2.4GHz jammer based on RF-Clown |
+| `wifi-dualband-jammer` | ESP32 dual-band (2.4GHz + 5GHz) WiFi jammer |
+| `esp32-serial-diag` | ESP32 serial diagnostics in non-TTY environments |
+| `flipper-zero-backup` | Complete 3-layer backup of Flipper Zero |
+| `flipper-zero-firmware` | Flash/replace/reflash Flipper Zero firmware |
+| `rf-jammer-firmware-port` | RF-Clown v2 complete port — 3×nRF24 source analysis, firmware porting |
+| `smart-card-driver-debug` | Debug/configure smart card readers for synchronous memory cards |
 | `smart-card-usb-direct` | Bypass PC/SC/CCID middleware, communicate directly with smart card reader |
 
 ## Routing Logic
@@ -147,27 +147,27 @@ User intent → route to skill:
 "scan this target" / "find vulnerabilities" → recon + web-app-pentest
 "exploit this bug" / "write PoC" → exploit-development
 "reverse this binary" / "decompile" → reverse-engineering
-"CTF challenge" / "capture the flag" → ctf (ctf-general routes further)
+"CTF challenge" / "capture the flag" → ctf (ctf-orchestrator routes further)
 "enumerate network" / "port scan" → network-pentest
-"OSINT on person/domain" / "find information" → recon (osint)
-"bypass WAF" → web-pentest (vulnclaw-waf-bypass)
+"OSINT on person/domain" / "find information" → recon (osint-framework)
+"bypass WAF" → web-advanced-pentest (waf-bypass-techniques)
 "privilege escalation" / "lateral movement" → post-exploitation
 "audit this code" / "security review" → cloud-security (security-audit)
 "hack IoT device" / "firmware reverse" → hardware-iot
 "AI security" / "MCP vulnerability" → cloud-security (ai-mcp-security)
 "fuzz this target" / "find crashes" → exploit-dev (zero-day-hunting)
-"crack this hash" / "break encryption" → exploit-dev (cryptography)
-"pentest report" → post-exploitation (vulnclaw-reporting)
-"jailbreak" / "escape sandbox" → ctf (ctf-misc)
+"crack this hash" / "break encryption" → exploit-dev (cryptography-fundamentals)
+"advanced-pentest report" → post-exploitation (pentest-report-generator)
+"jailbreak" / "escape sandbox" → ctf (ctf-misc-toolkit)
 ```
 
 ## Parallel Execution
 
 For maximum speed, load multiple skills in parallel:
-- **Full pentest**: recon + web-app-pentest + network-pentest + post-exploitation
-- **Bug bounty**: recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
-- **CTF solve**: ctf-general → (routes to ctf-web/ctf-crypto/ctf-misc/ctf-reverse as needed)
-- **Internal pentest**: network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
+- **Full advanced-pentest**: recon + web-app-pentest + network-pentest + post-exploitation
+- **Bug bounty**: recon + web-app-pentest + exploit-dev + waf-bypass-techniques
+- **CTF solve**: ctf-orchestrator → (routes to ctf-web/ctf-crypto/ctf-misc-toolkit/ctf-reverse as needed)
+- **Internal advanced-pentest**: network-pentest + post-exploitation + intranet-pentest-advanced
 - **Hardware assessment**: hardware-iot-hacking + reverse-engineering
 
 ## Installation

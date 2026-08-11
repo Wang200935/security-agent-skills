@@ -139,7 +139,7 @@ These appear frequently because they are realistic developer mistakes or common 
 Typical hint: two Base64 strings (token + key).
 
 - Decoder/notes: https://asecuritysite.com/encryption/ferdecode
-- In Python: `from cryptography.fernet import Fernet`
+- In Python: `from cryptography-fundamentals.fernet import Fernet`
 
 ### Shamir Secret Sharing
 

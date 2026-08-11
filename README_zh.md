@@ -109,31 +109,31 @@ cd security-agent-skills
 ## 技能分類
 
 ### 🔍 偵察與 OSINT (12 個技能)
-`osint` · `aliens-eye` · `email-osint` · `spiderfoot-osint` · `parallel-intel` · `vulnclaw-osint-recon` · `vulnclaw-recon` · `darkweb-research-env` · `vulnclaw-vuln-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
+`osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
 
 ### 🌐 Web 滲透測試 (14 個技能)
-`web-app-pentest` · `api-security-testing` · `client-side-auth-bypass` · `vulnclaw-web-pentest` · `vulnclaw-web-security-advanced` · `vulnclaw-waf-bypass` · `vulnclaw-ctf-web` · `ctf-pwn-web-methodology` · `full-stack-vulnerability-research` · `sql-server-exploitation` · `vulnclaw-client-reverse` · `vulnclaw-android-pentest` · `playwright-browser`
+`web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
 
 ### 🖥️ 網路滲透測試 (6 個技能)
-`network-pentest` · `pentest` · `pentest-tool-installation` · `vulnclaw-pentest-flow` · `vulnclaw-pentest-tools` · `vulnclaw-rapid-checklist`
+`network-pentest` · `advanced-pentest` · `pentest-tool-setup` · `pentest-workflow` · `pentest-tool-reference` · `pentest-quick-checklist`
 
 ### 💥 漏洞開發 (10 個技能)
-`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `vulnclaw-exploitation` · `vulnclaw-crypto-toolkit` · `vulnclaw-ctf-crypto` · `cryptography` · `ctf-cryptography` · `ctf-encoding-realignment` · `ctf-pwn-binary-exploitation`
+`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `exploit-poc-builder` · `crypto-toolkit` · `crypto-ctf-attacks` · `cryptography-fundamentals` · `crypto-attack-patterns` · `encoding-realignment` · `binary-exploitation`
 
 ### 🔧 反向工程 (3 個技能)
-`reverse-engineering` · `ctf-reverse-engineering` · `ctf-forensics`
+`reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
 
 ### 🚩 CTF (12 個技能)
-`ctf-playbook` · `ctf-general` · `ctf-misc` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-artifact-discipline` · `natural-ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `vulnclaw-ctf-misc`
+`ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
 
 ### 🎯 後滲透 (6 個技能)
-`vulnclaw-post-exploitation` · `vulnclaw-intranet-pentest-advanced` · `overclock-combat-pentest` · `professional-pentest-mastery` · `strix-pentest` · `vulnclaw-reporting`
+`post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
 
 ### ☁️ 雲端與 AI 安全 (7 個技能)
-`vulnclaw-ai-mcp-security` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `claude-code-security-review` · `security-audit` · `hackingtool`
+`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
 
 ### 🔌 硬體與 IoT (12 個技能)
-`hardware-iot-hacking` · `bt-classic-segmented-sweep` · `esp32-wifi-killer-v12` · `nrf24-bitbang-driver` · `rfclown-multi-protocol-jammer` · `esp32-dualband-wifi-jammer` · `esp32-serial-diagnostics` · `flipper-zero-back` · `flipper-zero-firmware-modification` · `rf-clown-master` · `smart-card-reader-driver-debugging` · `smart-card-usb-direct`
+`hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
 
 ---
 
@@ -152,33 +152,33 @@ cd security-agent-skills
 "掃描此目標"         → recon + web-app-pentest
 "利用此漏洞"         → exploit-development
 "反編譯此二進制"      → reverse-engineering
-"CTF 挑戰"            → ctf (ctf-general 進一步路由)
+"CTF 挑戰"            → ctf (ctf-orchestrator 進一步路由)
 "枚舉網路"            → network-pentest
-"對人/域名進行 OSINT"   → recon (osint)
-"繞過 WAF"            → web-pentest (vulnclaw-waf-bypass)
+"對人/域名進行 OSINT"   → recon (osint-framework)
+"繞過 WAF"            → web-advanced-pentest (waf-bypass-techniques)
 "權限提升"            → post-exploitation
 "審計此程式碼"         → cloud-security (security-audit)
 "入侵 IoT 裝置"       → hardware-iot
 "AI 安全 / MCP"       → cloud-security (ai-mcp-security)
 "模糊測試此目標"       → exploit-dev (zero-day-hunting)
-"破解此雜湊"          → exploit-dev (cryptography)
-"滲透測試報告"        → post-exploitation (vulnclaw-reporting)
+"破解此雜湊"          → exploit-dev (cryptography-fundamentals)
+"滲透測試報告"        → post-exploitation (pentest-report-generator)
 ```
 
 ### 平行執行
 
 為達到最大速度，可並行載入多個技能：
 - **完整滲透測試**：recon + web-app-pentest + network-pentest + post-exploitation
-- **漏洞賞金**：recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
-- **CTF 解題**：ctf-general → 根據需要路由到 ctf-web / ctf-crypto / ctf-misc / ctf-reverse
-- **內部滲透測試**：network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
+- **漏洞賞金**：recon + web-app-pentest + exploit-dev + waf-bypass-techniques
+- **CTF 解題**：ctf-orchestrator → 根據需要路由到 ctf-web / ctf-crypto / ctf-misc-toolkit / ctf-reverse
+- **內部滲透測試**：network-pentest + post-exploitation + intranet-pentest-advanced
 - **硬體評估**：hardware-iot-hacking + reverse-engineering
 
 ### 選擇性安裝
 
 ```bash
 # 只安裝特定領域
-./install.sh --agent claude-code --domains web-pentest,exploit-dev
+./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
 
 # 只安裝 CTF 技能
 ./install.sh --agent claude-code --domains ctf
@@ -196,7 +196,7 @@ skills/
 ├── security-orchestrator/          # 主路由器
 │   └── SKILL.md
 ├── recon/
-│   ├── osint/
+│   ├── osint-framework/
 │   │   ├── SKILL.md                # 指令 + YAML 前置資料
 │   │   ├── references/             # 深度知識文件
 │   │   └── scripts/                # 輔助自動化

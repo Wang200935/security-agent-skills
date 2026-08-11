@@ -109,31 +109,31 @@ cd security-agent-skills
 ## 技能分类
 
 ### 🔍 侦察 & OSINT（12 个技能）
-`osint` · `aliens-eye` · `email-osint` · `spiderfoot-osint` · `parallel-intel` · `vulnclaw-osint-recon` · `vulnclaw-recon` · `darkweb-research-env` · `vulnclaw-vuln-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
+`osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
 
 ### 🌐 Web 渗透测试（14 个技能）
-`web-app-pentest` · `api-security-testing` · `client-side-auth-bypass` · `vulnclaw-web-pentest` · `vulnclaw-web-security-advanced` · `vulnclaw-waf-bypass` · `vulnclaw-ctf-web` · `ctf-pwn-web-methodology` · `full-stack-vulnerability-research` · `sql-server-exploitation` · `vulnclaw-client-reverse` · `vulnclaw-android-pentest` · `playwright-browser`
+`web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
 
 ### 🖥️ 网络渗透测试（6 个技能）
-`network-pentest` · `pentest` · `pentest-tool-installation` · `vulnclaw-pentest-flow` · `vulnclaw-pentest-tools` · `vulnclaw-rapid-checklist`
+`network-pentest` · `advanced-pentest` · `pentest-tool-setup` · `pentest-workflow` · `pentest-tool-reference` · `pentest-quick-checklist`
 
 ### 💥 漏洞开发（10 个技能）
-`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `vulnclaw-exploitation` · `vulnclaw-crypto-toolkit` · `vulnclaw-ctf-crypto` · `cryptography` · `ctf-cryptography` · `ctf-encoding-realignment` · `ctf-pwn-binary-exploitation`
+`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `exploit-poc-builder` · `crypto-toolkit` · `crypto-ctf-attacks` · `cryptography-fundamentals` · `crypto-attack-patterns` · `encoding-realignment` · `binary-exploitation`
 
 ### 🔧 逆向工程（3 个技能）
-`reverse-engineering` · `ctf-reverse-engineering` · `ctf-forensics`
+`reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
 
 ### 🚩 CTF（12 个技能）
-`ctf-playbook` · `ctf-general` · `ctf-misc` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-artifact-discipline` · `natural-ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `vulnclaw-ctf-misc`
+`ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
 
 ### 🎯 后渗透（6 个技能）
-`vulnclaw-post-exploitation` · `vulnclaw-intranet-pentest-advanced` · `overclock-combat-pentest` · `professional-pentest-mastery` · `strix-pentest` · `vulnclaw-reporting`
+`post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
 
 ### ☁️ 云 & AI 安全（7 个技能）
-`vulnclaw-ai-mcp-security` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `claude-code-security-review` · `security-audit` · `hackingtool`
+`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
 
 ### 🔌 硬件 & IoT（12 个技能）
-`hardware-iot-hacking` · `bt-classic-segmented-sweep` · `esp32-wifi-killer-v12` · `nrf24-bitbang-driver` · `rfclown-multi-protocol-jammer` · `esp32-dualband-wifi-jammer` · `esp32-serial-diagnostics` · `flipper-zero-back` · `flipper-zero-firmware-modification` · `rf-clown-master` · `smart-card-reader-driver-debugging` · `smart-card-usb-direct`
+`hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
 
 ---
 
@@ -152,33 +152,33 @@ cd security-agent-skills
 "scan this target"         → recon + web-app-pentest
 "exploit this bug"         → exploit-development
 "reverse this binary"      → reverse-engineering
-"CTF challenge"            → ctf (ctf-general routes further)
+"CTF challenge"            → ctf (ctf-orchestrator routes further)
 "enumerate network"        → network-pentest
-"OSINT on person/domain"   → recon (osint)
-"bypass WAF"              → web-pentest (vulnclaw-waf-bypass)
+"OSINT on person/domain"   → recon (osint-framework)
+"bypass WAF"              → web-advanced-pentest (waf-bypass-techniques)
 "privilege escalation"     → post-exploitation
 "audit this code"          → cloud-security (security-audit)
 "hack IoT device"          → hardware-iot
 "AI security / MCP"        → cloud-security (ai-mcp-security)
 "fuzz this target"         → exploit-dev (zero-day-hunting)
-"crack this hash"          → exploit-dev (cryptography)
-"pentest report"           → post-exploitation (vulnclaw-reporting)
+"crack this hash"          → exploit-dev (cryptography-fundamentals)
+"advanced-pentest report"           → post-exploitation (pentest-report-generator)
 ```
 
 ### 并行执行
 
 为最大化速度，可并行加载多个技能：
 - **完整渗透测试**：recon + web-app-pentest + network-pentest + post-exploitation
-- **Bug Bounty**：recon + web-app-pentest + exploit-dev + vulnclaw-waf-bypass
-- **CTF 解题**：ctf-general → 按需路由到 ctf-web / ctf-crypto / ctf-misc / ctf-reverse
-- **内网渗透**：network-pentest + post-exploitation + vulnclaw-intranet-pentest-advanced
+- **Bug Bounty**：recon + web-app-pentest + exploit-dev + waf-bypass-techniques
+- **CTF 解题**：ctf-orchestrator → 按需路由到 ctf-web / ctf-crypto / ctf-misc-toolkit / ctf-reverse
+- **内网渗透**：network-pentest + post-exploitation + intranet-pentest-advanced
 - **硬件评估**：hardware-iot-hacking + reverse-engineering
 
 ### 选择性安装
 
 ```bash
 # 只安装特定领域
-./install.sh --agent claude-code --domains web-pentest,exploit-dev
+./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
 
 # 只安装 CTF 技能
 ./install.sh --agent claude-code --domains ctf
@@ -196,7 +196,7 @@ skills/
 ├── security-orchestrator/          # 主路由
 │   └── SKILL.md
 ├── recon/
-│   ├── osint/
+│   ├── osint-framework/
 │   │   ├── SKILL.md                # 说明 + YAML frontmatter
 │   │   ├── references/             # 深度知识文件
 │   │   └── scripts/                # 辅助自动化脚本

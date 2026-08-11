@@ -2,7 +2,6 @@
 name: security-audit
 description: Security audit of a codebase — web apps, APIs, services, CLI tools, libraries, daemons, and more. Use when asked to find security bugs, do a security review, audit for vulnerabilities, or pen-test the code. Focuses on exploitable issues with real impact, not theoretical concerns or industry-standard behavior.
 version: 1.0.0
-author: Cloudflare (adapted for Hermes Agent)
 license: MIT
 metadata:
   hermes:
@@ -127,7 +126,7 @@ These are the mistakes that make security audits useless:
 - User wants structured vulnerability findings with exploit verification
 ---
 
-## 🔧 Trivy Dependency CVE Scanning Workflow (from Strix `custom/dependency_cve_scanning.md`)
+## 🔧 Trivy Dependency CVE Scanning Workflow (from autonomous scanner `custom/dependency_cve_scanning.md`)
 
 ```bash
 # Full SCA scan (vuln + config + secret + license)
@@ -144,7 +143,7 @@ trivy fs --format template --template "@contrib/sarif.tpl" --output trivy.sarif 
 
 ---
 
-## Source-Aware SAST Orchestration (from Strix `custom/source_aware_sast.md`)
+## Source-Aware SAST Orchestration (from autonomous scanner `custom/source_aware_sast.md`)
 
 When source code is available, run this **before** dynamic testing to prioritize:
 

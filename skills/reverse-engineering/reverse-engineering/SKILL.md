@@ -109,7 +109,6 @@ def emulate_snippet(program, start, end):
     if emu.run(start, None, monitor):
         return {'rax': emu.readRegister('RAX')}
 
-
 # GhidraMCP — AI-Assisted RE Workflow (2025+)
 # Install: copy GhidraMCP extension to ~/.ghidra/extensions/ → restart Ghidra → Tools → GhidraMCP → Start Server
 # Connect via MCP client (Claude Code, Hermes, etc.)

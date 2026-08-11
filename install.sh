@@ -171,7 +171,7 @@ install_copilot_instructions() {
 This repository contains a curated security skill library under:
 
 - \\`./skills/recon/\\`
-- \\`./skills/web-pentest/\\`
+- \\`./skills/web-advanced-pentest/\\`
 - \\`./skills/network-pentest/\\`
 - \\`./skills/exploit-dev/\\`
 - \\`./skills/reverse-engineering/\\`

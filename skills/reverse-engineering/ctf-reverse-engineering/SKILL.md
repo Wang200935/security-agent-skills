@@ -2,7 +2,6 @@
 name: ctf-reverse-engineering
 description: Solve CTF Reverse Engineering challenges involving binaries, APKs, bytecode, firmware, obfuscated scripts, crackmes, license checks, and custom VMs. Use when a CTF challenge gives an executable, shared library, APK/JAR/class, wasm, firmware blob, or obfuscated program to analyze.
 version: 1.0.0
-author: Hermes Agent
 license: MIT
 metadata:
   hermes:
@@ -46,7 +45,6 @@ metadata:
 4. For Unity web/API mechanics, search disassembly for `UnityWebRequest`, `UploadHandlerRaw`, `DownloadHandlerBuffer`, `SetRequestHeader`, `POST`, `Content-Type`, URL strings, and coroutine state-machine `MoveNext` methods.
 5. Reconstruct JSON bodies from adjacent `ldstr` + `String.Format` fragments, then probe the endpoint conservatively. If the endpoint resolves to private/routed CTF infrastructure and times out, continue extracting local fallback logic and document the exact request shape rather than guessing a flag.
 6. For API probing after Unity reversing, do not batch many paths/payloads behind one long timeout: first send one short-timeout request to `/` using the exact recovered method/body/header, then expand paths or fuzz fields only after observing status codes. Long all-path loops can consume the session budget without a useful response.
-
 
 ## Unity Mono / Assembly-CSharp workflow
 

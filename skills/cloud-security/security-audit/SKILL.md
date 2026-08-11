@@ -126,7 +126,7 @@ These are the mistakes that make security audits useless:
 - User wants structured vulnerability findings with exploit verification
 ---
 
-## 🔧 Trivy Dependency CVE Scanning Workflow (from autonomous scanner `custom/dependency_cve_scanning.md`)
+## 🔧 Trivy Dependency CVE Scanning Workflow (from strix `custom/dependency_cve_scanning.md`)
 
 ```bash
 # Full SCA scan (vuln + config + secret + license)
@@ -143,7 +143,7 @@ trivy fs --format template --template "@contrib/sarif.tpl" --output trivy.sarif 
 
 ---
 
-## Source-Aware SAST Orchestration (from autonomous scanner `custom/source_aware_sast.md`)
+## Source-Aware SAST Orchestration (from strix `custom/source_aware_sast.md`)
 
 When source code is available, run this **before** dynamic testing to prioritize:
 

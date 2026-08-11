@@ -46,7 +46,7 @@ Load this skill when the user asks about ANY security-related task. It routes to
 | `framework-vulnerability-research` | Framework vulnerability research — frontend/backend frameworks, DB engines, GraphQL, API Gateway |
 | `sql-server-exploitation` | SQL injection on MSSQL — xp_cmdshell, information_schema, lateral |
 | `client-reverse-engineering` | Client-side reverse engineering — signature recovery, encrypted restoration, request chain tracing |
-| `android-pentest` | Android app advanced-pentest — APK analysis, hook, automated testing, runtime driver, signature recovery |
+| `android-pentest` | Android app pentest — APK analysis, hook, automated testing, runtime driver, signature recovery |
 | `browser-automation-security` | Playwright browser automation for security testing and OSINT |
 | `devops/playwright-cli` | Playwright CLI workflow for browser automation |
 
@@ -104,7 +104,7 @@ Load this skill when the user asks about ANY security-related task. It routes to
 | Skill | Purpose |
 |:------|:--------|
 | `post-exploitation-ops` | Post-exploitation — internal info gathering, lateral movement |
-| `intranet-pentest-advanced` | Intranet advanced-pentest advanced — lateral movement, credential theft, persistence, tunnels, AD, ADCS, Exchange/SharePoint |
+| `intranet-pentest-advanced` | Intranet pentest — lateral movement, credential theft, persistence, tunnels, AD, ADCS, Exchange/SharePoint |
 | `advanced-attack-chains` | Overclock combat mode — 10-year deep advanced-pentest knowledge, cloud-native escape, framework exploitation, protocol malformation |
 | `professional-pentest-guide` | Full advanced-pentest system — recon to zero-day hunting, PayloadsAllTheThings + HackTricks integrated |
 | `autonomous-pentest-scanner` | Open-source AI multi-agent penetration testing tool |

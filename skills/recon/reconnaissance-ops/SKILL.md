@@ -6,7 +6,7 @@ license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [, red-teaming, penetration-testing, security, imported]
+    tags: [ red-teaming, penetration-testing, security, imported]
     homepage: https://
     related_skills: [-pentest-flow, -web-security-advanced, -osint-recon]
   upstream:

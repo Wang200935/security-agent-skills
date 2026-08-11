@@ -8,7 +8,8 @@ metadata:
   hermes:
     tags: [red-teaming, ai-security, mcp-security, llm-security, prompt-injection, agent-security]
     related_skills: [cybersecurity, web-app-pentest, pentest, reverse-engineering]
-    origin: im---
+    origin: import
+---
 
 # AI 与 MCP 安全评估 Skill
 

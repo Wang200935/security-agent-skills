@@ -38,13 +38,22 @@ def parse_frontmatter(path):
         content = f.read()
     if not content.startswith('---'):
         return {}, content, False
-    parts = content.split('---', 2)
-    if len(parts) < 3:
+    # Find the closing --- on its own line (not part of a horizontal rule in body)
+    lines = content.split('\n')
+    end = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() == '---':
+            end = i
+            break
+    if end is None:
+        return {}, content, False
+    fm_text = '\n'.join(lines[1:end])
+    if not fm_text.strip():
         return {}, content, False
     try:
-        fm = yaml.safe_load(parts[1]) or {}
+        fm = yaml.safe_load(fm_text) or {}
         return fm, content, True
-    except yaml.YAMLError as e:
+    except yaml.YAMLError:
         return {}, content, False
 
 def check_skill_md(path, all_skill_names):

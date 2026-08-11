@@ -1,5 +1,4 @@
 schema_version: 1
-generated_at: '2026-08-12'
 total_skills: 79
 domains:
 - cloud-security
@@ -12,18 +11,28 @@ domains:
 - recon
 - reverse-engineering
 - web-pentest
+domain_counts:
+  cloud-security: 6
+  ctf: 10
+  exploit-dev: 10
+  hardware-iot: 12
+  network-pentest: 6
+  orchestrator: 1
+  post-exploitation: 6
+  recon: 12
+  reverse-engineering: 3
+  web-pentest: 13
 skills:
 - id: ai-mcp-security
   path: skills/cloud-security/ai-mcp-security/SKILL.md
   domain: cloud-security
   description: AI 与 MCP 安全评估 — Prompt 注入、工具滥用、MCP 信任边界、Agent 权限逃逸、数据泄露、模型风险、GAARM
     风险矩阵。Use when testing LLM-based applications, MCP servers, agent orchestration
-    systems, AI plugins, RAG pipelines, or any system where an LLM acts on untrusted
-    inputs or tool calls.
+    systems, AI plugins, RAG pipelines, or any system wher
   version: 2.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11171
+  skill_md_bytes: 11176
   reference_count: 10
   script_count: 0
 - id: modern-attack-surfaces
@@ -31,7 +40,7 @@ skills:
   domain: cloud-security
   description: Modern attack surfaces beyond traditional pentesting — LLM/AI security
     (prompt injection, model poisoning), supply chain attacks, blockchain/smart contract
-    exploitation, CI/CD pipeline attacks, and serverless/edge computing vulnerabilities.
+    exploitation, CI/CD pipeline attacks, and se
   version: 1.0.0
   tags:
   - LLM-security
@@ -57,9 +66,7 @@ skills:
   domain: cloud-security
   description: Use hackingtool — a 21-category, 173-tool offensive security and pentesting
     suite installed on this Mac via local venv. Use when the user asks to search for
-    tools, browse categories, install/run a specific pentesting tool, or get recommendations
-    for a security task. This skill covers the TUI launcher, programmatic queries
-    (list, search, tags), and how to invoke individual tool install/run flows non-interactively.
+    tools, browse categories, install/run a spe
   version: ''
   tags: []
   related_skills: []
@@ -71,8 +78,7 @@ skills:
   domain: cloud-security
   description: Hardens code against vulnerabilities. Use when handling user input,
     authentication, data storage, or external integrations. Use when building any
-    feature that accepts untrusted data, manages user sessions, or interacts with
-    third-party services.
+    feature that accepts untrusted data, manages user sess
   version: ''
   tags: []
   related_skills: []
@@ -84,8 +90,7 @@ skills:
   domain: cloud-security
   description: Security audit of a codebase — web apps, APIs, services, CLI tools,
     libraries, daemons, and more. Use when asked to find security bugs, do a security
-    review, audit for vulnerabilities, or pen-test the code. Focuses on exploitable
-    issues with real impact, not theoretical concerns or industry-standard behavior.
+    review, audit for vulnerabilities, or pen-test the
   version: 1.0.0
   tags: []
   related_skills: []
@@ -106,11 +111,13 @@ skills:
 - id: ctf-jail-escape
   path: skills/ctf/ctf-jail-escape/SKILL.md
   domain: ctf
-  description: ''
-  version: ''
+  description: CTF杂项知识库 — Python Jail逃逸、Bash Jail逃逸、编码链识别与解码、QR/音频/图像隐写、游戏VM逆向、CTFd
+    API导航、Linux提权。Use when performing authorized penetration testing, CTF, or security
+    assessment tasks related to ctf-misc.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3068
+  skill_md_bytes: 3067
   reference_count: 9
   script_count: 0
 - id: ctf-kernel-exploitation
@@ -127,10 +134,9 @@ skills:
 - id: ctf-misc-toolkit
   path: skills/ctf/ctf-misc-toolkit/SKILL.md
   domain: ctf
-  description: Solve CTF Misc challenges including pyjails/sandboxes, OSINT, puzzles,
+  description: 'Solve CTF Misc challenges including pyjails/sandboxes, OSINT, puzzles,
     encodings, QR/barcodes, esolangs, protocols, game challenges, cloud/config leaks,
-    blockchain-lite, and category-mixed tasks. Use when a CTF task does not cleanly
-    fit Web, Crypto, Forensics, or Reverse Engineering.
+    blockchain-lite, and category-mixed tasks. Use '
   version: 1.0.0
   tags: []
   related_skills: []
@@ -142,8 +148,7 @@ skills:
   domain: ctf
   description: Orchestrate Capture-the-Flag challenge solving across Web Exploitation,
     Cryptography, Forensics, Reverse Engineering, Pwn/Binary Exploitation, and Misc.
-    Use when the user provides a CTF challenge, asks to train for CTFs, wants a writeup,
-    or asks which CTF category/attack path to try.
+    Use when the user provides a CTF challenge, ask
   version: 1.1.0
   tags: []
   related_skills: []
@@ -155,8 +160,7 @@ skills:
   domain: ctf
   description: CTF (Capture The Flag) competition playbook — Web, Crypto, Reverse
     Engineering, PWN/Binary Exploitation, Forensics, Steganography, OSINT, and Misc
-    categories. Covers methodology, tools, common vulnerabilities, and exploit patterns
-    for each CTF category.
+    categories. Covers methodology, tools, common vulnera
   version: 1.0.0
   tags:
   - CTF
@@ -183,10 +187,7 @@ skills:
   domain: ctf
   description: Deep CTF technique atlas for mapping challenge clues to concrete attack
     patterns, tools, scripts, and next probes across Web, Crypto, Forensics, Reverse,
-    Pwn, Misc/Jail, OSINT, Mobile, Cloud, Blockchain, Hardware/RF/ICS, Game/Protocol,
-    and AI/ML. Use when the user asks to strengthen CTF solving ability, research
-    all CTF techniques, classify an unknown CTF challenge, or choose the next attack
-    path.
+    Pwn, Misc/Jail, OSINT, Mobile, Cloud, Blockcha
   version: 1.0.0
   tags: []
   related_skills: []
@@ -209,8 +210,7 @@ skills:
   domain: ctf
   description: Solve CTF Web Exploitation challenges by triaging HTTP behavior, source
     code, sessions, auth, injection, SSRF, file upload, template, deserialization,
-    race, and client-side bugs. Use when a CTF challenge includes a website, API,
-    URL, web source, cookies, JWTs, forms, uploads, or browser behavior.
+    race, and client-side bugs. Use when a CTF challe
   version: 1.0.0
   tags: []
   related_skills: []
@@ -222,8 +222,7 @@ skills:
   domain: ctf
   description: Produce CTF write-ups with authentic solve evidence, scripts, screenshots,
     and clean separation from reference material. Use when writing, revising, or packaging
-    CTF write-ups, especially when the user provides someone else's write-up as reference
-    or requests screenshots.
+    CTF write-ups, especially when the use
   version: 1.0.0
   tags: []
   related_skills: []
@@ -233,10 +232,9 @@ skills:
 - id: ctf-writeup-screenshots
   path: skills/ctf/ctf-writeup-screenshots/SKILL.md
   domain: ctf
-  description: Capture and organize natural-looking screenshots for CTF re-solve write-ups,
-    matching a human solver's workflow rather than generated diagrams. Use when preparing
-    CTF write-ups that need step-by-step screenshots, terminal/browser evidence, or
-    when the user asks for screenshots like another write-up.
+  description: 'Capture and organize natural-looking screenshots for CTF re-solve
+    write-ups, matching a human solver''s workflow rather than generated diagrams.
+    Use when preparing CTF write-ups that need step-by-step '
   version: 1.0.0
   tags: []
   related_skills: []
@@ -248,8 +246,7 @@ skills:
   domain: exploit-dev
   description: Solve CTF binary exploitation / pwn challenges involving stack, heap,
     format strings, ROP, shellcode, ret2libc, GOT/PLT, seccomp, sandbox escapes, and
-    remote exploit scripting. Use when a CTF challenge gives a vulnerable binary,
-    libc/ld, nc host:port, Dockerfile, or source C/C++ with memory corruption.
+    remote exploit scripting. Use when a CTF challeng
   version: 1.1.0
   tags: []
   related_skills: []
@@ -261,8 +258,7 @@ skills:
   domain: exploit-dev
   description: Solve CTF cryptography challenges by mapping challenge artifacts to
     attack patterns, tooling, and reusable exploit workflows across classical crypto,
-    XOR/stream ciphers, block modes, hashes/MACs, RSA, ECC, lattices, PRNGs, encodings,
-    and protocol mistakes.
+    XOR/stream ciphers, block modes, hashes/MACs, RSA,
   version: 1.2.0
   tags: []
   related_skills: []
@@ -272,21 +268,24 @@ skills:
 - id: crypto-ctf-attacks
   path: skills/exploit-dev/crypto-ctf-attacks/SKILL.md
   domain: exploit-dev
-  description: ''
-  version: ''
+  description: CTF密码学攻击知识库 — RSA攻击（小指数/共模/Wiener/Coppersmith）、AES攻击（Padding Oracle/ECB字节翻转/GCM
+    nonce重用）、ECC攻击、LFSR/LCG/PRNG攻击、古典密码、LWE格攻击。Use when performing authorized penetration
+    testing, CTF, or security assessme
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3930
+  skill_md_bytes: 3929
   reference_count: 9
   script_count: 0
 - id: crypto-toolkit
   path: skills/exploit-dev/crypto-toolkit/SKILL.md
   domain: exploit-dev
-  description: ''
-  version: ''
+  description: 编码解码与加解密工具 — base64/URL/Hex/HTML实体编码解码，MD5/SHA哈希，AES/DES/RSA加解密，JWT解析，Caesar/ROT13密码，栅栏/Vigenere密码，Unicode转义，Morse电码等。Use
+    when performing authorized penetration testing, CTF, or security assessment ta
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 6797
+  skill_md_bytes: 6796
   reference_count: 6
   script_count: 0
 - id: cryptography-fundamentals
@@ -294,10 +293,7 @@ skills:
   domain: exploit-dev
   description: Build and maintain deep cryptography knowledge for Hermes, covering
     foundations, primitives, protocols, standards, post-quantum migration, and applied
-    engineering checklists. Use when the user asks about cryptography, encryption,
-    signatures, key exchange, TLS, password hashing, PKI, zero-knowledge, MPC, homomorphic
-    encryption, or post-quantum crypto, or when Hermes should deepen and solidify
-    cryptography knowledge into reusable notes.
+    engineering checklists. Use when the user asks ab
   version: 1.5.0
   tags: []
   related_skills: []
@@ -309,9 +305,7 @@ skills:
   domain: exploit-dev
   description: Solve CTF challenges where a custom alphabet or unusual string-to-bytes
     encoding yields partially readable output that must be recovered through UTF-16/word
-    interpretation, bit-shift realignment, offset scanning, and layered decoding.
-    Use when decoded text is half-readable, source code leaks exact transform symbols,
-    or nested encodings appear after a custom Base64-like stage.
+    interpretation, bit-shift realignment, offs
   version: 1.0.0
   tags: []
   related_skills: []
@@ -323,8 +317,7 @@ skills:
   domain: exploit-dev
   description: Exploit development — from vulnerability to working exploit. Covers
     stack overflow, heap exploitation, ROP, format string, shellcode, egg hunting,
-    ASLR/DEP bypass, type confusion, and modern browser/kernel exploitation primitives.
-    Uses pwntools framework.
+    ASLR/DEP bypass, type confusion, and modern browser/k
   version: 1.0.0
   tags:
   - exploit-dev
@@ -349,11 +342,12 @@ skills:
 - id: exploit-poc-builder
   path: skills/exploit-dev/exploit-poc-builder/SKILL.md
   domain: exploit-dev
-  description: ''
-  version: ''
+  description: 漏洞利用流程 — 构造PoC验证和利用已发现漏洞。Use when performing authorized penetration
+    testing, CTF, or security assessment tasks related to exploitation.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2370
+  skill_md_bytes: 2369
   reference_count: 3
   script_count: 0
 - id: kernel-exploitation
@@ -361,8 +355,7 @@ skills:
   domain: exploit-dev
   description: Operating system kernel exploitation — Linux kernel (SLUB/SLAB allocator
     attacks, KASLR bypass, ret2usr, modprobe_path, DirtyCow-like race conditions)
-    and Windows kernel (token stealing, NULL deref escalation, HAL heap, driver exploitation,
-    PatchGuard-aware techniques).
+    and Windows kernel (token stealing, NULL deref es
   version: 1.0.0
   tags:
   - kernel
@@ -387,8 +380,7 @@ skills:
   domain: exploit-dev
   description: Zero-day vulnerability hunting — complete methodology from attack surface
     mapping through fuzzing, crash triage, root cause analysis, and PoC development
-    to CVE submission. Covers AFL++, libFuzzer, syzkaller, AddressSanitizer, and WinDbg/GDB
-    crash analysis.
+    to CVE submission. Covers AFL++, libFuzzer, sy
   version: 1.0.0
   tags:
   - zero-day
@@ -416,7 +408,7 @@ skills:
   domain: hardware-iot
   description: Fast segmented sweep technique for Bluetooth Classic (BR/EDR) jamming
     using nRF24L01+ with ShockBurst. Overcomes AFH by sweeping all 79 channels continuously
-    at ~350µs/hop, preventing adaptive frequency hopping from avoiding jammed channels.
+    at ~350µs/hop, preventing adaptive frequen
   version: '1.0'
   tags:
   - bluetooth-classic
@@ -434,9 +426,7 @@ skills:
   domain: hardware-iot
   description: ESP32 serial diagnostics in non-TTY environments — pyserial workarounds
     for pio device monitor / arduino-cli monitor failures, DTR/RTS soft-reset, boot
-    log interpretation, and OLED I2C 4-pin label disambiguation. Use when verifying
-    ESP32 firmware liveness from Hermes terminal, docker, SSH pipe, or any non-interactive
-    context where pio device monitor crashes with termios.error.
+    log interpretation, and OLED I2C 4-pin label dis
   version: 1.0.0
   tags: []
   related_skills: []
@@ -465,8 +455,7 @@ skills:
   domain: hardware-iot
   description: Flash, replace, or reflash Flipper Zero firmware — official release,
     custom forks (Momentum, Unleashed, Xtreme), or community Chinese-localized builds.
-    Covers device-variant matching, .tgz extraction, DFU recovery, pre/post verification,
-    and partial-translation awareness for forked firmware.
+    Covers device-variant matching, .tgz extraction,
   version: 1.0.0
   tags:
   - flipper
@@ -485,7 +474,7 @@ skills:
   domain: hardware-iot
   description: Hardware & IoT hacking — UART/JTAG/SPI/I2C hardware interfaces, firmware
     extraction from flash chips, firmware reverse engineering, binary analysis, radio
-    attacks (SDR, BLE, Zigbee), side-channel analysis, and IoT device exploitation.
+    attacks (SDR, BLE, Zigbee), side-channel anal
   version: 1.0.0
   tags:
   - hardware
@@ -505,15 +494,14 @@ skills:
   - pentest
   - zero-day-hunting
   skill_md_bytes: 14525
-  reference_count: 2
+  reference_count: 1
   script_count: 0
 - id: nrf24-bitbang-spi
   path: skills/hardware-iot/nrf24-bitbang-spi/SKILL.md
   domain: hardware-iot
   description: Bit-bang SPI driver for nRF24L01+ on ESP32 with verified writes, ShockBurst
     mode, and auto-repair for high-resistance breadboard connections. Solves SPI signal
-    integrity issues on Dupont-wired nRF24 modules where hardware SPI fails due to
-    nanosecond edge ringing.
+    integrity issues on Dupont-wired nRF24 m
   version: '1.0'
   tags:
   - nrf24
@@ -529,11 +517,13 @@ skills:
 - id: rf-jammer-firmware-port
   path: skills/hardware-iot/rf-jammer-firmware-port/SKILL.md
   domain: hardware-iot
-  description: ''
-  version: ''
+  description: RF Jammer v2 完整移植技術手冊 — 從 RF Jammer 3×nRF24 原始碼深度分析、 sigkill 交叉比較、到
+    Wang 現有雙 nRF24 硬體的移植方案。包含完整硬體腳位對照、firmware 逐行架構分析、UI 動畫系統、頻道協議映射、編譯燒錄 SOP、以及所有已踩過的
+    Pitfall。當 user 要製作 OLED 選單多協議干擾器、或移植 RF Jammer/ 到
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 19740
+  skill_md_bytes: 19739
   reference_count: 0
   script_count: 0
 - id: rf-multi-protocol-jammer
@@ -541,11 +531,7 @@ skills:
   domain: hardware-iot
   description: Build OLED-menu multi-protocol 2.4GHz jammer based on RF Jammer architecture
     (cifertech/rf-jammer). Covers ESP32 + 3×nRF24L01+PA+LNA on shared SPI bus with
-    SoftNRF bit-bang driver, 8 jamming modes (WiFi/BLE/BT/VideoTX/RC/Zigbee/nRF24/USB
-    Wireless). ALL modes use startConstCarrier (CONT_WAVE + PLL_LOCK + W_TX_PAYLOAD_NOACK
-    + REUSE_TX_PL) for continuous carrier+payload flooding — pure ShockBurst fires
-    one packet and stops (empirically verified). Fast segmented sweep for Bluetooth
-    Classic defeats AFH. Verified writes with auto-repair for high-R breadboard connections.
+    SoftNRF bit-bang driver, 8 jamming modes (Wi
   version: '1.0'
   tags:
   - rf-jammer
@@ -566,7 +552,7 @@ skills:
   domain: hardware-iot
   description: Debug and configure smart card readers for synchronous memory cards
     (SLE4442/4428, AT88SC, etc.) on Windows. Covers driver binding, vendor CT-API
-    usage, Microsoft CCID limitations, and 32-bit DLL interop.
+    usage, Microsoft CCID limitations, and 32-bit DLL inte
   version: ''
   tags: []
   related_skills: []
@@ -576,12 +562,9 @@ skills:
 - id: smart-card-usb-direct
   path: skills/hardware-iot/smart-card-usb-direct/SKILL.md
   domain: hardware-iot
-  description: 'Bypass PC/SC/CCID middleware and communicate directly with USB smart
+  description: Bypass PC/SC/CCID middleware and communicate directly with USB smart
     card readers via vendor DLLs (Windows) or libusb/WinUSB (cross-platform). Covers
-    Alcor AU9540/AK9543, DCULC, SpringCard, and similar Chinese OEM readers for synchronous
-    memory cards (SLE4442, SLE4428, AT24Cxx, AT88SCxxx).
-
-    '
+    Alcor AU9540/AK9543, DCULC, SpringCard, and simila
   version: 1.0.0
   tags:
   - smart-card
@@ -600,8 +583,7 @@ skills:
   domain: hardware-iot
   description: 'ESP32 Time-Division WiFi Killer v12 - Targeted deauth + nRF24 CW jamming
     alternating phases. v2.0: PhantomRF ESP32-S3 raw TX (esp_wifi_80211_tx) verified,
-    BrakTooth 28 CVE BT Classic LMP exploits, ESPwn32 link-layer injection, cross-chip
-    support (S3/C3/C6/H2).'
+    BrakTooth 28 CVE BT Classic LMP exploits, ESP'
   version: 2.0.0
   tags:
   - esp32
@@ -644,8 +626,7 @@ skills:
   domain: network-pentest
   description: Advanced Penetration Testing — Active Directory attacks, cloud pentesting
     (AWS/Azure/GCP), container/Kubernetes escape, privilege escalation (Windows/Linux),
-    lateral movement, persistence, C2 frameworks, AV/EDR evasion, wireless/physical/social
-    engineering.
+    lateral movement, persistence, C2 framewor
   version: 1.0.0
   tags:
   - pentest
@@ -670,7 +651,7 @@ skills:
   domain: network-pentest
   description: Network penetration testing — port scanning, service enumeration, banner
     grabbing, vulnerability assessment, network pivoting, and exploitation. Covers
-    internal and external network pentesting methodology.
+    internal and external network pentesting methodo
   version: 1.0.0
   tags:
   - network
@@ -691,21 +672,25 @@ skills:
 - id: pentest-quick-checklist
   path: skills/network-pentest/pentest-quick-checklist/SKILL.md
   domain: network-pentest
-  description: ''
-  version: ''
+  description: 渗透速查与Payload — 快速Payload家族、绕过提醒、验证顺序、常见测试卡片，适用于已知测试方向后快速查找。Use when
+    performing authorized penetration testing, CTF, or security assessment tasks related
+    to rapid-checklist.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4399
+  skill_md_bytes: 4398
   reference_count: 6
   script_count: 0
 - id: pentest-tool-reference
   path: skills/network-pentest/pentest-tool-reference/SKILL.md
   domain: network-pentest
-  description: ''
-  version: ''
+  description: 渗透工具速查 — 编码解码、反向Shell、红队工具、漏洞利用、密码攻击、内网工具、凭据窃取、提权、隧道代理、系统命令、信息收集、域渗透、Web工具、Windows工具。Use
+    when performing authorized penetration testing, CTF, or security assessment tasks
+    related to pentest-tools.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3358
+  skill_md_bytes: 3357
   reference_count: 20
   script_count: 0
 - id: pentest-tool-setup
@@ -723,12 +708,35 @@ skills:
 - id: pentest-workflow
   path: skills/network-pentest/pentest-workflow/SKILL.md
   domain: network-pentest
-  description: ''
-  version: ''
+  description: 渗透测试全流程编排 — 从信息收集到报告生成。Use when performing authorized penetration testing,
+    CTF, or security assessment tasks related to pentest-flow.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11079
+  skill_md_bytes: 11078
   reference_count: 10
+  script_count: 0
+- id: security-orchestrator
+  path: skills/security-orchestrator/SKILL.md
+  domain: orchestrator
+  description: 'Master router for all security operations — 79 skills across 9 domains:
+    recon/OSINT, web pentest, network pentest, exploit development, reverse engineering,
+    CTF, post-exploitation, cloud security, and'
+  version: 2.0.0
+  tags:
+  - security
+  - advanced-pentest
+  - red-team
+  - ctf
+  - osint-framework
+  - exploit
+  - reverse-engineering
+  - zero-day
+  - hardware
+  - cloud-security
+  related_skills: []
+  skill_md_bytes: 12050
+  reference_count: 0
   script_count: 0
 - id: advanced-attack-chains
   path: skills/post-exploitation/advanced-attack-chains/SKILL.md
@@ -763,12 +771,7 @@ skills:
   domain: post-exploitation
   description: Open-source AI multi-agent pentesting tool — wraps the `strix` CLI
     for autonomous security scans of authorized targets. Produces validated findings
-    + working PoCs + compliance reports. Use when the user wants to run an autonomous
-    AI red-team scan (not a manual single-technique test) against a repo, URL, domain,
-    or IP they OWN or are AUTHORIZED to test. Distinct from manual pentest skills
-    (web-app-pentest/network-pentest/pentest/api-security-testing) which are for hands-on
-    technique execution; strix orchestrates a team of LLM agents that drive those
-    same tools themselves.
+    + working PoCs + compliance reports. Use when the us
   version: 1.0.0
   tags:
   - strix
@@ -798,31 +801,35 @@ skills:
 - id: intranet-pentest-advanced
   path: skills/post-exploitation/intranet-pentest-advanced/SKILL.md
   domain: post-exploitation
-  description: ''
-  version: ''
+  description: 内网渗透高级 — 横向移动、凭据窃取、提权、持久化、隧道代理、AD攻击、ADCS滥用、Exchange/SharePoint攻击。Use
+    when performing authorized penetration testing, CTF, or security assessment tasks
+    related to intranet-pentest-advanced.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4276
+  skill_md_bytes: 4275
   reference_count: 17
   script_count: 0
 - id: pentest-report-generator
   path: skills/post-exploitation/pentest-report-generator/SKILL.md
   domain: post-exploitation
-  description: ''
-  version: ''
+  description: 报告生成流程 — 生成结构化渗透测试报告和PoC。Use when performing authorized penetration
+    testing, CTF, or security assessment tasks related to reporting.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4722
+  skill_md_bytes: 4721
   reference_count: 13
   script_count: 0
 - id: post-exploitation-ops
   path: skills/post-exploitation/post-exploitation-ops/SKILL.md
   domain: post-exploitation
-  description: ''
-  version: ''
+  description: 后渗透流程 — 内网信息收集与横向移动。Use when performing authorized penetration testing,
+    CTF, or security assessment tasks related to post-exploitation.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2257
+  skill_md_bytes: 2256
   reference_count: 3
   script_count: 0
 - id: professional-pentest-guide
@@ -857,8 +864,7 @@ skills:
   domain: recon
   description: Hermes skill to relay prompts to ChatGPT web UI via Playwright browser
     automation. Uses persistent Chrome profile to maintain login state. Enables Hermes
-    to use ChatGPT web features (GPT-5.5 Pro Extended, Deep Research, image gen, file
-    upload) without API quota consumption.
+    to use ChatGPT web features (GPT-5.5 Pro Exten
   version: 1.0.0
   tags:
   - playwright
@@ -878,9 +884,7 @@ skills:
   domain: recon
   description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .onion 站。已在本機建立硬化 torrc + darksearch.py
     SQLite 索引 (1385 站、924 存活) + Keepass 加密 DB + exiftool 證據隔離。**資安研究專用** - references/security-onion-map.md
-    記錄已鑑定高價值資安站 (snapWONDERS 隱寫/法醫 API+MCP server, NetForge CVE feed, Surveillance
-    Archive 法醫工具書, Tor core dev homepage, archive.today onion mirror, lanodan cyber
-    blog 等)。Use when 需要上暗網找資訊/做 OSINT/做資安研究/索引 onion 站/驗證 Tor 連線安全。
+    記錄已鑑定高價值資安站 (snapWONDE
   version: ''
   tags: []
   related_skills: []
@@ -892,10 +896,7 @@ skills:
   domain: recon
   description: Email-first OSINT investigation — 7-track parallel workflow when the
     seed is an email address, not a username or domain. Uses holehe (service registration),
-    username-scanner (username sweep), HudsonRock (infostealer breach correlation
-    — highest value), Gravatar, GitHub commit search, direct platform checks (Instagram
-    GraphQL, Pinterest JSON-in-HTML), and multi-engine web search. Produces identity
-    resolution with confidence tiers.
+    username-scanner (username sweep), HudsonRo
   version: 1.0.0
   tags:
   - OSINT
@@ -917,8 +918,7 @@ skills:
   domain: recon
   description: Comprehensive local network device discovery, identification, and interaction.
     Use when the user asks to find/scan/list/control devices on their local network.
-    Covers multi-pass scanning, port-based identification, printer/NAS/smart-home
-    control patterns, and common pitfalls.
+    Covers multi-pass scanning, port-based i
   version: ''
   tags: []
   related_skills: []
@@ -941,7 +941,7 @@ skills:
   domain: recon
   description: Complete OSINT (Open Source Intelligence) framework — SOCMINT, DNS/domain
     recon, email/phone intelligence, geolocation, image analysis, technical recon,
-    financial/crypto OSINT, dark web, government records, and automated toolchains.
+    financial/crypto OSINT, dark web, government re
   version: 1.0.0
   tags:
   - OSINT
@@ -967,11 +967,12 @@ skills:
 - id: osint-recon-model
   path: skills/recon/osint-recon-model/SKILL.md
   domain: recon
-  description: ''
-  version: ''
+  description: OSINT 开源情报收集知识库 — 四维信息收集模型（服务器→网站→域名→人员），维度四（人员信息）条件触发。Use when performing
+    authorized penetration testing, CTF, or security assessment tasks related to osint-recon.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9343
+  skill_md_bytes: 9342
   reference_count: 10
   script_count: 0
 - id: parallel-intel-gathering
@@ -979,8 +980,7 @@ skills:
   domain: recon
   description: Parallel intelligence gathering — run web_search + web_extract + arXiv
     + Playwright browser scraping + API data collection simultaneously for maximum
-    information yield. Use for OSINT, target research, vulnerability intelligence,
-    and competitive analysis.
+    information yield. Use for OSINT, target research,
   version: 1.0.0
   tags:
   - OSINT
@@ -1000,11 +1000,12 @@ skills:
 - id: reconnaissance-ops
   path: skills/recon/reconnaissance-ops/SKILL.md
   domain: recon
-  description: ''
-  version: ''
+  description: 信息收集流程 — 被动+主动侦察。Use when performing authorized penetration testing,
+    CTF, or security assessment tasks related to recon.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9492
+  skill_md_bytes: 9491
   reference_count: 5
   script_count: 0
 - id: spiderfoot-automation
@@ -1012,8 +1013,7 @@ skills:
   domain: recon
   description: SpiderFoot 4.0 OSINT automation — one email/domain/username/phone/IP
     seed → full digital footprint map. 231 modules (Shodan, HIBP, VirusTotal, breach
-    DBs, SOCMINT, DNS, dark web, etc.) running in parallel. CLI scan + HX2 Web GUI
-    + fallback playbook. Authorized OSINT/research use.
+    DBs, SOCMINT, DNS, dark web, etc.) running in para
   version: 1.0.0
   tags:
   - OSINT
@@ -1040,7 +1040,7 @@ skills:
   domain: recon
   description: AI-OSINT username scanner — scan 840+ platforms with ML-blended detection.
     Find accounts across social media, forums, dev platforms, and more. Supports Tor/proxy,
-    advanced scan levels, JSON/CSV/HTML/MD export, Playwright fallback, and ML retraining.
+    advanced scan levels, JSON/CSV/HTML/M
   version: 1.0.0
   tags:
   - OSINT
@@ -1061,11 +1061,12 @@ skills:
 - id: vulnerability-discovery
   path: skills/recon/vulnerability-discovery/SKILL.md
   domain: recon
-  description: ''
-  version: ''
+  description: 漏洞发现流程 — 基于信息收集结果扫描漏洞。Use when performing authorized penetration testing,
+    CTF, or security assessment tasks related to vuln-discovery.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2993
+  skill_md_bytes: 2992
   reference_count: 3
   script_count: 0
 - id: ctf-reverse-engineering
@@ -1073,8 +1074,7 @@ skills:
   domain: reverse-engineering
   description: Solve CTF Reverse Engineering challenges involving binaries, APKs,
     bytecode, firmware, obfuscated scripts, crackmes, license checks, and custom VMs.
-    Use when a CTF challenge gives an executable, shared library, APK/JAR/class, wasm,
-    firmware blob, or obfuscated program to analyze.
+    Use when a CTF challenge gives an executable, share
   version: 1.0.0
   tags: []
   related_skills: []
@@ -1084,12 +1084,9 @@ skills:
 - id: digital-forensics
   path: skills/reverse-engineering/digital-forensics/SKILL.md
   domain: reverse-engineering
-  description: 'Comprehensive CTF forensics workflows covering file type identification,
+  description: Comprehensive CTF forensics workflows covering file type identification,
     image/audio steganography, PCAP/memory/disk forensics, archive cracking, document
-    analysis, and common flag-hunting patterns. Use when the challenge involves unknown
-    files, data recovery, hidden data, or forensic artifacts.
-
-    '
+    analysis, and common flag-hunting patterns. U
   version: 2.1.0
   tags:
   - ctf
@@ -1108,7 +1105,7 @@ skills:
   domain: reverse-engineering
   description: Complete Reverse Engineering skill — Ghidra, IDA, radare2, Binary Ninja,
     angr symbolic execution, deobfuscation, unpacking, anti-debug bypass, Go/Rust/.NET/Java/Android/iOS/WebAssembly
-    reversing, malware analysis, game hacking, and binary triage automation.
+    reversing, malw
   version: 1.0.0
   tags:
   - reverse-engineering
@@ -1128,37 +1125,15 @@ skills:
   skill_md_bytes: 35883
   reference_count: 9
   script_count: 0
-- id: security-orchestrator
-  path: skills/security-orchestrator/SKILL.md
-  domain: orchestrator
-  description: 'Master router for all security operations — 79 skills across 9 domains:
-    recon/OSINT, web pentest, network pentest, exploit development, reverse engineering,
-    CTF, post-exploitation, cloud security, and hardware/IoT hacking. Load this first
-    for any security task to get intelligent routing to the right specialized skill.'
-  version: 2.0.0
-  tags:
-  - security
-  - advanced-pentest
-  - red-team
-  - ctf
-  - osint-framework
-  - exploit
-  - reverse-engineering
-  - zero-day
-  - hardware
-  - cloud-security
-  related_skills: []
-  skill_md_bytes: 12050
-  reference_count: 0
-  script_count: 0
 - id: android-pentest
   path: skills/web-pentest/android-pentest/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: 安卓应用渗透测试 — APK分析、Hook、自动化测试、运行态驱动、签名恢复、抓包分析。Use when performing authorized
+    penetration testing, CTF, or security assessment tasks related to android-pentest.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4009
+  skill_md_bytes: 4008
   reference_count: 13
   script_count: 0
 - id: api-security-testing
@@ -1166,7 +1141,7 @@ skills:
   domain: web-pentest
   description: API security testing — REST, GraphQL, WebSocket, gRPC API penetration
     testing. Covers authentication bypass, authorization flaws, rate limiting, injection,
-    mass assignment, BOLA/IDOR, and API-specific OWASP Top 10 vulnerabilities.
+    mass assignment, BOLA/IDOR, and API-specific
   version: 1.0.0
   tags:
   - API
@@ -1189,8 +1164,7 @@ skills:
   domain: web-pentest
   description: Playwright browser automation for security testing, OSINT, web scraping,
     and penetration testing. Full browser automation with Chromium for JS-rendered
-    pages, login automation, form interaction, screenshot capture, and network interception.
-    Use as an alternative to web_extract for interactive/dynamic content.
+    pages, login automation, form interaction, scree
   version: 1.61.0
   tags:
   - playwright
@@ -1223,21 +1197,25 @@ skills:
 - id: client-reverse-engineering
   path: skills/web-pentest/client-reverse-engineering/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: 客户端逆向与Burp重放 — 复杂客户端签名恢复、加密还原、请求链追踪、稳定重放，适用于已授权安卓App渗透测试、浏览器JS签名、桌面客户端逆向。Use
+    when performing authorized penetration testing, CTF, or security assessment tasks
+    related to client-reverse.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4812
+  skill_md_bytes: 4811
   reference_count: 23
   script_count: 0
 - id: ctf-web-attacks
   path: skills/web-pentest/ctf-web-attacks/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: CTF Web攻击知识库 — PHP弱比较绕过、命令注入空格绕过、eval回显技巧、SSTI注入链、反序列化利用链、PHP代码审计checklist、常见flag位置。Use
+    when performing authorized penetration testing, CTF, or security assessment tasks
+    related to ctf-web.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 10359
+  skill_md_bytes: 10358
   reference_count: 12
   script_count: 0
 - id: ctf-web-pwn-methodology
@@ -1268,8 +1246,7 @@ skills:
   domain: web-pentest
   description: 全棧框架漏洞研究編譯 — 針對前端/後端框架、資料庫引擎、GraphQL、API Gateway 的 2015-2025 年漏洞利用技術演化研究，輸出完整
     Payload、觸發條件、繞過方式、CVE 編號。Use when conducting authorized vulnerability research,
-    building exploit knowledge bases, or preparing penetration testing cheatsheets
-    across full-stack technologies.
+    building exploit knowledge bases, or prepa
   version: 1.0.0
   tags: []
   related_skills: []
@@ -1281,8 +1258,7 @@ skills:
   domain: web-pentest
   description: Escalate SQL injection on Microsoft SQL Server backends to OS command
     execution via xp_cmdshell, stacked queries, and database defacement. Covers sysadmin
-    privilege checks, ViewState MAC analysis, WAF pitfalls, and Taiwan school-specific
-    credential patterns.
+    privilege checks, ViewState MAC analysis, WAF
   version: ''
   tags:
   - pentest
@@ -1300,21 +1276,23 @@ skills:
 - id: waf-bypass-techniques
   path: skills/web-pentest/waf-bypass-techniques/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: WAF 绕过技巧库 — 各类WAF绕过方法。Use when performing authorized penetration testing,
+    CTF, or security assessment tasks related to waf-bypass.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4252
+  skill_md_bytes: 4251
   reference_count: 3
   script_count: 0
 - id: web-app-assessment
   path: skills/web-pentest/web-app-assessment/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: Web应用渗透测试 — 针对Web应用的完整渗透流程，含技术栈识别、目录枚举、认证测试、输入验证、逻辑漏洞。Use when performing
+    authorized penetration testing, CTF, or security assessment tasks related to web-pentest.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5081
+  skill_md_bytes: 5079
   reference_count: 8
   script_count: 0
 - id: web-app-pentest
@@ -1322,7 +1300,7 @@ skills:
   domain: web-pentest
   description: Full OWASP 2025 web application penetration testing — SQL injection,
     XSS, CSRF, SSRF, SSTI, LFI/RFI, IDOR, command injection, file upload, deserialization,
-    JWT attacks, and more. Covers methodology, tools, scripts, and exploit patterns.
+    JWT attacks, and more. Covers methodology, t
   version: 1.0.0
   tags:
   - web-security
@@ -1348,10 +1326,12 @@ skills:
 - id: web-security-advanced
   path: skills/web-pentest/web-security-advanced/SKILL.md
   domain: web-pentest
-  description: ''
-  version: ''
+  description: Web高级安全测试 — 注入攻击族、协议安全、认证与逻辑漏洞、文件与部署安全、现代Web攻击面，含完整Playbook。Use when
+    performing authorized penetration testing, CTF, or security assessment tasks related
+    to web-security-advanced.
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 12377
+  skill_md_bytes: 12376
   reference_count: 50
   script_count: 0

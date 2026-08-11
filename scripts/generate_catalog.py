@@ -14,11 +14,17 @@ def parse_frontmatter(path):
         content = f.read()
     if not content.startswith('---'):
         return {}, content
-    parts = content.split('---', 2)
-    if len(parts) < 3:
+    lines = content.split('\n')
+    end = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() == '---':
+            end = i
+            break
+    if end is None:
         return {}, content
+    fm_text = '\n'.join(lines[1:end])
     try:
-        fm = yaml.safe_load(parts[1]) or {}
+        fm = yaml.safe_load(fm_text) or {}
     except Exception:
         fm = {}
     return fm, content

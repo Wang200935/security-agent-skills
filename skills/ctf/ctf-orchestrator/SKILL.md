@@ -1,12 +1,28 @@
 ---
 name: ctf-orchestrator
-description: Orchestrate Capture-the-Flag challenge solving across Web Exploitation, Cryptography, Forensics, Reverse Engineering, Pwn/Binary Exploitation, and Misc. Use when the user provides a CTF challenge, asks to train for CTFs, wants a writeup, or asks which CTF category/attack path to try.
+description: Orchestrate Capture-the-Flag challenge solving across Web Exploitation,
+  Cryptography, Forensics, Reverse Engineering, Pwn/Binary Exploitation, and Misc.
+  Use when the user provides a CTF challenge, asks to train for CTFs, wants a writeup,
+  or asks which CTF category/attack path to try.
 version: 1.1.0
 license: MIT
 metadata:
   hermes:
-    tags: [ctf, triage, writeups, training]
-    related_skills: [ctf-web-exploitation, ctf-cryptography, ctf-forensics, ctf-reverse-engineering, ctf-pwn-binary-exploitation, ctf-misc, ctf-kernel-exploitation, hackingtool]
+    tags:
+    - ctf
+    - triage
+    - writeups
+    - training
+    related_skills:
+    - ctf-web-exploitation
+    - ctf-cryptography
+    - ctf-forensics
+    - ctf-reverse-engineering
+    - ctf-pwn-binary-exploitation
+    - ctf-misc
+    - ctf-kernel-exploitation
+    - hackingtool
+    origin: import
 ---
 
 # CTF General Solver

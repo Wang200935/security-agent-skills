@@ -5,22 +5,26 @@ description: CTF (Capture The Flag) competition playbook — Web, Crypto, Revers
   methodology, tools, common vulnerabilities, and exploit patterns for each CTF category.
 version: 1.0.0
 category: red-teaming
-tags:
-- CTF
-- capture-the-flag
-- crypto
-- reversing
-- pwn
-- binary-exploitation
-- forensics
-- steganography
-- OSINT
-- web-exploitation
-related_skills:
-- web-app-pentest
-- client-auth-bypass
-- security-orchestrator
-- network-pentest
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - CTF
+    - capture-the-flag
+    - crypto
+    - reversing
+    - pwn
+    - binary-exploitation
+    - forensics
+    - steganography
+    - OSINT
+    - web-exploitation
+    related_skills:
+    - web-app-pentest
+    - client-auth-bypass
+    - security-orchestrator
+    - network-pentest
+    origin: import
 ---
 
 # CTF Playbook

@@ -1,12 +1,24 @@
 ---
 name: rf-jammer-firmware-port
-description: RF Jammer v2 完整移植技術手冊 — 從 RF Jammer 3×nRF24 原始碼深度分析、 sigkill 交叉比較、到 Wang 現有雙 nRF24 硬體的移植方案。包含完整硬體腳位對照、firmware 逐行架構分析、UI 動畫系統、頻道協議映射、編譯燒錄 SOP、以及所有已踩過的 Pitfall。當 user 要製作 OLED 選單多協議干擾器、或移植 RF Jammer/ 到 Wang 硬體時載入。
+description: RF Jammer v2 完整移植技術手冊 — 從 RF Jammer 3×nRF24 原始碼深度分析、 sigkill 交叉比較、到 Wang
+  現有雙 nRF24 硬體的移植方案。包含完整硬體腳位對照、firmware 逐行架構分析、UI 動畫系統、頻道協議映射、編譯燒錄 SOP、以及所有已踩過的 Pitfall。當
+  user 要製作 OLED 選單多協議干擾器、或移植 RF Jammer/ 到 Wang 硬體時載入。
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [RF Jammer, esp32, nrf24, jammer, multi-protocol, oled, 移植]
-    related_skills: [esp32-nrf24-jammer-builder, ctf-general]
+    tags:
+    - RF Jammer
+    - esp32
+    - nrf24
+    - jammer
+    - multi-protocol
+    - oled
+    - 移植
+    related_skills:
+    - esp32-nrf24-jammer-builder
+    - ctf-general
+    origin: import
 ---
 
 # RF Jammer v2 完整移植技術手冊

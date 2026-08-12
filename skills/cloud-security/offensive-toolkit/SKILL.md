@@ -1,6 +1,12 @@
 ---
 name: offensive-toolkit
-description: Use hackingtool — a 21-category, 173-tool offensive security and pentesting suite installed on this Mac via local venv. Use when the user asks to search for tools, browse categories, install/run a specific pentesting tool, or get recommendations for a security task. This skill covers the TUI launcher, programmatic queries (list, search, tags), and how to invoke individual tool install/run flows non-interactively.
+description: Use hackingtool — a 21-category, 173-tool offensive security and pentesting
+  suite installed on this Mac via local venv. Use when the user asks to search for
+  tools, browse categories, install/run a specific pentesting tool, or get recommendations
+  for a security task. This skill covers the TUI launcher, programmatic queries (list,
+  search, tags), and how to invoke individual tool install/run flows non-interactively.
+version: 1.0.0
+license: MIT
 ---
 
 # HackingTool — Offensive Security Suite

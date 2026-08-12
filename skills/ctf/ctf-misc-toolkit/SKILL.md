@@ -1,12 +1,29 @@
 ---
 name: ctf-misc-toolkit
-description: Solve CTF Misc challenges including pyjails/sandboxes, OSINT, puzzles, encodings, QR/barcodes, esolangs, protocols, game challenges, cloud/config leaks, blockchain-lite, and category-mixed tasks. Use when a CTF task does not cleanly fit Web, Crypto, Forensics, or Reverse Engineering.
+description: Solve CTF Misc challenges including pyjails/sandboxes, OSINT, puzzles,
+  encodings, QR/barcodes, esolangs, protocols, game challenges, cloud/config leaks,
+  blockchain-lite, and category-mixed tasks. Use when a CTF task does not cleanly
+  fit Web, Crypto, Forensics, or Reverse Engineering.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [ctf, misc, pyjail, osint, puzzle, encoding, sandbox, protocols]
-    related_skills: [ctf-general, ctf-web-exploitation, ctf-forensics, ctf-reverse-engineering, ctf-cryptography]
+    tags:
+    - ctf
+    - misc
+    - pyjail
+    - osint
+    - puzzle
+    - encoding
+    - sandbox
+    - protocols
+    related_skills:
+    - ctf-general
+    - ctf-web-exploitation
+    - ctf-forensics
+    - ctf-reverse-engineering
+    - ctf-cryptography
+    origin: import
 ---
 
 # CTF Misc

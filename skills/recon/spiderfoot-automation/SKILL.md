@@ -6,21 +6,25 @@ description: SpiderFoot 4.0 OSINT automation — one email/domain/username/phone
   fallback playbook. Authorized OSINT/research use.
 version: 1.0.0
 category: red-teaming
-tags:
-- OSINT
-- spiderfoot
-- intelligence
-- reconnaissance
-- email
-- domain
-- SOCMINT
-- breach
-- HIBP
-- Shodan
-- darkweb
-related_skills:
-- security-orchestrator
-- username-scanner
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - OSINT
+    - spiderfoot
+    - intelligence
+    - reconnaissance
+    - email
+    - domain
+    - SOCMINT
+    - breach
+    - HIBP
+    - Shodan
+    - darkweb
+    related_skills:
+    - security-orchestrator
+    - username-scanner
+    origin: import
 ---
 
 # SpiderFoot OSINT — One Seed → Full Digital Footprint

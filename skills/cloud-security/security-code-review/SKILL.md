@@ -1,13 +1,24 @@
 ---
 name: security-code-review
-description: "Review code in Hermes with a Claude-Code-style security-focused findings-first workflow."
+description: Review code in Hermes with a Claude-Code-style security-focused findings-first
+  workflow.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [claude-code, security, review, findings, auth, injection]
+    tags:
+    - claude-code
+    - security
+    - review
+    - findings
+    - auth
+    - injection
     homepage: https://github.com/Piebald-AI/claude-code-system-prompts
-    related_skills: [claude-code-review-executor, claude-code-pr-executor, claude-code-coding-executor]
+    related_skills:
+    - claude-code-review-executor
+    - claude-code-pr-executor
+    - claude-code-coding-executor
+    origin: import
 ---
 
 # Claude-Code-Style Security Review

@@ -1,12 +1,26 @@
 ---
 name: ctf-writeup-discipline
-description: Produce CTF write-ups with authentic solve evidence, scripts, screenshots, and clean separation from reference material. Use when writing, revising, or packaging CTF write-ups, especially when the user provides someone else's write-up as reference or requests screenshots.
+description: Produce CTF write-ups with authentic solve evidence, scripts, screenshots,
+  and clean separation from reference material. Use when writing, revising, or packaging
+  CTF write-ups, especially when the user provides someone else's write-up as reference
+  or requests screenshots.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [ctf, writeup, screenshots, evidence, packaging]
-    related_skills: [ctf-general, ctf-cryptography, ctf-forensics, ctf-reverse-engineering, ctf-pwn-binary-exploitation]
+    tags:
+    - ctf
+    - writeup
+    - screenshots
+    - evidence
+    - packaging
+    related_skills:
+    - ctf-general
+    - ctf-cryptography
+    - ctf-forensics
+    - ctf-reverse-engineering
+    - ctf-pwn-binary-exploitation
+    origin: import
 ---
 
 # CTF Write-up Artifact Discipline

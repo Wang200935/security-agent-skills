@@ -5,22 +5,26 @@ description: Modern attack surfaces beyond traditional pentesting — LLM/AI sec
   exploitation, CI/CD pipeline attacks, and serverless/edge computing vulnerabilities.
 version: 1.0.0
 category: red-teaming
-tags:
-- LLM-security
-- AI-attacks
-- supply-chain
-- blockchain
-- smart-contract
-- CI-CD-security
-- serverless
-- prompt-injection
-- model-poisoning
-related_skills:
-- security-orchestrator
-- web-app-pentest
-- api-security-testing
-- zero-day-hunting
-- pentest-workflow
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - LLM-security
+    - AI-attacks
+    - supply-chain
+    - blockchain
+    - smart-contract
+    - CI-CD-security
+    - serverless
+    - prompt-injection
+    - model-poisoning
+    related_skills:
+    - security-orchestrator
+    - web-app-pentest
+    - api-security-testing
+    - zero-day-hunting
+    - pentest-workflow
+    origin: import
 ---
 
 # Modern Attack Surfaces — 2025-2026

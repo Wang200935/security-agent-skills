@@ -1,9 +1,24 @@
 ---
 name: flipper-zero-firmware
-description: Flash, replace, or reflash Flipper Zero firmware — official release, custom forks (Momentum, Unleashed, Xtreme), or community Chinese-localized builds. Covers device-variant matching, .tgz extraction, DFU recovery, pre/post verification, and partial-translation awareness for forked firmware.
+description: Flash, replace, or reflash Flipper Zero firmware — official release,
+  custom forks (Momentum, Unleashed, Xtreme), or community Chinese-localized builds.
+  Covers device-variant matching, .tgz extraction, DFU recovery, pre/post verification,
+  and partial-translation awareness for forked firmware.
 version: 1.0.0
 category: hardware
-tags: [flipper, firmware, flash, dfu, momentum, unleashed, qflipper]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - flipper
+    - firmware
+    - flash
+    - dfu
+    - momentum
+    - unleashed
+    - qflipper
+    related_skills: []
+    origin: import
 ---
 
 # Flipper Zero Firmware Modification

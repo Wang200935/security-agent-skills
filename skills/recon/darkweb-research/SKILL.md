@@ -1,6 +1,12 @@
 ---
 name: darkweb-research
-description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .onion 站。已在本機建立硬化 torrc + darksearch.py SQLite 索引 (1385 站、924 存活) + Keepass 加密 DB + exiftool 證據隔離。**資安研究專用** - references/security-onion-map.md 記錄已鑑定高價值資安站 (snapWONDERS 隱寫/法醫 API+MCP server, NetForge CVE feed, Surveillance Archive 法醫工具書, Tor core dev homepage, archive.today onion mirror, lanodan cyber blog 等)。Use when 需要上暗網找資訊/做 OSINT/做資安研究/索引 onion 站/驗證 Tor 連線安全。
+description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .onion 站。已在本機建立硬化 torrc + darksearch.py
+  SQLite 索引 (1385 站、924 存活) + Keepass 加密 DB + exiftool 證據隔離。**資安研究專用** - references/security-onion-map.md
+  記錄已鑑定高價值資安站 (snapWONDERS 隱寫/法醫 API+MCP server, NetForge CVE feed, Surveillance Archive
+  法醫工具書, Tor core dev homepage, archive.today onion mirror, lanodan cyber blog 等)。Use
+  when 需要上暗網找資訊/做 OSINT/做資安研究/索引 onion 站/驗證 Tor 連線安全。
+version: 1.0.0
+license: MIT
 ---
 
 # 暗網研究環境 (本機 macOS)

@@ -109,38 +109,37 @@ cd security-agent-skills
 ## 技能分类
 
 <!-- BEGIN INVENTORY -->
-
-### 🔍 侦察 & OSINT (12 个技能)
+### 🔍 Recon & OSINT (12 个技能)
 `chatgpt-web-relay` · `darkweb-research` · `email-osint-investigation` · `local-network-recon` · `network-device-recon` · `osint-framework` · `osint-recon-model` · `parallel-intel-gathering` · `reconnaissance-ops` · `spiderfoot-automation` · `username-scanner` · `vulnerability-discovery`
 
-### 🌐 Web 渗透测试 (13 个技能)
+### 🌐 Web Pentest (13 个技能)
 `android-pentest` · `api-security-testing` · `browser-automation-security` · `client-auth-bypass` · `client-reverse-engineering` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `waf-bypass-techniques` · `web-app-assessment` · `web-app-pentest` · `web-security-advanced`
 
-### 🖥️ 网络渗透测试 (6 个技能)
+### 🖥️ Network Pentest (6 个技能)
 `advanced-pentest` · `network-pentest` · `pentest-quick-checklist` · `pentest-tool-reference` · `pentest-tool-setup` · `pentest-workflow`
 
-### 💥 漏洞开发 (10 个技能)
+### 💥 Exploit Development (10 个技能)
 `binary-exploitation` · `crypto-attack-patterns` · `crypto-ctf-attacks` · `crypto-toolkit` · `cryptography-fundamentals` · `encoding-realignment` · `exploit-development` · `exploit-poc-builder` · `kernel-exploitation` · `zero-day-hunting`
 
-### 🔧 逆向工程 (3 个技能)
+### 🔧 Reverse Engineering (3 个技能)
 `ctf-reverse-engineering` · `digital-forensics` · `reverse-engineering`
 
 ### 🚩 CTF (10 个技能)
 `ctf-jail-escape` · `ctf-kernel-exploitation` · `ctf-misc-toolkit` · `ctf-orchestrator` · `ctf-playbook` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots`
 
-### 🎯 后渗透 (6 个技能)
+### 🎯 Post-Exploitation (6 个技能)
 `advanced-attack-chains` · `autonomous-pentest-scanner` · `intranet-pentest-advanced` · `pentest-report-generator` · `post-exploitation-ops` · `professional-pentest-guide`
 
-### ☁️ 云端 & AI 安全 (6 个技能)
+### ☁️ Cloud & AI Security (6 个技能)
 `ai-mcp-security` · `modern-attack-surfaces` · `offensive-toolkit` · `security-and-hardening` · `security-audit` · `security-code-review`
 
-### 🔌 硬件 & IoT (12 个技能)
+### 🔌 Hardware & IoT (12 个技能)
 `bluetooth-jammer-sweep` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `hardware-iot-hacking` · `nrf24-bitbang-spi` · `rf-jammer-firmware-port` · `rf-multi-protocol-jammer` · `smart-card-driver-debug` · `smart-card-usb-direct` · `wifi-deauth-jammer` · `wifi-dualband-jammer`
 
-### 🧭 路由器 (1 个技能)
+### 🧭 Orchestrator (1 个技能)
 `security-orchestrator`
 
-**合计：79 个技能**（+ 1 路由器）
+**Total: 79 skills** (+ 1 orchestrator)
 <!-- END INVENTORY -->
 
 

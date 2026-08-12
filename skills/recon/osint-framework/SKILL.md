@@ -5,23 +5,27 @@ description: Complete OSINT (Open Source Intelligence) framework — SOCMINT, DN
   OSINT, dark web, government records, and automated toolchains.
 version: 1.0.0
 category: red-teaming
-tags:
-- OSINT
-- intelligence
-- reconnaissance
-- SOCMINT
-- geolocation
-- dorking
-- Shodan
-- darkweb
-- crypto
-- blockchain
-related_skills:
-- web-app-pentest
-- ctf-playbook
-- security-orchestrator
-- username-scanner
-- spiderfoot-osint-automation
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - OSINT
+    - intelligence
+    - reconnaissance
+    - SOCMINT
+    - geolocation
+    - dorking
+    - Shodan
+    - darkweb
+    - crypto
+    - blockchain
+    related_skills:
+    - web-app-pentest
+    - ctf-playbook
+    - security-orchestrator
+    - username-scanner
+    - spiderfoot-osint-automation
+    origin: import
 ---
 
 # OSINT — Complete Open Source Intelligence

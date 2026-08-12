@@ -1,6 +1,9 @@
 ---
 name: ctf-training-loop
-description: Practical CTF training workflow for systematically learning challenge categories through real solving, writeups, and skill updates.
+description: Practical CTF training workflow for systematically learning challenge
+  categories through real solving, writeups, and skill updates.
+version: 1.0.0
+license: MIT
 ---
 
 # CTF Training Loop

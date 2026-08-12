@@ -1,12 +1,25 @@
 ---
 name: digital-forensics
-description: >
-  Comprehensive CTF forensics workflows covering file type identification,
-  image/audio steganography, PCAP/memory/disk forensics, archive cracking,
-  document analysis, and common flag-hunting patterns. Use when the challenge
-  involves unknown files, data recovery, hidden data, or forensic artifacts.
+description: 'Comprehensive CTF forensics workflows covering file type identification,
+  image/audio steganography, PCAP/memory/disk forensics, archive cracking, document
+  analysis, and common flag-hunting patterns. Use when the challenge involves unknown
+  files, data recovery, hidden data, or forensic artifacts.
+
+  '
 version: 2.1.0
-tags: [ctf, forensics, steganography, pcap, memory, disk, reversing]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - ctf
+    - forensics
+    - steganography
+    - pcap
+    - memory
+    - disk
+    - reversing
+    related_skills: []
+    origin: import
 ---
 
 # CTF Forensics Skill

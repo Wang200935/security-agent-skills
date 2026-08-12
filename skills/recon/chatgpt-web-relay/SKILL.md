@@ -6,16 +6,20 @@ description: Hermes skill to relay prompts to ChatGPT web UI via Playwright brow
   upload) without API quota consumption.
 version: 1.0.0
 category: red-teaming
-tags:
-- playwright
-- browser
-- automation
-- chatgpt
-- relay
-- web-ui
-related_skills:
-- browser-automation-security
-- web-app-pentest
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - playwright
+    - browser
+    - automation
+    - chatgpt
+    - relay
+    - web-ui
+    related_skills:
+    - browser-automation-security
+    - web-app-pentest
+    origin: import
 ---
 
 # ChatGPT Web Relay for Hermes

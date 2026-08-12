@@ -1,9 +1,21 @@
 ---
 name: flipper-zero-backup
-description: Complete 3-layer backup of Flipper Zero — SD card, internal storage, and official firmware. Fully automated via qFlipper CLI + serial + file copy. Restore path included.
+description: Complete 3-layer backup of Flipper Zero — SD card, internal storage,
+  and official firmware. Fully automated via qFlipper CLI + serial + file copy. Restore
+  path included.
 version: 1.0.0
 category: hardware
-tags: [flipper, backup, firmware, qflipper, hardware]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - flipper
+    - backup
+    - firmware
+    - qflipper
+    - hardware
+    related_skills: []
+    origin: import
 ---
 
 # Flipper Zero Complete Backup

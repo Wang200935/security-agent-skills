@@ -6,17 +6,21 @@ description: Parallel intelligence gathering — run web_search + web_extract + 
   analysis.
 version: 1.0.0
 category: red-teaming
-tags:
-- OSINT
-- reconnaissance
-- intelligence
-- information-gathering
-- parallel-search
-- web-scraping
-- dorking
-related_skills:
-- browser-automation-security
-- security-orchestrator
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - OSINT
+    - reconnaissance
+    - intelligence
+    - information-gathering
+    - parallel-search
+    - web-scraping
+    - dorking
+    related_skills:
+    - browser-automation-security
+    - security-orchestrator
+    origin: import
 ---
 
 # Parallel Intelligence Gathering

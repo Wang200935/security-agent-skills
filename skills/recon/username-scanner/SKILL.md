@@ -5,17 +5,21 @@ description: AI-OSINT username scanner — scan 840+ platforms with ML-blended d
   advanced scan levels, JSON/CSV/HTML/MD export, Playwright fallback, and ML retraining.
 version: 1.0.0
 category: red-teaming
-tags:
-- OSINT
-- username-scanner
-- social-media
-- reconnaissance
-- account-discovery
-- username-scanner
-related_skills:
-- security-orchestrator
-- pentest-workflow
-- browser-automation-security
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - OSINT
+    - username-scanner
+    - social-media
+    - reconnaissance
+    - account-discovery
+    - username-scanner
+    related_skills:
+    - security-orchestrator
+    - pentest-workflow
+    - browser-automation-security
+    origin: import
 ---
 
 # Username Scanner — AI-Powered OSINT Username Scanner

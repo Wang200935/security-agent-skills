@@ -1,0 +1,119 @@
+# SOURCES.lock.yaml
+# Provenance tracking for security-agent-skills
+#
+# This file records where each skill's knowledge content originated.
+# Skills are original works; their reference material cites upstream
+# open-source projects. This lock file ensures traceability.
+
+schema_version: 1
+generated: "2026-08-12"
+description: |
+  Provenance map for 79 security testing skills.
+  All skills are original compositions. Reference files cite
+  1,344+ unique GitHub repositories as upstream knowledge sources.
+
+# Skill origins
+skill_origins:
+  origin_type: "original-composition"
+  upstream_ecosystem: "hermes-agent-skills"
+  import_date: "2026-08-12"
+  original_author: "Wang200935"
+  license: "MIT"
+  notes: |
+    Skills were authored as integrations of field-tested security
+    methodologies. Reference material draws from open-source security
+    tools, CTF writeups, and penetration testing knowledge bases.
+    Each SKILL.md is an original composition; reference files contain
+    curated and attributed excerpts from upstream sources.
+
+# Upstream tool dependencies (tools these skills teach agents to use)
+# These are third-party tools referenced in skill instructions.
+upstream_tools:
+  # Recon & OSINT
+  SpiderFoot:
+    repo: "https://github.com/smicallef/spiderfoot"
+    license: "MIT"
+    used_in: [spiderfoot-automation, osint-framework]
+  Sherlock:
+    repo: "https://github.com/sherlock-project/sherlock"
+    license: "MIT"
+    used_in: [username-scanner]
+  theHarvester:
+    repo: "https://github.com/laramies/theHarvester"
+    license: "GPL-2.0"
+    used_in: [osint-framework, email-osint-investigation]
+
+  # Web Pentest
+  sqlmap:
+    repo: "https://github.com/sqlmapproject/sqlmap"
+    license: "GPL-2.0"
+    used_in: [web-app-pentest, sql-server-exploitation]
+  ffuf:
+    repo: "https://github.com/ffuf/ffuf"
+    license: "MIT"
+    used_in: [web-app-pentest, web-app-assessment]
+  nuclei:
+    repo: "https://github.com/projectdiscovery/nuclei"
+    license: "MIT"
+    used_in: [vulnerability-discovery, web-app-pentest]
+  Playwright:
+    repo: "https://github.com/microsoft/playwright"
+    license: "Apache-2.0"
+    used_in: [browser-automation-security, client-auth-bypass]
+
+  # Exploit Development
+  pwntools:
+    repo: "https://github.com/Gallopsled/pwntools"
+    license: "MIT"
+    used_in: [exploit-development, binary-exploitation, ctf-kernel-exploitation]
+  AFLplusplus:
+    repo: "https://github.com/AFLplusplus/AFLplusplus"
+    license: "Apache-2.0"
+    used_in: [zero-day-hunting]
+
+  # Reverse Engineering
+  Ghidra:
+    repo: "https://github.com/NationalSecurityAgency/ghidra"
+    license: "Apache-2.0"
+    used_in: [reverse-engineering, ctf-reverse-engineering]
+  radare2:
+    repo: "https://github.com/radareorg/radare2"
+    license: "LGPL-3.0"
+    used_in: [reverse-engineering]
+
+  # Post-Exploitation / AD
+  BloodHound:
+    repo: "https://github.com/BloodHoundAD/BloodHound"
+    license: "GPL-3.0"
+    used_in: [intranet-pentest-advanced, post-exploitation-ops]
+  Certipy:
+    repo: "https://github.com/ly4k/Certipy"
+    license: "MIT"
+    used_in: [intranet-pentest-advanced]
+
+  # Hardware & IoT
+  ESP32-Arduino:
+    repo: "https://github.com/espressif/arduino-esp32"
+    license: "LGPL-2.1"
+    used_in: [wifi-deauth-jammer, esp32-serial-diag, nrf24-bitbang-spi]
+  Flipper-Zero-Firmware:
+    repo: "https://github.com/flipperdevices/flipperzero-firmware"
+    license: "GPL-3.0"
+    used_in: [flipper-zero-backup, flipper-zero-firmware]
+
+# Reference material attribution
+reference_attribution:
+  total_github_repos_cited: 1344
+  notes: |
+    Reference files (in skills/*/references/) cite upstream repositories
+    as knowledge sources. These citations appear as inline links within
+    the markdown. No reference file is a verbatim copy of an upstream
+    repository — they are curated knowledge compilations with
+    attribution links to original sources.
+
+# Verification
+verification:
+  method: "automated URL validation via CI"
+  ci_job: "validate.yml: URL check step"
+  last_checked: "2026-08-12"
+  broken_urls: "tracked by CI, fixed on detection"

@@ -8,16 +8,20 @@ description: Email-first OSINT investigation — 7-track parallel workflow when 
   resolution with confidence tiers.
 version: 1.0.0
 category: red-teaming
-tags:
-- OSINT
-- email-intelligence
-- breach
-- infostealer
-- identity-resolution
-- SOCMINT
-related_skills:
-- username-scanner
-- spiderfoot-osint-automation
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - OSINT
+    - email-intelligence
+    - breach
+    - infostealer
+    - identity-resolution
+    - SOCMINT
+    related_skills:
+    - username-scanner
+    - spiderfoot-osint-automation
+    origin: import
 ---
 
 # Email-First OSINT — 7-Track Parallel Investigation

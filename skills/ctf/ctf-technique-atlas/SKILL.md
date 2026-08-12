@@ -1,12 +1,31 @@
 ---
 name: ctf-technique-atlas
-description: Deep CTF technique atlas for mapping challenge clues to concrete attack patterns, tools, scripts, and next probes across Web, Crypto, Forensics, Reverse, Pwn, Misc/Jail, OSINT, Mobile, Cloud, Blockchain, Hardware/RF/ICS, Game/Protocol, and AI/ML. Use when the user asks to strengthen CTF solving ability, research all CTF techniques, classify an unknown CTF challenge, or choose the next attack path.
+description: Deep CTF technique atlas for mapping challenge clues to concrete attack
+  patterns, tools, scripts, and next probes across Web, Crypto, Forensics, Reverse,
+  Pwn, Misc/Jail, OSINT, Mobile, Cloud, Blockchain, Hardware/RF/ICS, Game/Protocol,
+  and AI/ML. Use when the user asks to strengthen CTF solving ability, research all
+  CTF techniques, classify an unknown CTF challenge, or choose the next attack path.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [ctf, technique-atlas, training, triage, exploitation, writeups]
-    related_skills: [ctf-general, ctf-web-exploitation, ctf-cryptography, ctf-forensics, ctf-reverse-engineering, ctf-pwn-binary-exploitation, ctf-kernel-exploitation, ctf-misc]
+    tags:
+    - ctf
+    - technique-atlas
+    - training
+    - triage
+    - exploitation
+    - writeups
+    related_skills:
+    - ctf-general
+    - ctf-web-exploitation
+    - ctf-cryptography
+    - ctf-forensics
+    - ctf-reverse-engineering
+    - ctf-pwn-binary-exploitation
+    - ctf-kernel-exploitation
+    - ctf-misc
+    origin: import
 ---
 
 # CTF Technique Atlas

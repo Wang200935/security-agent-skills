@@ -1,35 +1,39 @@
 ---
 name: smart-card-driver-debug
 category: hardware
-description: Debug and configure smart card readers for synchronous memory cards (SLE4442/4428, AT88SC, etc.) on Windows. Covers driver binding, vendor CT-API usage, Microsoft CCID limitations, and 32-bit DLL interop.
+description: Debug and configure smart card readers for synchronous memory cards (SLE4442/4428,
+  AT88SC, etc.) on Windows. Covers driver binding, vendor CT-API usage, Microsoft
+  CCID limitations, and 32-bit DLL interop.
 triggers:
-  - "SLE4442"
-  - "SLE4428"
-  - "synchronous card"
-  - "memory card"
-  - "smart card reader driver Windows"
-  - "VID_"
-  - "PID_"
-  - "CTAlc001"
-  - "Alcor"
-  - "AU9540"
-  - "AK9543"
-  - "PC/SC synchronous failure"
-  - "Pincop"
-  - "品可"
-  - "ICU02"
-  - "PSC"
-  - "error counter"
-  - "SLE4442 PSC"
-  - "SLE4442 attack"
-  - "SLE4442 crack"
-  - "SLE4442 clone"
-  - "SLE4442 security"
-  - "synchronous card attack"
-  - "冷氣卡"
-  - "校園卡"
-  - "Secure Boot smart card"
-  - "wudfusbcciddriver"
+- SLE4442
+- SLE4428
+- synchronous card
+- memory card
+- smart card reader driver Windows
+- VID_
+- PID_
+- CTAlc001
+- Alcor
+- AU9540
+- AK9543
+- PC/SC synchronous failure
+- Pincop
+- 品可
+- ICU02
+- PSC
+- error counter
+- SLE4442 PSC
+- SLE4442 attack
+- SLE4442 crack
+- SLE4442 clone
+- SLE4442 security
+- synchronous card attack
+- 冷氣卡
+- 校園卡
+- Secure Boot smart card
+- wudfusbcciddriver
+version: 1.0.0
+license: MIT
 ---
 
 # Smart Card Reader Driver Debugging (Windows)

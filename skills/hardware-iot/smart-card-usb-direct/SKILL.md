@@ -1,12 +1,25 @@
 ---
 name: smart-card-usb-direct
-description: >
-  Bypass PC/SC/CCID middleware and communicate directly with USB smart card readers
-  via vendor DLLs (Windows) or libusb/WinUSB (cross-platform). Covers Alcor AU9540/AK9543,
-  DCULC, SpringCard, and similar Chinese OEM readers for synchronous memory cards
-  (SLE4442, SLE4428, AT24Cxx, AT88SCxxx).
+description: 'Bypass PC/SC/CCID middleware and communicate directly with USB smart
+  card readers via vendor DLLs (Windows) or libusb/WinUSB (cross-platform). Covers
+  Alcor AU9540/AK9543, DCULC, SpringCard, and similar Chinese OEM readers for synchronous
+  memory cards (SLE4442, SLE4428, AT24Cxx, AT88SCxxx).
+
+  '
 version: 1.0.0
-tags: [smart-card, usb, synchronous-card, vendor-dll, pcsclite-bypass, SLE4442, AL9543]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - smart-card
+    - usb
+    - synchronous-card
+    - vendor-dll
+    - pcsclite-bypass
+    - SLE4442
+    - AL9543
+    related_skills: []
+    origin: import
 ---
 
 # Smart Card USB Direct Access

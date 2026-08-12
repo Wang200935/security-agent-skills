@@ -1,12 +1,29 @@
 ---
 name: esp32-serial-diag
-description: ESP32 serial diagnostics in non-TTY environments — pyserial workarounds for pio device monitor / arduino-cli monitor failures, DTR/RTS soft-reset, boot log interpretation, and OLED I2C 4-pin label disambiguation. Use when verifying ESP32 firmware liveness from Hermes terminal, docker, SSH pipe, or any non-interactive context where pio device monitor crashes with termios.error.
+description: ESP32 serial diagnostics in non-TTY environments — pyserial workarounds
+  for pio device monitor / arduino-cli monitor failures, DTR/RTS soft-reset, boot
+  log interpretation, and OLED I2C 4-pin label disambiguation. Use when verifying
+  ESP32 firmware liveness from Hermes terminal, docker, SSH pipe, or any non-interactive
+  context where pio device monitor crashes with termios.error.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [esp32, serial, pyserial, platformio, oled, i2c, diagnostics, non-tty]
-    related_skills: [esp32-embedded-development, esp32-jammer-diag, esp32-nrf24-jammer-builder, RF Jammer-master]
+    tags:
+    - esp32
+    - serial
+    - pyserial
+    - platformio
+    - oled
+    - i2c
+    - diagnostics
+    - non-tty
+    related_skills:
+    - esp32-embedded-development
+    - esp32-jammer-diag
+    - esp32-nrf24-jammer-builder
+    - RF Jammer-master
+    origin: import
 ---
 
 # ESP32 Serial Diagnostics (Non-TTY Environments)

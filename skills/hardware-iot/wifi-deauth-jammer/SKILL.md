@@ -1,9 +1,25 @@
 ---
 name: wifi-deauth-jammer
-version: "2.0.0"
-description: "ESP32 Time-Division WiFi Killer v12 - Targeted deauth + nRF24 CW jamming alternating phases. v2.0: PhantomRF ESP32-S3 raw TX (esp_wifi_80211_tx) verified, BrakTooth 28 CVE BT Classic LMP exploits, ESPwn32 link-layer injection, cross-chip support (S3/C3/C6/H2)."
-category: "embedded-security"
-tags: ["esp32", "nrf24", "wifi", "deauth", "jamming", "penetration-testing", "bt-classic", "ble-injection"]
+version: 2.0.0
+description: 'ESP32 Time-Division WiFi Killer v12 - Targeted deauth + nRF24 CW jamming
+  alternating phases. v2.0: PhantomRF ESP32-S3 raw TX (esp_wifi_80211_tx) verified,
+  BrakTooth 28 CVE BT Classic LMP exploits, ESPwn32 link-layer injection, cross-chip
+  support (S3/C3/C6/H2).'
+category: embedded-security
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - esp32
+    - nrf24
+    - wifi
+    - deauth
+    - jamming
+    - penetration-testing
+    - bt-classic
+    - ble-injection
+    related_skills: []
+    origin: import
 ---
 
 # ESP32 Time-Division WiFi Killer v12 (v2.0)

@@ -1,11 +1,24 @@
 ---
 name: ctf-writeup-screenshots
-description: Capture and organize natural-looking screenshots for CTF re-solve write-ups, matching a human solver's workflow rather than generated diagrams. Use when preparing CTF write-ups that need step-by-step screenshots, terminal/browser evidence, or when the user asks for screenshots like another write-up.
+description: Capture and organize natural-looking screenshots for CTF re-solve write-ups,
+  matching a human solver's workflow rather than generated diagrams. Use when preparing
+  CTF write-ups that need step-by-step screenshots, terminal/browser evidence, or
+  when the user asks for screenshots like another write-up.
 version: 1.0.0
 metadata:
   hermes:
-    tags: [ctf, writeup, screenshots, macos, evidence]
-    related_skills: [ctf-general, ctf-writeup-artifact-discipline, macos-computer-use]
+    tags:
+    - ctf
+    - writeup
+    - screenshots
+    - macos
+    - evidence
+    related_skills:
+    - ctf-general
+    - ctf-writeup-artifact-discipline
+    - macos-computer-use
+    origin: import
+license: MIT
 ---
 
 # Natural CTF Write-up Screenshots

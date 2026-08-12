@@ -1,8 +1,22 @@
 ---
-version: "1.0"
-description: "Bit-bang SPI driver for nRF24L01+ on ESP32 with verified writes, ShockBurst mode, and auto-repair for high-resistance breadboard connections. Solves SPI signal integrity issues on Dupont-wired nRF24 modules where hardware SPI fails due to nanosecond edge ringing."
+version: '1.0'
+description: Bit-bang SPI driver for nRF24L01+ on ESP32 with verified writes, ShockBurst
+  mode, and auto-repair for high-resistance breadboard connections. Solves SPI signal
+  integrity issues on Dupont-wired nRF24 modules where hardware SPI fails due to nanosecond
+  edge ringing.
 name: nrf24-bitbang-spi
-tags: ["nrf24", "esp32", "bit-bang", "spi", "shockburst", "wireless-jamming"]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - nrf24
+    - esp32
+    - bit-bang
+    - spi
+    - shockburst
+    - wireless-jamming
+    related_skills: []
+    origin: import
 ---
 
 # nRF24L01+ Bit-Bang SPI Driver with Verified Writes & Auto-Repair

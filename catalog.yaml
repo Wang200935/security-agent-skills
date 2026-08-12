@@ -42,23 +42,9 @@ skills:
     (prompt injection, model poisoning), supply chain attacks, blockchain/smart contract
     exploitation, CI/CD pipeline attacks, and se
   version: 1.0.0
-  tags:
-  - LLM-security
-  - AI-attacks
-  - supply-chain
-  - blockchain
-  - smart-contract
-  - CI-CD-security
-  - serverless
-  - prompt-injection
-  - model-poisoning
-  related_skills:
-  - security-orchestrator
-  - web-app-pentest
-  - api-security-testing
-  - zero-day-hunting
-  - pentest-workflow
-  skill_md_bytes: 13602
+  tags: []
+  related_skills: []
+  skill_md_bytes: 13718
   reference_count: 1
   script_count: 0
 - id: offensive-toolkit
@@ -67,10 +53,10 @@ skills:
   description: Use hackingtool — a 21-category, 173-tool offensive security and pentesting
     suite installed on this Mac via local venv. Use when the user asks to search for
     tools, browse categories, install/run a spe
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5802
+  skill_md_bytes: 5838
   reference_count: 0
   script_count: 0
 - id: security-and-hardening
@@ -79,10 +65,10 @@ skills:
   description: Hardens code against vulnerabilities. Use when handling user input,
     authentication, data storage, or external integrations. Use when building any
     feature that accepts untrusted data, manages user sess
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 18878
+  skill_md_bytes: 18910
   reference_count: 0
   script_count: 0
 - id: security-audit
@@ -94,7 +80,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11738
+  skill_md_bytes: 11806
   reference_count: 2
   script_count: 0
 - id: security-code-review
@@ -105,7 +91,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3729
+  skill_md_bytes: 3791
   reference_count: 0
   script_count: 0
 - id: ctf-jail-escape
@@ -117,7 +103,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3067
+  skill_md_bytes: 3127
   reference_count: 9
   script_count: 0
 - id: ctf-kernel-exploitation
@@ -128,7 +114,7 @@ skills:
   version: 1.1.0
   tags: []
   related_skills: []
-  skill_md_bytes: 21587
+  skill_md_bytes: 21651
   reference_count: 8
   script_count: 0
 - id: ctf-misc-toolkit
@@ -140,7 +126,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11155
+  skill_md_bytes: 11243
   reference_count: 9
   script_count: 1
 - id: ctf-orchestrator
@@ -152,7 +138,7 @@ skills:
   version: 1.1.0
   tags: []
   related_skills: []
-  skill_md_bytes: 58979
+  skill_md_bytes: 59062
   reference_count: 14
   script_count: 1
 - id: ctf-playbook
@@ -162,23 +148,9 @@ skills:
     Engineering, PWN/Binary Exploitation, Forensics, Steganography, OSINT, and Misc
     categories. Covers methodology, tools, common vulnera
   version: 1.0.0
-  tags:
-  - CTF
-  - capture-the-flag
-  - crypto
-  - reversing
-  - pwn
-  - binary-exploitation
-  - forensics
-  - steganography
-  - OSINT
-  - web-exploitation
-  related_skills:
-  - web-app-pentest
-  - client-auth-bypass
-  - security-orchestrator
-  - network-pentest
-  skill_md_bytes: 96001
+  tags: []
+  related_skills: []
+  skill_md_bytes: 96117
   reference_count: 4
   script_count: 0
 - id: ctf-technique-atlas
@@ -190,7 +162,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5760
+  skill_md_bytes: 5855
   reference_count: 5
   script_count: 1
 - id: ctf-training-loop
@@ -198,10 +170,10 @@ skills:
   domain: ctf
   description: Practical CTF training workflow for systematically learning challenge
     categories through real solving, writeups, and skill updates.
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2624
+  skill_md_bytes: 2654
   reference_count: 0
   script_count: 0
 - id: ctf-web-exploitation
@@ -213,7 +185,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 24829
+  skill_md_bytes: 24922
   reference_count: 27
   script_count: 1
 - id: ctf-writeup-discipline
@@ -225,7 +197,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 8576
+  skill_md_bytes: 8649
   reference_count: 0
   script_count: 0
 - id: ctf-writeup-screenshots
@@ -237,7 +209,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5846
+  skill_md_bytes: 5922
   reference_count: 0
   script_count: 0
 - id: binary-exploitation
@@ -249,7 +221,7 @@ skills:
   version: 1.1.0
   tags: []
   related_skills: []
-  skill_md_bytes: 42067
+  skill_md_bytes: 42145
   reference_count: 19
   script_count: 6
 - id: crypto-attack-patterns
@@ -261,7 +233,7 @@ skills:
   version: 1.2.0
   tags: []
   related_skills: []
-  skill_md_bytes: 43123
+  skill_md_bytes: 43216
   reference_count: 26
   script_count: 5
 - id: crypto-ctf-attacks
@@ -273,7 +245,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3929
+  skill_md_bytes: 3989
   reference_count: 9
   script_count: 0
 - id: crypto-toolkit
@@ -284,7 +256,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 6796
+  skill_md_bytes: 6856
   reference_count: 6
   script_count: 0
 - id: cryptography-fundamentals
@@ -296,7 +268,7 @@ skills:
   version: 1.5.0
   tags: []
   related_skills: []
-  skill_md_bytes: 10923
+  skill_md_bytes: 11000
   reference_count: 12
   script_count: 11
 - id: encoding-realignment
@@ -308,7 +280,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 7785
+  skill_md_bytes: 7855
   reference_count: 0
   script_count: 0
 - id: exploit-development
@@ -318,24 +290,9 @@ skills:
     stack overflow, heap exploitation, ROP, format string, shellcode, egg hunting,
     ASLR/DEP bypass, type confusion, and modern browser/k
   version: 1.0.0
-  tags:
-  - exploit-dev
-  - shellcode
-  - ROP
-  - heap-exploitation
-  - pwntools
-  - buffer-overflow
-  - ASLR-bypass
-  - DEP-bypass
-  - browser-exploit
-  related_skills:
-  - security-orchestrator
-  - zero-day-hunting
-  - reverse-engineering
-  - pentest-workflow
-  - kernel-exploitation
-  - ctf-playbook
-  skill_md_bytes: 18682
+  tags: []
+  related_skills: []
+  skill_md_bytes: 18802
   reference_count: 3
   script_count: 0
 - id: exploit-poc-builder
@@ -346,7 +303,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2369
+  skill_md_bytes: 2422
   reference_count: 3
   script_count: 0
 - id: kernel-exploitation
@@ -356,22 +313,9 @@ skills:
     attacks, KASLR bypass, ret2usr, modprobe_path, DirtyCow-like race conditions)
     and Windows kernel (token stealing, NULL deref es
   version: 1.0.0
-  tags:
-  - kernel
-  - exploit
-  - Linux-kernel
-  - Windows-kernel
-  - KASLR
-  - privilege-escalation
-  - syzkaller
-  - PatchGuard
-  related_skills:
-  - security-orchestrator
-  - exploit-development
-  - zero-day-hunting
-  - reverse-engineering
-  - pentest-workflow
-  skill_md_bytes: 14119
+  tags: []
+  related_skills: []
+  skill_md_bytes: 14231
   reference_count: 2
   script_count: 0
 - id: zero-day-hunting
@@ -381,25 +325,9 @@ skills:
     mapping through fuzzing, crash triage, root cause analysis, and PoC development
     to CVE submission. Covers AFL++, libFuzzer, sy
   version: 1.0.0
-  tags:
-  - zero-day
-  - vulnerability-research
-  - fuzzing
-  - crash-analysis
-  - exploit-dev
-  - CVE
-  - AFL
-  - syzkaller
-  - ASAN
-  related_skills:
-  - security-orchestrator
-  - pentest-workflow
-  - reverse-engineering
-  - exploit-development
-  - binary-exploitation
-  - ctf-playbook
-  - hardware-iot-hacking
-  skill_md_bytes: 21866
+  tags: []
+  related_skills: []
+  skill_md_bytes: 21990
   reference_count: 2
   script_count: 0
 - id: bluetooth-jammer-sweep
@@ -409,15 +337,9 @@ skills:
     using nRF24L01+ with ShockBurst. Overcomes AFH by sweeping all 79 channels continuously
     at ~350µs/hop, preventing adaptive frequen
   version: '1.0'
-  tags:
-  - bluetooth-classic
-  - nrf24
-  - afh
-  - frequency-hopping
-  - jammer
-  - shockburst
+  tags: []
   related_skills: []
-  skill_md_bytes: 5138
+  skill_md_bytes: 5236
   reference_count: 0
   script_count: 0
 - id: esp32-serial-diag
@@ -429,7 +351,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11769
+  skill_md_bytes: 11854
   reference_count: 1
   script_count: 1
 - id: flipper-zero-backup
@@ -439,14 +361,9 @@ skills:
     and official firmware. Fully automated via qFlipper CLI + serial + file copy.
     Restore path included.
   version: 1.0.0
-  tags:
-  - flipper
-  - backup
-  - firmware
-  - qflipper
-  - hardware
+  tags: []
   related_skills: []
-  skill_md_bytes: 25816
+  skill_md_bytes: 25923
   reference_count: 5
   script_count: 2
 - id: flipper-zero-firmware
@@ -456,16 +373,9 @@ skills:
     custom forks (Momentum, Unleashed, Xtreme), or community Chinese-localized builds.
     Covers device-variant matching, .tgz extraction,
   version: 1.0.0
-  tags:
-  - flipper
-  - firmware
-  - flash
-  - dfu
-  - momentum
-  - unleashed
-  - qflipper
+  tags: []
   related_skills: []
-  skill_md_bytes: 23851
+  skill_md_bytes: 23970
   reference_count: 3
   script_count: 3
 - id: hardware-iot-hacking
@@ -475,24 +385,9 @@ skills:
     extraction from flash chips, firmware reverse engineering, binary analysis, radio
     attacks (SDR, BLE, Zigbee), side-channel anal
   version: 1.0.0
-  tags:
-  - hardware
-  - iot
-  - firmware
-  - UART
-  - JTAG
-  - SPI
-  - SDR
-  - side-channel
-  - flash-dump
-  - embedded
-  related_skills:
-  - security-orchestrator
-  - reverse-engineering
-  - network-pentest
-  - pentest-workflow
-  - zero-day-hunting
-  skill_md_bytes: 14543
+  tags: []
+  related_skills: []
+  skill_md_bytes: 14663
   reference_count: 1
   script_count: 0
 - id: nrf24-bitbang-spi
@@ -502,15 +397,9 @@ skills:
     mode, and auto-repair for high-resistance breadboard connections. Solves SPI signal
     integrity issues on Dupont-wired nRF24 m
   version: '1.0'
-  tags:
-  - nrf24
-  - esp32
-  - bit-bang
-  - spi
-  - shockburst
-  - wireless-jamming
+  tags: []
   related_skills: []
-  skill_md_bytes: 12266
+  skill_md_bytes: 12366
   reference_count: 0
   script_count: 0
 - id: rf-jammer-firmware-port
@@ -522,7 +411,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 19739
+  skill_md_bytes: 19805
   reference_count: 0
   script_count: 0
 - id: rf-multi-protocol-jammer
@@ -532,18 +421,9 @@ skills:
     (cifertech/rf-jammer). Covers ESP32 + 3×nRF24L01+PA+LNA on shared SPI bus with
     SoftNRF bit-bang driver, 8 jamming modes (Wi
   version: '1.0'
-  tags:
-  - rf-jammer
-  - nrf24
-  - esp32
-  - multi-protocol
-  - jammer
-  - constcarrier
-  - bluetooth-classic
-  - wifi-jamming
-  - ble-jamming
+  tags: []
   related_skills: []
-  skill_md_bytes: 13753
+  skill_md_bytes: 13868
   reference_count: 2
   script_count: 0
 - id: smart-card-driver-debug
@@ -552,10 +432,10 @@ skills:
   description: Debug and configure smart card readers for synchronous memory cards
     (SLE4442/4428, AT88SC, etc.) on Windows. Covers driver binding, vendor CT-API
     usage, Microsoft CCID limitations, and 32-bit DLL inte
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 10986
+  skill_md_bytes: 10910
   reference_count: 5
   script_count: 1
 - id: smart-card-usb-direct
@@ -565,16 +445,9 @@ skills:
     card readers via vendor DLLs (Windows) or libusb/WinUSB (cross-platform). Covers
     Alcor AU9540/AK9543, DCULC, SpringCard, and simila
   version: 1.0.0
-  tags:
-  - smart-card
-  - usb
-  - synchronous-card
-  - vendor-dll
-  - pcsclite-bypass
-  - SLE4442
-  - AL9543
+  tags: []
   related_skills: []
-  skill_md_bytes: 12801
+  skill_md_bytes: 12916
   reference_count: 1
   script_count: 1
 - id: wifi-deauth-jammer
@@ -584,17 +457,9 @@ skills:
     alternating phases. v2.0: PhantomRF ESP32-S3 raw TX (esp_wifi_80211_tx) verified,
     BrakTooth 28 CVE BT Classic LMP exploits, ESP'
   version: 2.0.0
-  tags:
-  - esp32
-  - nrf24
-  - wifi
-  - deauth
-  - jamming
-  - penetration-testing
-  - bt-classic
-  - ble-injection
+  tags: []
   related_skills: []
-  skill_md_bytes: 3751
+  skill_md_bytes: 3855
   reference_count: 1
   script_count: 2
 - id: wifi-dualband-jammer
@@ -603,21 +468,10 @@ skills:
   description: ESP32 雙頻 (2.4GHz + 5GHz) WiFi 干擾器完整實作指南 — 架構：ESP32-C6 負責 5GHz beacon
     flood + ESP32-S3 + 雙 nRF24L01+ PA+LNA 負責 2.4GHz 三層干擾 (CW×2 + beacon)。含硬體接線、ESP-IDF
     韌體、同步協定、一鍵燒錄、除錯流程。
-  version: ''
-  tags:
-  - esp32
-  - esp32-c6
-  - esp32-s3
-  - nRF24L01
-  - wifi-jammer
-  - beacon-flood
-  - cw-jamming
-  - dual-band
-  - 2.4ghz
-  - 5ghz
-  - esp-idf
+  version: 1.0.0
+  tags: []
   related_skills: []
-  skill_md_bytes: 21620
+  skill_md_bytes: 21772
   reference_count: 0
   script_count: 0
 - id: advanced-pentest
@@ -627,22 +481,9 @@ skills:
     (AWS/Azure/GCP), container/Kubernetes escape, privilege escalation (Windows/Linux),
     lateral movement, persistence, C2 framewor
   version: 1.0.0
-  tags:
-  - pentest
-  - red-team
-  - AD
-  - cloud
-  - kubernetes
-  - privilege-escalation
-  - lateral-movement
-  - C2
-  - EDR-evasion
-  related_skills:
-  - web-app-pentest
-  - network-pentest
-  - security-orchestrator
-  - api-security-testing
-  skill_md_bytes: 72471
+  tags: []
+  related_skills: []
+  skill_md_bytes: 72583
   reference_count: 40
   script_count: 4
 - id: network-pentest
@@ -652,19 +493,9 @@ skills:
     grabbing, vulnerability assessment, network pivoting, and exploitation. Covers
     internal and external network pentesting methodo
   version: 1.0.0
-  tags:
-  - network
-  - pentest
-  - nmap
-  - portscan
-  - enumeration
-  - exploitation
-  - pivoting
-  - metasploit
-  related_skills:
-  - security-orchestrator
-  - web-app-pentest
-  skill_md_bytes: 29549
+  tags: []
+  related_skills: []
+  skill_md_bytes: 29649
   reference_count: 5
   script_count: 0
 - id: pentest-quick-checklist
@@ -676,7 +507,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4398
+  skill_md_bytes: 4456
   reference_count: 6
   script_count: 0
 - id: pentest-tool-reference
@@ -688,7 +519,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3357
+  skill_md_bytes: 3417
   reference_count: 20
   script_count: 0
 - id: pentest-tool-setup
@@ -697,10 +528,10 @@ skills:
   description: Guides the installation and troubleshooting of penetration testing
     tools, with a focus on Ruby-based tools and dependency management. Includes common
     pitfalls and workarounds for permission issues.
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3769
+  skill_md_bytes: 3801
   reference_count: 0
   script_count: 0
 - id: pentest-workflow
@@ -711,7 +542,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 11078
+  skill_md_bytes: 11131
   reference_count: 10
   script_count: 0
 - id: security-orchestrator
@@ -723,7 +554,7 @@ skills:
   version: 3.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5618
+  skill_md_bytes: 5603
   reference_count: 0
   script_count: 0
 - id: advanced-attack-chains
@@ -732,24 +563,9 @@ skills:
   description: 超頻作戰模式 — 近 10 年滲透技術深度研究知識庫。整合雲原生多層逃逸、全框架漏洞利用、底層協定畸形、身分認證暴力破解、CDN/WAF
     穿透術，以及 10 條獨創複合攻擊鏈和國家級假想敵入侵策略。涵蓋 2015-2025 年 CVE 演化、Payload 庫、繞過技巧。
   version: 1.0.0
-  tags:
-  - pentest
-  - red-team
-  - 0day
-  - cloud-escape
-  - kubernetes
-  - protocol-abuse
-  - iam-attack
-  - waf-bypass
-  - cache-poisoning
-  - composite-attack-chain
-  - zero-trust-bypass
-  related_skills:
-  - security-orchestrator
-  - pentest-workflow
-  - web-app-pentest
-  - network-pentest
-  skill_md_bytes: 29592
+  tags: []
+  related_skills: []
+  skill_md_bytes: 29712
   reference_count: 1
   script_count: 0
 - id: autonomous-pentest-scanner
@@ -759,28 +575,9 @@ skills:
     for autonomous security scans of authorized targets. Produces validated findings
     + working PoCs + compliance reports. Use when the us
   version: 1.0.0
-  tags:
-  - strix
-  - ai-pentesting
-  - red-teaming
-  - autonomous-agent
-  - pentest
-  - owasp
-  - sast
-  - dast
-  - source-aware
-  - whitebox
-  - blackbox
-  - ci-cd
-  related_skills:
-  - security-orchestrator
-  - advanced-attack-chains
-  - web-app-pentest
-  - api-security-testing
-  - pentest-workflow
-  - network-pentest
-  - security-audit
-  skill_md_bytes: 14005
+  tags: []
+  related_skills: []
+  skill_md_bytes: 14141
   reference_count: 6
   script_count: 0
 - id: intranet-pentest-advanced
@@ -792,7 +589,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4275
+  skill_md_bytes: 4335
   reference_count: 17
   script_count: 0
 - id: pentest-report-generator
@@ -803,7 +600,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4721
+  skill_md_bytes: 4774
   reference_count: 13
   script_count: 0
 - id: post-exploitation-ops
@@ -814,7 +611,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2256
+  skill_md_bytes: 2309
   reference_count: 3
   script_count: 0
 - id: professional-pentest-guide
@@ -823,22 +620,9 @@ skills:
   description: 職業級滲透測試完整體系 — 從偵察到零日漏洞挖掘的全流程精進指南。整合 PayloadsAllTheThings、HackTricks、OWASP、MITRE
     ATT&CK、PortSwigger Academy 完整知識，涵蓋工具熟練使用、漏洞發現與利用、零日研究方法論。當用戶需要執行完整滲透測試、學習漏洞利用、提升資安技能到職業等級時載入。
   version: 1.0.0
-  tags:
-  - pentest
-  - red-team
-  - exploit
-  - 0day
-  - vulnerability-research
-  - methodology
-  - professional
-  - mastery
-  related_skills:
-  - security-orchestrator
-  - pentest-workflow
-  - web-app-pentest
-  - network-pentest
-  - reverse-engineering
-  skill_md_bytes: 32401
+  tags: []
+  related_skills: []
+  skill_md_bytes: 32513
   reference_count: 10
   script_count: 0
 - id: chatgpt-web-relay
@@ -848,17 +632,9 @@ skills:
     automation. Uses persistent Chrome profile to maintain login state. Enables Hermes
     to use ChatGPT web features (GPT-5.5 Pro Exten
   version: 1.0.0
-  tags:
-  - playwright
-  - browser
-  - automation
-  - chatgpt
-  - relay
-  - web-ui
-  related_skills:
-  - browser-automation-security
-  - web-app-pentest
-  skill_md_bytes: 8239
+  tags: []
+  related_skills: []
+  skill_md_bytes: 8331
   reference_count: 0
   script_count: 1
 - id: darkweb-research
@@ -867,10 +643,10 @@ skills:
   description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .onion 站。已在本機建立硬化 torrc + darksearch.py
     SQLite 索引 (1385 站、924 存活) + Keepass 加密 DB + exiftool 證據隔離。**資安研究專用** - references/security-onion-map.md
     記錄已鑑定高價值資安站 (snapWONDE
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9081
+  skill_md_bytes: 9117
   reference_count: 4
   script_count: 6
 - id: email-osint-investigation
@@ -880,17 +656,9 @@ skills:
     seed is an email address, not a username or domain. Uses holehe (service registration),
     username-scanner (username sweep), HudsonRo
   version: 1.0.0
-  tags:
-  - OSINT
-  - email-intelligence
-  - breach
-  - infostealer
-  - identity-resolution
-  - SOCMINT
-  related_skills:
-  - username-scanner
-  - spiderfoot-osint-automation
-  skill_md_bytes: 11951
+  tags: []
+  related_skills: []
+  skill_md_bytes: 12043
   reference_count: 2
   script_count: 0
 - id: local-network-recon
@@ -899,10 +667,10 @@ skills:
   description: Comprehensive local network device discovery, identification, and interaction.
     Use when the user asks to find/scan/list/control devices on their local network.
     Covers multi-pass scanning, port-based i
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 15969
+  skill_md_bytes: 16003
   reference_count: 5
   script_count: 0
 - id: network-device-recon
@@ -910,10 +678,10 @@ skills:
   domain: recon
   description: Recon local network devices — scan ports, identify NAS/router type,
     list SMB/AFP/NFS shares, mount file shares.
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 14087
+  skill_md_bytes: 14117
   reference_count: 4
   script_count: 0
 - id: osint-framework
@@ -923,24 +691,9 @@ skills:
     recon, email/phone intelligence, geolocation, image analysis, technical recon,
     financial/crypto OSINT, dark web, government re
   version: 1.0.0
-  tags:
-  - OSINT
-  - intelligence
-  - reconnaissance
-  - SOCMINT
-  - geolocation
-  - dorking
-  - Shodan
-  - darkweb
-  - crypto
-  - blockchain
-  related_skills:
-  - web-app-pentest
-  - ctf-playbook
-  - security-orchestrator
-  - username-scanner
-  - spiderfoot-osint-automation
-  skill_md_bytes: 51485
+  tags: []
+  related_skills: []
+  skill_md_bytes: 51605
   reference_count: 12
   script_count: 4
 - id: osint-recon-model
@@ -951,7 +704,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9342
+  skill_md_bytes: 9400
   reference_count: 10
   script_count: 0
 - id: parallel-intel-gathering
@@ -961,18 +714,9 @@ skills:
     + Playwright browser scraping + API data collection simultaneously for maximum
     information yield. Use for OSINT, target research,
   version: 1.0.0
-  tags:
-  - OSINT
-  - reconnaissance
-  - intelligence
-  - information-gathering
-  - parallel-search
-  - web-scraping
-  - dorking
-  related_skills:
-  - browser-automation-security
-  - security-orchestrator
-  skill_md_bytes: 9638
+  tags: []
+  related_skills: []
+  skill_md_bytes: 9734
   reference_count: 0
   script_count: 0
 - id: reconnaissance-ops
@@ -983,7 +727,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9491
+  skill_md_bytes: 9544
   reference_count: 5
   script_count: 0
 - id: spiderfoot-automation
@@ -993,22 +737,9 @@ skills:
     seed → full digital footprint map. 231 modules (Shodan, HIBP, VirusTotal, breach
     DBs, SOCMINT, DNS, dark web, etc.) running in para
   version: 1.0.0
-  tags:
-  - OSINT
-  - spiderfoot
-  - intelligence
-  - reconnaissance
-  - email
-  - domain
-  - SOCMINT
-  - breach
-  - HIBP
-  - Shodan
-  - darkweb
-  related_skills:
-  - security-orchestrator
-  - username-scanner
-  skill_md_bytes: 18504
+  tags: []
+  related_skills: []
+  skill_md_bytes: 18616
   reference_count: 2
   script_count: 1
 - id: username-scanner
@@ -1018,18 +749,9 @@ skills:
     Find accounts across social media, forums, dev platforms, and more. Supports Tor/proxy,
     advanced scan levels, JSON/CSV/HTML/M
   version: 1.0.0
-  tags:
-  - OSINT
-  - username-scanner
-  - social-media
-  - reconnaissance
-  - account-discovery
-  - username-scanner
-  related_skills:
-  - security-orchestrator
-  - pentest-workflow
-  - browser-automation-security
-  skill_md_bytes: 17164
+  tags: []
+  related_skills: []
+  skill_md_bytes: 17260
   reference_count: 1
   script_count: 1
 - id: vulnerability-discovery
@@ -1040,7 +762,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2992
+  skill_md_bytes: 3045
   reference_count: 3
   script_count: 0
 - id: ctf-reverse-engineering
@@ -1052,7 +774,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 19350
+  skill_md_bytes: 19433
   reference_count: 8
   script_count: 4
 - id: digital-forensics
@@ -1062,16 +784,9 @@ skills:
     image/audio steganography, PCAP/memory/disk forensics, archive cracking, document
     analysis, and common flag-hunting patterns. U
   version: 2.1.0
-  tags:
-  - ctf
-  - forensics
-  - steganography
-  - pcap
-  - memory
-  - disk
-  - reversing
+  tags: []
   related_skills: []
-  skill_md_bytes: 33338
+  skill_md_bytes: 33453
   reference_count: 11
   script_count: 1
 - id: reverse-engineering
@@ -1081,22 +796,9 @@ skills:
     angr symbolic execution, deobfuscation, unpacking, anti-debug bypass, Go/Rust/.NET/Java/Android/iOS/WebAssembly
     reversing, malw
   version: 1.0.0
-  tags:
-  - reverse-engineering
-  - ghidra
-  - angr
-  - ida
-  - radare2
-  - malware
-  - deobfuscation
-  - binary-analysis
-  - firmware
-  - mobile
-  related_skills:
-  - ctf-playbook
-  - security-orchestrator
-  - network-pentest
-  skill_md_bytes: 35896
+  tags: []
+  related_skills: []
+  skill_md_bytes: 36008
   reference_count: 9
   script_count: 0
 - id: android-pentest
@@ -1107,7 +809,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4008
+  skill_md_bytes: 4066
   reference_count: 13
   script_count: 0
 - id: api-security-testing
@@ -1117,20 +819,9 @@ skills:
     testing. Covers authentication bypass, authorization flaws, rate limiting, injection,
     mass assignment, BOLA/IDOR, and API-specific
   version: 1.0.0
-  tags:
-  - API
-  - security
-  - REST
-  - GraphQL
-  - WebSocket
-  - pentest
-  - JWT
-  - OAuth
-  related_skills:
-  - web-app-pentest
-  - browser-automation-security
-  - security-orchestrator
-  skill_md_bytes: 61052
+  tags: []
+  related_skills: []
+  skill_md_bytes: 61156
   reference_count: 1
   script_count: 0
 - id: browser-automation-security
@@ -1140,19 +831,9 @@ skills:
     and penetration testing. Full browser automation with Chromium for JS-rendered
     pages, login automation, form interaction, scree
   version: 1.61.0
-  tags:
-  - playwright
-  - browser
-  - automation
-  - headless
-  - scraping
-  - pentest
-  - chromium
-  related_skills:
-  - web-app-pentest
-  - client-auth-bypass
-  - security-orchestrator
-  skill_md_bytes: 44806
+  tags: []
+  related_skills: []
+  skill_md_bytes: 44906
   reference_count: 2
   script_count: 2
 - id: client-auth-bypass
@@ -1161,10 +842,10 @@ skills:
   description: Reverse and bypass client-side JavaScript authentication — packed/obfuscated
     JS analysis, encoding algorithm reversal, batch password recovery, and pentest
     report writing.
-  version: ''
+  version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 16782
+  skill_md_bytes: 16814
   reference_count: 11
   script_count: 0
 - id: client-reverse-engineering
@@ -1176,7 +857,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4811
+  skill_md_bytes: 4871
   reference_count: 23
   script_count: 0
 - id: ctf-web-attacks
@@ -1188,7 +869,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 10358
+  skill_md_bytes: 10418
   reference_count: 12
   script_count: 0
 - id: ctf-web-pwn-methodology
@@ -1197,21 +878,10 @@ skills:
   description: CTF pwn/web challenge solving methodology - systematic approach to
     binary exploitation, format string vulnerabilities, heap overflow, tcache poisoning,
     XSS, and CSP bypass
-  version: ''
-  tags:
-  - ctf
-  - pwn
-  - web
-  - binary-exploitation
-  - format-string
-  - heap
-  - tcache-poisoning
-  - xss
-  - csp-bypass
-  - gdb
-  - exploit-development
+  version: 1.0.0
+  tags: []
   related_skills: []
-  skill_md_bytes: 5844
+  skill_md_bytes: 5996
   reference_count: 4
   script_count: 0
 - id: framework-vulnerability-research
@@ -1223,7 +893,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5933
+  skill_md_bytes: 5996
   reference_count: 3
   script_count: 0
 - id: sql-server-exploitation
@@ -1232,18 +902,10 @@ skills:
   description: Escalate SQL injection on Microsoft SQL Server backends to OS command
     execution via xp_cmdshell, stacked queries, and database defacement. Covers sysadmin
     privilege checks, ViewState MAC analysis, WAF
-  version: ''
-  tags:
-  - pentest
-  - sqli
-  - sql-server
-  - xp-cmdshell
-  - stacked-queries
-  - defacement
-  - aspnet
-  - viewstate
+  version: 1.0.0
+  tags: []
   related_skills: []
-  skill_md_bytes: 16579
+  skill_md_bytes: 16718
   reference_count: 3
   script_count: 1
 - id: waf-bypass-techniques
@@ -1254,7 +916,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 4251
+  skill_md_bytes: 4304
   reference_count: 3
   script_count: 0
 - id: web-app-assessment
@@ -1265,7 +927,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5079
+  skill_md_bytes: 5138
   reference_count: 8
   script_count: 0
 - id: web-app-pentest
@@ -1275,24 +937,9 @@ skills:
     XSS, CSRF, SSRF, SSTI, LFI/RFI, IDOR, command injection, file upload, deserialization,
     JWT attacks, and more. Covers methodology, t
   version: 1.0.0
-  tags:
-  - web-security
-  - pentest
-  - OWASP
-  - SQLi
-  - XSS
-  - CSRF
-  - SSRF
-  - SSTI
-  - LFI
-  - RCE
-  - exploit
-  related_skills:
-  - client-auth-bypass
-  - browser-automation-security
-  - api-security-testing
-  - ctf-playbook
-  skill_md_bytes: 88466
+  tags: []
+  related_skills: []
+  skill_md_bytes: 88586
   reference_count: 90
   script_count: 1
 - id: web-security-advanced
@@ -1304,6 +951,6 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 12376
+  skill_md_bytes: 12436
   reference_count: 50
   script_count: 0

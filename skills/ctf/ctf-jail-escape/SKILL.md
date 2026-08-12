@@ -1,14 +1,28 @@
 ---
 name: ctf-jail-escape
-description: "CTF杂项知识库 — Python Jail逃逸、Bash Jail逃逸、编码链识别与解码、QR/音频/图像隐写、游戏VM逆向、CTFd API导航、Linux提权。Use when performing authorized penetration testing, CTF, or security assessment tasks related to ctf-misc."
+description: CTF杂项知识库 — Python Jail逃逸、Bash Jail逃逸、编码链识别与解码、QR/音频/图像隐写、游戏VM逆向、CTFd
+  API导航、Linux提权。Use when performing authorized penetration testing, CTF, or security
+  assessment tasks related to ctf-misc.
 version: 1.0.0
 license: MIT
-platforms: [linux, macos, windows]
+platforms:
+- linux
+- macos
+- windows
 metadata:
   hermes:
-    tags: [ red-teaming, penetration-testing, security, imported]
+    tags:
+    - red-teaming
+    - penetration-testing
+    - security
+    - imported
     homepage: https://
-    related_skills: [-pentest-flow, -rapid-checklist, pentest-tools, ctf-web]
+    related_skills:
+    - -pentest-flow
+    - -rapid-checklist
+    - pentest-tools
+    - ctf-web
+    origin: import
   upstream:
     repo: https://
     source_path: /skills/specialized/ctf-misc/SKILL.md

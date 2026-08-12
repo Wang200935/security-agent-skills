@@ -1,8 +1,28 @@
 ---
-version: "1.0"
-description: "Build OLED-menu multi-protocol 2.4GHz jammer based on RF Jammer architecture (cifertech/rf-jammer). Covers ESP32 + 3×nRF24L01+PA+LNA on shared SPI bus with SoftNRF bit-bang driver, 8 jamming modes (WiFi/BLE/BT/VideoTX/RC/Zigbee/nRF24/USB Wireless). ALL modes use startConstCarrier (CONT_WAVE + PLL_LOCK + W_TX_PAYLOAD_NOACK + REUSE_TX_PL) for continuous carrier+payload flooding — pure ShockBurst fires one packet and stops (empirically verified). Fast segmented sweep for Bluetooth Classic defeats AFH. Verified writes with auto-repair for high-R breadboard connections."
+version: '1.0'
+description: Build OLED-menu multi-protocol 2.4GHz jammer based on RF Jammer architecture
+  (cifertech/rf-jammer). Covers ESP32 + 3×nRF24L01+PA+LNA on shared SPI bus with SoftNRF
+  bit-bang driver, 8 jamming modes (WiFi/BLE/BT/VideoTX/RC/Zigbee/nRF24/USB Wireless).
+  ALL modes use startConstCarrier (CONT_WAVE + PLL_LOCK + W_TX_PAYLOAD_NOACK + REUSE_TX_PL)
+  for continuous carrier+payload flooding — pure ShockBurst fires one packet and stops
+  (empirically verified). Fast segmented sweep for Bluetooth Classic defeats AFH.
+  Verified writes with auto-repair for high-R breadboard connections.
 name: rf-multi-protocol-jammer
-tags: ["rf-jammer", "nrf24", "esp32", "multi-protocol", "jammer", "constcarrier", "bluetooth-classic", "wifi-jamming", "ble-jamming"]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - rf-jammer
+    - nrf24
+    - esp32
+    - multi-protocol
+    - jammer
+    - constcarrier
+    - bluetooth-classic
+    - wifi-jamming
+    - ble-jamming
+    related_skills: []
+    origin: import
 ---
 
 # RF Jammer Style Multi-Protocol 2.4GHz Jammer

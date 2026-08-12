@@ -1,8 +1,27 @@
 ---
 name: wifi-dualband-jammer
-description: ESP32 雙頻 (2.4GHz + 5GHz) WiFi 干擾器完整實作指南 — 架構：ESP32-C6 負責 5GHz beacon flood + ESP32-S3 + 雙 nRF24L01+ PA+LNA 負責 2.4GHz 三層干擾 (CW×2 + beacon)。含硬體接線、ESP-IDF 韌體、同步協定、一鍵燒錄、除錯流程。
+description: ESP32 雙頻 (2.4GHz + 5GHz) WiFi 干擾器完整實作指南 — 架構：ESP32-C6 負責 5GHz beacon
+  flood + ESP32-S3 + 雙 nRF24L01+ PA+LNA 負責 2.4GHz 三層干擾 (CW×2 + beacon)。含硬體接線、ESP-IDF
+  韌體、同步協定、一鍵燒錄、除錯流程。
 category: hardware
-tags: [esp32, esp32-c6, esp32-s3, nRF24L01, wifi-jammer, beacon-flood, cw-jamming, dual-band, 2.4ghz, 5ghz, esp-idf]
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - esp32
+    - esp32-c6
+    - esp32-s3
+    - nRF24L01
+    - wifi-jammer
+    - beacon-flood
+    - cw-jamming
+    - dual-band
+    - 2.4ghz
+    - 5ghz
+    - esp-idf
+    related_skills: []
+    origin: import
 ---
 
 # ESP32 雙頻 WiFi 干擾器完整實作指南

@@ -57,7 +57,7 @@ def generate_inventory(lang="en"):
         emoji, display = DOMAIN_CONFIG.get(domain_key, ("", domain_key))
         count = domain_counts.get(domain_key, len(by_domain[domain_key]))
         skill_list = " · ".join(f"`{s}`" for s in by_domain[domain_key])
-        lines.append(f"### {emoji} {display} ({count} {LANG_CONFIG[lang][1]})")
+        lines.append(f"### {emoji} {display} ({count} {LANG_CONFIG[lang][2]})")
         lines.append(skill_list)
         lines.append("")
     

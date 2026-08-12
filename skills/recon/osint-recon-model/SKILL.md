@@ -1,14 +1,27 @@
 ---
 name: osint-recon-model
-description: "OSINT 开源情报收集知识库 — 四维信息收集模型（服务器→网站→域名→人员），维度四（人员信息）条件触发。Use when performing authorized penetration testing, CTF, or security assessment tasks related to osint-recon."
+description: OSINT 开源情报收集知识库 — 四维信息收集模型（服务器→网站→域名→人员），维度四（人员信息）条件触发。Use when performing
+  authorized penetration testing, CTF, or security assessment tasks related to osint-recon.
 version: 1.0.0
 license: MIT
-platforms: [linux, macos, windows]
+platforms:
+- linux
+- macos
+- windows
 metadata:
   hermes:
-    tags: [ red-teaming, penetration-testing, security, imported]
+    tags:
+    - red-teaming
+    - penetration-testing
+    - security
+    - imported
     homepage: https://
-    related_skills: [-pentest-flow, -rapid-checklist, pentest-tools, ctf-web]
+    related_skills:
+    - -pentest-flow
+    - -rapid-checklist
+    - pentest-tools
+    - ctf-web
+    origin: import
   upstream:
     repo: https://
     source_path: /skills/specialized/osint-recon/SKILL.md

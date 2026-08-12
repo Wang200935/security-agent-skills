@@ -1,8 +1,21 @@
 ---
-version: "1.0"
-description: "Fast segmented sweep technique for Bluetooth Classic (BR/EDR) jamming using nRF24L01+ with ShockBurst. Overcomes AFH by sweeping all 79 channels continuously at ~350µs/hop, preventing adaptive frequency hopping from avoiding jammed channels."
+version: '1.0'
+description: Fast segmented sweep technique for Bluetooth Classic (BR/EDR) jamming
+  using nRF24L01+ with ShockBurst. Overcomes AFH by sweeping all 79 channels continuously
+  at ~350µs/hop, preventing adaptive frequency hopping from avoiding jammed channels.
 name: bluetooth-jammer-sweep
-tags: ["bluetooth-classic", "nrf24", "afh", "frequency-hopping", "jammer", "shockburst"]
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - bluetooth-classic
+    - nrf24
+    - afh
+    - frequency-hopping
+    - jammer
+    - shockburst
+    related_skills: []
+    origin: import
 ---
 
 # Bluetooth Classic Segmented Sweep Jamming

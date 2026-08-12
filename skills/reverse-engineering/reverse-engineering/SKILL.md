@@ -5,21 +5,25 @@ description: Complete Reverse Engineering skill — Ghidra, IDA, radare2, Binary
   reversing, malware analysis, game hacking, and binary triage automation.
 version: 1.0.0
 category: red-teaming
-tags:
-- reverse-engineering
-- ghidra
-- angr
-- ida
-- radare2
-- malware
-- deobfuscation
-- binary-analysis
-- firmware
-- mobile
-related_skills:
-- ctf-playbook
-- security-orchestrator
-- network-pentest
+license: MIT
+metadata:
+  hermes:
+    tags:
+    - reverse-engineering
+    - ghidra
+    - angr
+    - ida
+    - radare2
+    - malware
+    - deobfuscation
+    - binary-analysis
+    - firmware
+    - mobile
+    related_skills:
+    - ctf-playbook
+    - security-orchestrator
+    - network-pentest
+    origin: import
 ---
 
 # Reverse Engineering — Complete Framework

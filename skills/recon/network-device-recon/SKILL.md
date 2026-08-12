@@ -1,6 +1,9 @@
 ---
 name: network-device-recon
-description: Recon local network devices — scan ports, identify NAS/router type, list SMB/AFP/NFS shares, mount file shares.
+description: Recon local network devices — scan ports, identify NAS/router type, list
+  SMB/AFP/NFS shares, mount file shares.
+version: 1.0.0
+license: MIT
 ---
 
 # Network Device Recon & NAS Connection

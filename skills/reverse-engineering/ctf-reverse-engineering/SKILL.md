@@ -1,12 +1,28 @@
 ---
 name: ctf-reverse-engineering
-description: Solve CTF Reverse Engineering challenges involving binaries, APKs, bytecode, firmware, obfuscated scripts, crackmes, license checks, and custom VMs. Use when a CTF challenge gives an executable, shared library, APK/JAR/class, wasm, firmware blob, or obfuscated program to analyze.
+description: Solve CTF Reverse Engineering challenges involving binaries, APKs, bytecode,
+  firmware, obfuscated scripts, crackmes, license checks, and custom VMs. Use when
+  a CTF challenge gives an executable, shared library, APK/JAR/class, wasm, firmware
+  blob, or obfuscated program to analyze.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [ctf, reverse-engineering, binary, crackme, ghidra, angr, apk, wasm]
-    related_skills: [ctf-general, hackingtool, python-debugpy, systematic-debugging]
+    tags:
+    - ctf
+    - reverse-engineering
+    - binary
+    - crackme
+    - ghidra
+    - angr
+    - apk
+    - wasm
+    related_skills:
+    - ctf-general
+    - hackingtool
+    - python-debugpy
+    - systematic-debugging
+    origin: import
 ---
 
 # CTF Reverse Engineering

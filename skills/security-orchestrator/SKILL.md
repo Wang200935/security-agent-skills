@@ -1,20 +1,24 @@
 ---
 name: security-orchestrator
-description: "Router for cross-domain security operations. Use when a task spans multiple security domains (e.g. full pentest workflow, multi-domain attack chain, CTF orchestration, parallel reconnaissance). For single-domain tasks, let native skill discovery handle routing instead."
+description: Router for cross-domain security operations. Use when a task spans multiple
+  security domains (e.g. full pentest workflow, multi-domain attack chain, CTF orchestration,
+  parallel reconnaissance). For single-domain tasks, let native skill discovery handle
+  routing instead.
 version: 3.0.0
 category: orchestrator
 metadata:
   role: orchestrator
   triggers:
-    - "full pentest workflow"
-    - "multi-domain attack chain"
-    - "CTF orchestration"
-    - "parallel reconnaissance"
-    - "cross-domain security task"
+  - full pentest workflow
+  - multi-domain attack chain
+  - CTF orchestration
+  - parallel reconnaissance
+  - cross-domain security task
   negative-triggers:
-    - "single bug class"
-    - "one-off payload"
-    - "specific tool usage"
+  - single bug class
+  - one-off payload
+  - specific tool usage
+license: MIT
 ---
 
 # Security Orchestrator — Cross-Domain Router

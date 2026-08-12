@@ -1,6 +1,11 @@
 ---
 name: local-network-recon
-description: Comprehensive local network device discovery, identification, and interaction. Use when the user asks to find/scan/list/control devices on their local network. Covers multi-pass scanning, port-based identification, printer/NAS/smart-home control patterns, and common pitfalls.
+description: Comprehensive local network device discovery, identification, and interaction.
+  Use when the user asks to find/scan/list/control devices on their local network.
+  Covers multi-pass scanning, port-based identification, printer/NAS/smart-home control
+  patterns, and common pitfalls.
+version: 1.0.0
+license: MIT
 ---
 
 # Local Network Reconnaissance & Device Control

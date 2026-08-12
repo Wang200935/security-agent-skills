@@ -1,13 +1,26 @@
 ---
 name: security-audit
-description: Security audit of a codebase — web apps, APIs, services, CLI tools, libraries, daemons, and more. Use when asked to find security bugs, do a security review, audit for vulnerabilities, or pen-test the code. Focuses on exploitable issues with real impact, not theoretical concerns or industry-standard behavior.
+description: Security audit of a codebase — web apps, APIs, services, CLI tools, libraries,
+  daemons, and more. Use when asked to find security bugs, do a security review, audit
+  for vulnerabilities, or pen-test the code. Focuses on exploitable issues with real
+  impact, not theoretical concerns or industry-standard behavior.
 version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags: [security, audit, penetration-testing, vulnerability-research, red-teaming]
+    tags:
+    - security
+    - audit
+    - penetration-testing
+    - vulnerability-research
+    - red-teaming
     homepage: https://github.com/cloudflare/security-audit-skill
-    related_skills: [cybersecurity, web-app-pentest, ctf-playbook, ai-mcp-security]
+    related_skills:
+    - cybersecurity
+    - web-app-pentest
+    - ctf-playbook
+    - ai-mcp-security
+    origin: import
 ---
 
 # Security Audit

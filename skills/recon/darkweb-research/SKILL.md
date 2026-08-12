@@ -7,6 +7,16 @@ description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .
   when 需要上暗網找資訊/做 OSINT/做資安研究/索引 onion 站/驗證 Tor 連線安全。
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - osint
+    - recon
+    - information-gathering
+    - darkweb
+    - research
+    related_skills: []
+    origin: import
 ---
 
 # 暗網研究環境 (本機 macOS)

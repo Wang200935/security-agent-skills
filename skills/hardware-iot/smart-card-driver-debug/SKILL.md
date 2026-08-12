@@ -34,6 +34,19 @@ triggers:
 - wudfusbcciddriver
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - hardware
+    - iot
+    - embedded
+    - firmware
+    - smart
+    - card
+    - driver
+    - debug
+    related_skills: []
+    origin: import
 ---
 
 # Smart Card Reader Driver Debugging (Windows)

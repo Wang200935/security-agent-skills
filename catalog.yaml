@@ -56,7 +56,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5838
+  skill_md_bytes: 6001
   reference_count: 0
   script_count: 0
 - id: security-and-hardening
@@ -68,7 +68,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 18910
+  skill_md_bytes: 19084
   reference_count: 0
   script_count: 0
 - id: security-audit
@@ -173,7 +173,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 2654
+  skill_md_bytes: 2796
   reference_count: 0
   script_count: 0
 - id: ctf-web-exploitation
@@ -363,7 +363,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 25923
+  skill_md_bytes: 25975
   reference_count: 5
   script_count: 2
 - id: flipper-zero-firmware
@@ -375,7 +375,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 23970
+  skill_md_bytes: 24020
   reference_count: 3
   script_count: 3
 - id: hardware-iot-hacking
@@ -435,7 +435,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 10910
+  skill_md_bytes: 11085
   reference_count: 5
   script_count: 1
 - id: smart-card-usb-direct
@@ -459,7 +459,7 @@ skills:
   version: 2.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3855
+  skill_md_bytes: 3939
   reference_count: 1
   script_count: 2
 - id: wifi-dualband-jammer
@@ -471,7 +471,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 21772
+  skill_md_bytes: 21855
   reference_count: 0
   script_count: 0
 - id: advanced-pentest
@@ -531,7 +531,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 3801
+  skill_md_bytes: 3945
   reference_count: 0
   script_count: 0
 - id: pentest-workflow
@@ -554,7 +554,7 @@ skills:
   version: 3.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 5603
+  skill_md_bytes: 5764
   reference_count: 0
   script_count: 0
 - id: advanced-attack-chains
@@ -646,7 +646,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 9117
+  skill_md_bytes: 9270
   reference_count: 4
   script_count: 6
 - id: email-osint-investigation
@@ -670,7 +670,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 16003
+  skill_md_bytes: 16153
   reference_count: 5
   script_count: 0
 - id: network-device-recon
@@ -681,7 +681,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 14117
+  skill_md_bytes: 14268
   reference_count: 4
   script_count: 0
 - id: osint-framework
@@ -845,7 +845,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 16814
+  skill_md_bytes: 17045
   reference_count: 11
   script_count: 0
 - id: client-reverse-engineering
@@ -905,7 +905,7 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 16718
+  skill_md_bytes: 16790
   reference_count: 3
   script_count: 1
 - id: waf-bypass-techniques

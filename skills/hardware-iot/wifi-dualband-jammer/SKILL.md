@@ -20,7 +20,10 @@ metadata:
     - 2.4ghz
     - 5ghz
     - esp-idf
-    related_skills: []
+    related_skills:
+    - wifi-deauth-jammer
+    - rf-multi-protocol-jammer
+    - rf-jammer-firmware-port
     origin: import
 ---
 

@@ -18,6 +18,15 @@ metadata:
   - single bug class
   - one-off payload
   - specific tool usage
+  hermes:
+    tags:
+    - security
+    - orchestrator
+    related_skills:
+    - ctf-orchestrator
+    - advanced-pentest
+    - osint-framework
+    origin: import
 license: MIT
 ---
 

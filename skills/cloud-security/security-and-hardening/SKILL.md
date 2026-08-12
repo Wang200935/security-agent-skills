@@ -5,6 +5,19 @@ description: Hardens code against vulnerabilities. Use when handling user input,
   untrusted data, manages user sessions, or interacts with third-party services.
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - cloud
+    - aws
+    - azure
+    - gcp
+    - kubernetes
+    - security
+    - and
+    - hardening
+    related_skills: []
+    origin: import
 ---
 
 # Security and Hardening

@@ -7,6 +7,18 @@ description: Use hackingtool — a 21-category, 173-tool offensive security and 
   search, tags), and how to invoke individual tool install/run flows non-interactively.
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - cloud
+    - aws
+    - azure
+    - gcp
+    - kubernetes
+    - offensive
+    - toolkit
+    related_skills: []
+    origin: import
 ---
 
 # HackingTool — Offensive Security Suite

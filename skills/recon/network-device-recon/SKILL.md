@@ -4,6 +4,16 @@ description: Recon local network devices — scan ports, identify NAS/router typ
   SMB/AFP/NFS shares, mount file shares.
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - osint
+    - recon
+    - information-gathering
+    - network
+    - device
+    related_skills: []
+    origin: import
 ---
 
 # Network Device Recon & NAS Connection

@@ -17,7 +17,9 @@ metadata:
     - momentum
     - unleashed
     - qflipper
-    related_skills: []
+    related_skills:
+    - flipper-zero-backup
+    - hardware-iot-hacking
     origin: import
 ---
 

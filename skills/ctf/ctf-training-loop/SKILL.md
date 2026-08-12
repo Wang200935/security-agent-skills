@@ -4,6 +4,16 @@ description: Practical CTF training workflow for systematically learning challen
   categories through real solving, writeups, and skill updates.
 version: 1.0.0
 license: MIT
+metadata:
+  hermes:
+    tags:
+    - ctf
+    - competition
+    - challenge
+    - training
+    - loop
+    related_skills: []
+    origin: import
 ---
 
 # CTF Training Loop

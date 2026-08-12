@@ -14,7 +14,9 @@ metadata:
     - firmware
     - qflipper
     - hardware
-    related_skills: []
+    related_skills:
+    - flipper-zero-firmware
+    - hardware-iot-hacking
     origin: import
 ---
 

@@ -18,7 +18,10 @@ metadata:
     - penetration-testing
     - bt-classic
     - ble-injection
-    related_skills: []
+    related_skills:
+    - wifi-dualband-jammer
+    - rf-multi-protocol-jammer
+    - bluetooth-jammer-sweep
     origin: import
 ---
 

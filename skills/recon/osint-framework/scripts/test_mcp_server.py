@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 # Path to OpenOSINT installation
-OPENOSINT_PATH = Path("/Users/wang/.hermes/hermes-agent/venv/bin/python")
+OPENOSINT_PATH = Path("${HERMES_PY:-python3}")
 MCP_SERVER = Path("/tmp/OpenOSINT/openosint/mcp_server.py")
 
 

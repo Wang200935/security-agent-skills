@@ -1,15 +1,21 @@
 ---
 name: username-scanner
-description: "AI-OSINT username scanner — scan 840+ platforms with ML-blended detection. Find accounts across social media, forums, dev platforms, and more. Supports Tor/proxy, advanced scan levels, JSON/CSV/HTML/MD export, Playwright fallback, and ML retraining."
+description: AI-OSINT username scanner — scan 840+ platforms with ML-blended detection.
+  Find accounts across social media, forums, dev platforms, and more. Supports Tor/proxy,
+  advanced scan levels, JSON/CSV/HTML/MD export, Playwright fallback, and ML retraining.
 version: 1.0.0
 category: red-teaming
-tags: [OSINT, username-scanner, social-media, reconnaissance, account-discovery, username-scanner]
+tags:
+- OSINT
+- username-scanner
+- social-media
+- reconnaissance
+- account-discovery
+- username-scanner
 related_skills:
-  - osint
-  - cybersecurity
-  - pentest
-  - parallel-intel
-  - playwright-browser
+- security-orchestrator
+- pentest-workflow
+- browser-automation-security
 ---
 
 # Username Scanner — AI-Powered OSINT Username Scanner

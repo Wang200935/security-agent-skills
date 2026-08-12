@@ -21,9 +21,9 @@ class OpenOSINTWrapper:
     """Wrapper for OpenOSINT CLI and MCP tools."""
 
     def __init__(self):
-        self.openosint_bin = Path("/Users/wang/.hermes/hermes-agent/venv/bin/openosint")
+        self.openosint_bin = Path("${OPENOSINT_BIN:-openosint}")
         self.mcp_server = Path("/tmp/OpenOSINT/openosint/mcp_server.py")
-        self.python_bin = Path("/Users/wang/.hermes/hermes-agent/venv/bin/python")
+        self.python_bin = Path("${HERMES_PY:-python3}")
 
     def run_cli(self, args: List[str], timeout: int = 120) -> Dict:
         """Run openosint CLI command."""

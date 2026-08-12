@@ -1,14 +1,26 @@
 ---
 name: spiderfoot-automation
-description: "SpiderFoot 4.0 OSINT automation — one email/domain/username/phone/IP seed → full digital footprint map. 231 modules (Shodan, HIBP, VirusTotal, breach DBs, SOCMINT, DNS, dark web, etc.) running in parallel. CLI scan + HX2 Web GUI + fallback playbook. Authorized OSINT/research use."
+description: SpiderFoot 4.0 OSINT automation — one email/domain/username/phone/IP
+  seed → full digital footprint map. 231 modules (Shodan, HIBP, VirusTotal, breach
+  DBs, SOCMINT, DNS, dark web, etc.) running in parallel. CLI scan + HX2 Web GUI +
+  fallback playbook. Authorized OSINT/research use.
 version: 1.0.0
 category: red-teaming
-tags: [OSINT, spiderfoot, intelligence, reconnaissance, email, domain, SOCMINT, breach, HIBP, Shodan, darkweb]
+tags:
+- OSINT
+- spiderfoot
+- intelligence
+- reconnaissance
+- email
+- domain
+- SOCMINT
+- breach
+- HIBP
+- Shodan
+- darkweb
 related_skills:
-  - osint
-  - parallel-intel
-  - cybersecurity
-  - username-scanner
+- security-orchestrator
+- username-scanner
 ---
 
 # SpiderFoot OSINT — One Seed → Full Digital Footprint

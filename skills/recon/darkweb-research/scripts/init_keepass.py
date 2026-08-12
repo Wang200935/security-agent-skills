@@ -17,7 +17,7 @@ from pathlib import Path
 
 from pykeepass import PyKeePass, create_database
 
-DB_PATH = Path("/Users/wang/Documents/darkweb-research/keepass/research.kdbx")
+DB_PATH = Path("${DARKWEB_HOME:-./darkweb-research}/keepass/research.kdbx")
 KEYCHAIN_NAME = "darkweb-research-kp-key"
 
 

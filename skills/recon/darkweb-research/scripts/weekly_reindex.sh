@@ -9,7 +9,7 @@
 #   4. 若有新站 → echo title + url 列表 (cron 會發通知); 都死了就靜默
 
 set -euo pipefail
-SHARED=/Users/wang/Documents/darkweb-research
+SHARED=${DARKWEB_HOME:-./darkweb-research}
 TOOLS=$SHARED/tools
 TOR_SOCKS=127.0.0.1:9050
 UA="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
@@ -35,7 +35,7 @@ grep -oE "https?://[a-z0-9]{16,56}\.onion" /tmp/ahmia-weekly.html | sort -u | \
 # 與 idx.db 比對 找新站
 python3 << 'PYEOF' > /tmp/new-urls.txt 2>/dev/null
 import sqlite3
-db = sqlite3.connect('/Users/wang/Documents/darkweb-research/scans/idx.db')
+db = sqlite3.connect('${DARKWEB_HOME:-./darkweb-research}/scans/idx.db')
 try:
     indexed = set(r[0] for r in db.execute('SELECT url FROM urls').fetchall())
 except sqlite3.OperationalError:
@@ -60,7 +60,7 @@ python3 onion_probe.py /tmp/new-urls.txt -o /tmp/new-probed.json \
 python3 << 'PYEOF'
 import json, sqlite3, datetime, re
 results = json.load(open('/tmp/new-probed.json'))
-db = sqlite3.connect('/Users/wang/Documents/darkweb-research/scans/idx.db')
+db = sqlite3.connect('${DARKWEB_HOME:-./darkweb-research}/scans/idx.db')
 db.execute("""CREATE TABLE IF NOT EXISTS urls(
     url TEXT PRIMARY KEY, title TEXT, http_code INT, size INT, elapsed REAL,
     probed_at TEXT, category TEXT, error TEXT)""")

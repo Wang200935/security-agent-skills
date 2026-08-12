@@ -18,7 +18,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-QUARANTINE = Path("/Users/wang/Documents/darkweb-research/evidence")
+QUARANTINE = Path("${DARKWEB_HOME:-./darkweb-research}/evidence")
 
 
 def exiftool_available():

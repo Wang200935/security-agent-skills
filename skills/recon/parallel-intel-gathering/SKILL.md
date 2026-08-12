@@ -1,13 +1,22 @@
 ---
 name: parallel-intel-gathering
-description: "Parallel intelligence gathering — run web_search + web_extract + arXiv + Playwright browser scraping + API data collection simultaneously for maximum information yield. Use for OSINT, target research, vulnerability intelligence, and competitive analysis."
+description: Parallel intelligence gathering — run web_search + web_extract + arXiv
+  + Playwright browser scraping + API data collection simultaneously for maximum information
+  yield. Use for OSINT, target research, vulnerability intelligence, and competitive
+  analysis.
 version: 1.0.0
 category: red-teaming
-tags: [OSINT, reconnaissance, intelligence, information-gathering, parallel-search, web-scraping, dorking]
+tags:
+- OSINT
+- reconnaissance
+- intelligence
+- information-gathering
+- parallel-search
+- web-scraping
+- dorking
 related_skills:
-  - playwright-browser
-  - arxiv
-  - cybersecurity
+- browser-automation-security
+- security-orchestrator
 ---
 
 # Parallel Intelligence Gathering

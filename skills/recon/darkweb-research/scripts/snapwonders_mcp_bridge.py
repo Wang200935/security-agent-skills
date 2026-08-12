@@ -20,7 +20,7 @@ snapwonders_mcp_bridge.py — stdio MCP bridge (Hermes → Tor → snapWONDERS .
   mcp_servers:
     snapwonders:
       command: "python3"
-      args: ["/Users/wang/Documents/darkweb-research/tools/snapwonders_mcp_bridge.py"]
+      args: ["${DARKWEB_HOME:-./darkweb-research}/tools/snapwonders_mcp_bridge.py"]
       timeout: 180
       connect_timeout: 60
 

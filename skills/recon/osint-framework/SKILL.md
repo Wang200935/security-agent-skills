@@ -1,16 +1,27 @@
 ---
 name: osint-framework
-description: "Complete OSINT (Open Source Intelligence) framework — SOCMINT, DNS/domain recon, email/phone intelligence, geolocation, image analysis, technical recon, financial/crypto OSINT, dark web, government records, and automated toolchains."
+description: Complete OSINT (Open Source Intelligence) framework — SOCMINT, DNS/domain
+  recon, email/phone intelligence, geolocation, image analysis, technical recon, financial/crypto
+  OSINT, dark web, government records, and automated toolchains.
 version: 1.0.0
 category: red-teaming
-tags: [OSINT, intelligence, reconnaissance, SOCMINT, geolocation, dorking, Shodan, darkweb, crypto, blockchain]
+tags:
+- OSINT
+- intelligence
+- reconnaissance
+- SOCMINT
+- geolocation
+- dorking
+- Shodan
+- darkweb
+- crypto
+- blockchain
 related_skills:
-  - parallel-intel
-  - web-app-pentest
-  - ctf-playbook
-  - cybersecurity
-  - username-scanner
-  - spiderfoot-osint
+- web-app-pentest
+- ctf-playbook
+- security-orchestrator
+- username-scanner
+- spiderfoot-osint-automation
 ---
 
 # OSINT — Complete Open Source Intelligence

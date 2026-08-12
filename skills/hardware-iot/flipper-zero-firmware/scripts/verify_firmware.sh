@@ -11,7 +11,7 @@
 set -euo pipefail
 
 PORT="${1:-/dev/cu.usbmodemflip_Ur1nicar1}"
-PY="${HERMES_PY:-/Users/wang/.hermes/hermes-agent/venv/bin/python}"
+PY="${HERMES_PY:-${HERMES_PY:-python3}}"
 
 if [ ! -x "$PY" ]; then
   PY="$(command -v python3)"

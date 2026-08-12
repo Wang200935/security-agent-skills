@@ -1,15 +1,27 @@
 ---
 name: hardware-iot-hacking
-description: "Hardware & IoT hacking — UART/JTAG/SPI/I2C hardware interfaces, firmware extraction from flash chips, firmware reverse engineering, binary analysis, radio attacks (SDR, BLE, Zigbee), side-channel analysis, and IoT device exploitation."
+description: Hardware & IoT hacking — UART/JTAG/SPI/I2C hardware interfaces, firmware
+  extraction from flash chips, firmware reverse engineering, binary analysis, radio
+  attacks (SDR, BLE, Zigbee), side-channel analysis, and IoT device exploitation.
 version: 1.0.0
 category: red-teaming
-tags: [hardware, iot, firmware, UART, JTAG, SPI, SDR, side-channel, flash-dump, embedded]
+tags:
+- hardware
+- iot
+- firmware
+- UART
+- JTAG
+- SPI
+- SDR
+- side-channel
+- flash-dump
+- embedded
 related_skills:
-  - cybersecurity
-  - reverse-engineering
-  - network-pentest
-  - pentest
-  - zero-day-hunting
+- security-orchestrator
+- reverse-engineering
+- network-pentest
+- pentest-workflow
+- zero-day-hunting
 ---
 
 # Hardware & IoT Hacking — Complete Methodology

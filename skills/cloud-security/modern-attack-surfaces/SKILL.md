@@ -1,15 +1,26 @@
 ---
 name: modern-attack-surfaces
-description: "Modern attack surfaces beyond traditional pentesting — LLM/AI security (prompt injection, model poisoning), supply chain attacks, blockchain/smart contract exploitation, CI/CD pipeline attacks, and serverless/edge computing vulnerabilities."
+description: Modern attack surfaces beyond traditional pentesting — LLM/AI security
+  (prompt injection, model poisoning), supply chain attacks, blockchain/smart contract
+  exploitation, CI/CD pipeline attacks, and serverless/edge computing vulnerabilities.
 version: 1.0.0
 category: red-teaming
-tags: [LLM-security, AI-attacks, supply-chain, blockchain, smart-contract, CI-CD-security, serverless, prompt-injection, model-poisoning]
+tags:
+- LLM-security
+- AI-attacks
+- supply-chain
+- blockchain
+- smart-contract
+- CI-CD-security
+- serverless
+- prompt-injection
+- model-poisoning
 related_skills:
-  - cybersecurity
-  - web-app-pentest
-  - api-security-testing
-  - zero-day-hunting
-  - pentest
+- security-orchestrator
+- web-app-pentest
+- api-security-testing
+- zero-day-hunting
+- pentest-workflow
 ---
 
 # Modern Attack Surfaces — 2025-2026

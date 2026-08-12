@@ -1,13 +1,25 @@
 ---
 name: reverse-engineering
-description: "Complete Reverse Engineering skill — Ghidra, IDA, radare2, Binary Ninja, angr symbolic execution, deobfuscation, unpacking, anti-debug bypass, Go/Rust/.NET/Java/Android/iOS/WebAssembly reversing, malware analysis, game hacking, and binary triage automation."
+description: Complete Reverse Engineering skill — Ghidra, IDA, radare2, Binary Ninja,
+  angr symbolic execution, deobfuscation, unpacking, anti-debug bypass, Go/Rust/.NET/Java/Android/iOS/WebAssembly
+  reversing, malware analysis, game hacking, and binary triage automation.
 version: 1.0.0
 category: red-teaming
-tags: [reverse-engineering, ghidra, angr, ida, radare2, malware, deobfuscation, binary-analysis, firmware, mobile]
+tags:
+- reverse-engineering
+- ghidra
+- angr
+- ida
+- radare2
+- malware
+- deobfuscation
+- binary-analysis
+- firmware
+- mobile
 related_skills:
-  - ctf-playbook
-  - cybersecurity
-  - network-pentest
+- ctf-playbook
+- security-orchestrator
+- network-pentest
 ---
 
 # Reverse Engineering — Complete Framework

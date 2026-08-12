@@ -1,9 +1,0 @@
-{
-  "additionalFiles": "../..",
-  "compiler.optimization_flags": "-Os",
-  "customBuildProperties": "",
-  "fqbn": "esp32:esp32:esp32",
-  "hardwareFolders": "/Users/wang/Library/Arduino15/packages/esp32/hardware/esp32/3.3.10,/Users/wang/Library/Arduino15/packages/esp32/hardware/esp32/3.3.10",
-  "otherLibrariesFolders": "/Users/wang/Documents/Arduino/libraries",
-  "sketchLocation": "/Users/wang/.hermes/profiles/trade/skills/embedded-security/esp32-wifi-killer-v12/firmware"
-}

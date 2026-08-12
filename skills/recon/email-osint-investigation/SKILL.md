@@ -1,14 +1,23 @@
 ---
 name: email-osint-investigation
-description: "Email-first OSINT investigation — 7-track parallel workflow when the seed is an email address, not a username or domain. Uses holehe (service registration), username-scanner (username sweep), HudsonRock (infostealer breach correlation — highest value), Gravatar, GitHub commit search, direct platform checks (Instagram GraphQL, Pinterest JSON-in-HTML), and multi-engine web search. Produces identity resolution with confidence tiers."
+description: Email-first OSINT investigation — 7-track parallel workflow when the
+  seed is an email address, not a username or domain. Uses holehe (service registration),
+  username-scanner (username sweep), HudsonRock (infostealer breach correlation —
+  highest value), Gravatar, GitHub commit search, direct platform checks (Instagram
+  GraphQL, Pinterest JSON-in-HTML), and multi-engine web search. Produces identity
+  resolution with confidence tiers.
 version: 1.0.0
 category: red-teaming
-tags: [OSINT, email-intelligence, breach, infostealer, identity-resolution, SOCMINT]
+tags:
+- OSINT
+- email-intelligence
+- breach
+- infostealer
+- identity-resolution
+- SOCMINT
 related_skills:
-  - osint
-  - username-scanner
-  - parallel-intel
-  - spiderfoot-osint
+- username-scanner
+- spiderfoot-osint-automation
 ---
 
 # Email-First OSINT — 7-Track Parallel Investigation

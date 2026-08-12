@@ -1,12 +1,21 @@
 ---
 name: chatgpt-web-relay
-description: "Hermes skill to relay prompts to ChatGPT web UI via Playwright browser automation. Uses persistent Chrome profile to maintain login state. Enables Hermes to use ChatGPT web features (GPT-5.5 Pro Extended, Deep Research, image gen, file upload) without API quota consumption."
+description: Hermes skill to relay prompts to ChatGPT web UI via Playwright browser
+  automation. Uses persistent Chrome profile to maintain login state. Enables Hermes
+  to use ChatGPT web features (GPT-5.5 Pro Extended, Deep Research, image gen, file
+  upload) without API quota consumption.
 version: 1.0.0
 category: red-teaming
-tags: [playwright, browser, automation, chatgpt, relay, web-ui]
+tags:
+- playwright
+- browser
+- automation
+- chatgpt
+- relay
+- web-ui
 related_skills:
-  - playwright-browser
-  - web-app-pentest
+- browser-automation-security
+- web-app-pentest
 ---
 
 # ChatGPT Web Relay for Hermes

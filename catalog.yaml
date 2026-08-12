@@ -53,12 +53,12 @@ skills:
   - prompt-injection
   - model-poisoning
   related_skills:
-  - cybersecurity
+  - security-orchestrator
   - web-app-pentest
   - api-security-testing
   - zero-day-hunting
-  - pentest
-  skill_md_bytes: 13585
+  - pentest-workflow
+  skill_md_bytes: 13602
   reference_count: 1
   script_count: 0
 - id: offensive-toolkit
@@ -175,11 +175,10 @@ skills:
   - web-exploitation
   related_skills:
   - web-app-pentest
-  - client-side-auth-bypass
-  - cybersecurity
+  - client-auth-bypass
+  - security-orchestrator
   - network-pentest
-  - parallel-intel
-  skill_md_bytes: 96014
+  skill_md_bytes: 96001
   reference_count: 4
   script_count: 0
 - id: ctf-technique-atlas
@@ -330,13 +329,13 @@ skills:
   - DEP-bypass
   - browser-exploit
   related_skills:
-  - cybersecurity
+  - security-orchestrator
   - zero-day-hunting
   - reverse-engineering
-  - pentest
+  - pentest-workflow
   - kernel-exploitation
   - ctf-playbook
-  skill_md_bytes: 18665
+  skill_md_bytes: 18682
   reference_count: 3
   script_count: 0
 - id: exploit-poc-builder
@@ -367,12 +366,12 @@ skills:
   - syzkaller
   - PatchGuard
   related_skills:
-  - cybersecurity
+  - security-orchestrator
   - exploit-development
   - zero-day-hunting
   - reverse-engineering
-  - pentest
-  skill_md_bytes: 14101
+  - pentest-workflow
+  skill_md_bytes: 14119
   reference_count: 2
   script_count: 0
 - id: zero-day-hunting
@@ -393,14 +392,14 @@ skills:
   - syzkaller
   - ASAN
   related_skills:
-  - cybersecurity
-  - pentest
+  - security-orchestrator
+  - pentest-workflow
   - reverse-engineering
   - exploit-development
-  - -exploitation
+  - binary-exploitation
   - ctf-playbook
   - hardware-iot-hacking
-  skill_md_bytes: 21845
+  skill_md_bytes: 21866
   reference_count: 2
   script_count: 0
 - id: bluetooth-jammer-sweep
@@ -488,12 +487,12 @@ skills:
   - flash-dump
   - embedded
   related_skills:
-  - cybersecurity
+  - security-orchestrator
   - reverse-engineering
   - network-pentest
-  - pentest
+  - pentest-workflow
   - zero-day-hunting
-  skill_md_bytes: 14525
+  skill_md_bytes: 14543
   reference_count: 1
   script_count: 0
 - id: nrf24-bitbang-spi
@@ -641,9 +640,9 @@ skills:
   related_skills:
   - web-app-pentest
   - network-pentest
-  - cybersecurity
+  - security-orchestrator
   - api-security-testing
-  skill_md_bytes: 72459
+  skill_md_bytes: 72471
   reference_count: 40
   script_count: 4
 - id: network-pentest
@@ -663,10 +662,9 @@ skills:
   - pivoting
   - metasploit
   related_skills:
-  - cybersecurity
-  - parallel-intel
+  - security-orchestrator
   - web-app-pentest
-  skill_md_bytes: 29555
+  skill_md_bytes: 29549
   reference_count: 5
   script_count: 0
 - id: pentest-quick-checklist
@@ -719,23 +717,13 @@ skills:
 - id: security-orchestrator
   path: skills/security-orchestrator/SKILL.md
   domain: orchestrator
-  description: 'Master router for all security operations — 79 skills across 9 domains:
-    recon/OSINT, web pentest, network pentest, exploit development, reverse engineering,
-    CTF, post-exploitation, cloud security, and'
-  version: 2.0.0
-  tags:
-  - security
-  - advanced-pentest
-  - red-team
-  - ctf
-  - osint-framework
-  - exploit
-  - reverse-engineering
-  - zero-day
-  - hardware
-  - cloud-security
+  description: Router for cross-domain security operations. Use when a task spans
+    multiple security domains (e.g. full pentest workflow, multi-domain attack chain,
+    CTF orchestration, parallel reconnaissance). For si
+  version: 3.0.0
+  tags: []
   related_skills: []
-  skill_md_bytes: 12050
+  skill_md_bytes: 5618
   reference_count: 0
   script_count: 0
 - id: advanced-attack-chains
@@ -757,13 +745,11 @@ skills:
   - composite-attack-chain
   - zero-trust-bypass
   related_skills:
-  - cybersecurity
-  - professional-pentest-mastery
-  - pentest
+  - security-orchestrator
+  - pentest-workflow
   - web-app-pentest
   - network-pentest
-  - godmode
-  skill_md_bytes: 29618
+  skill_md_bytes: 29592
   reference_count: 1
   script_count: 0
 - id: autonomous-pentest-scanner
@@ -787,15 +773,14 @@ skills:
   - blackbox
   - ci-cd
   related_skills:
-  - cybersecurity
-  - professional-pentest-mastery
-  - advanced attack chain-pentest
+  - security-orchestrator
+  - advanced-attack-chains
   - web-app-pentest
   - api-security-testing
-  - pentest
+  - pentest-workflow
   - network-pentest
   - security-audit
-  skill_md_bytes: 14021
+  skill_md_bytes: 14005
   reference_count: 6
   script_count: 0
 - id: intranet-pentest-advanced
@@ -848,15 +833,12 @@ skills:
   - professional
   - mastery
   related_skills:
-  - cybersecurity
-  - pentest
+  - security-orchestrator
+  - pentest-workflow
   - web-app-pentest
   - network-pentest
-  - ctf-general
   - reverse-engineering
-  - osint
-  - hackingtool
-  skill_md_bytes: 32429
+  skill_md_bytes: 32401
   reference_count: 10
   script_count: 0
 - id: chatgpt-web-relay
@@ -874,9 +856,9 @@ skills:
   - relay
   - web-ui
   related_skills:
-  - playwright-browser
+  - browser-automation-security
   - web-app-pentest
-  skill_md_bytes: 8225
+  skill_md_bytes: 8239
   reference_count: 0
   script_count: 1
 - id: darkweb-research
@@ -906,11 +888,9 @@ skills:
   - identity-resolution
   - SOCMINT
   related_skills:
-  - osint
   - username-scanner
-  - parallel-intel
-  - spiderfoot-osint
-  skill_md_bytes: 11960
+  - spiderfoot-osint-automation
+  skill_md_bytes: 11951
   reference_count: 2
   script_count: 0
 - id: local-network-recon
@@ -955,13 +935,12 @@ skills:
   - crypto
   - blockchain
   related_skills:
-  - parallel-intel
   - web-app-pentest
   - ctf-playbook
-  - cybersecurity
+  - security-orchestrator
   - username-scanner
-  - spiderfoot-osint
-  skill_md_bytes: 51484
+  - spiderfoot-osint-automation
+  skill_md_bytes: 51485
   reference_count: 12
   script_count: 4
 - id: osint-recon-model
@@ -991,10 +970,9 @@ skills:
   - web-scraping
   - dorking
   related_skills:
-  - playwright-browser
-  - arxiv
-  - cybersecurity
-  skill_md_bytes: 9625
+  - browser-automation-security
+  - security-orchestrator
+  skill_md_bytes: 9638
   reference_count: 0
   script_count: 0
 - id: reconnaissance-ops
@@ -1028,11 +1006,9 @@ skills:
   - Shodan
   - darkweb
   related_skills:
-  - osint
-  - parallel-intel
-  - cybersecurity
+  - security-orchestrator
   - username-scanner
-  skill_md_bytes: 18515
+  skill_md_bytes: 18504
   reference_count: 2
   script_count: 1
 - id: username-scanner
@@ -1050,12 +1026,10 @@ skills:
   - account-discovery
   - username-scanner
   related_skills:
-  - osint
-  - cybersecurity
-  - pentest
-  - parallel-intel
-  - playwright-browser
-  skill_md_bytes: 17166
+  - security-orchestrator
+  - pentest-workflow
+  - browser-automation-security
+  skill_md_bytes: 17164
   reference_count: 1
   script_count: 1
 - id: vulnerability-discovery
@@ -1120,9 +1094,9 @@ skills:
   - mobile
   related_skills:
   - ctf-playbook
-  - cybersecurity
+  - security-orchestrator
   - network-pentest
-  skill_md_bytes: 35883
+  skill_md_bytes: 35896
   reference_count: 9
   script_count: 0
 - id: android-pentest
@@ -1154,9 +1128,9 @@ skills:
   - OAuth
   related_skills:
   - web-app-pentest
-  - playwright-browser
-  - cybersecurity
-  skill_md_bytes: 61032
+  - browser-automation-security
+  - security-orchestrator
+  skill_md_bytes: 61052
   reference_count: 1
   script_count: 0
 - id: browser-automation-security
@@ -1176,10 +1150,9 @@ skills:
   - chromium
   related_skills:
   - web-app-pentest
-  - parallel-intel
-  - client-side-auth-bypass
-  - cybersecurity
-  skill_md_bytes: 44818
+  - client-auth-bypass
+  - security-orchestrator
+  skill_md_bytes: 44806
   reference_count: 2
   script_count: 2
 - id: client-auth-bypass
@@ -1315,12 +1288,11 @@ skills:
   - RCE
   - exploit
   related_skills:
-  - client-side-auth-bypass
-  - playwright-browser
+  - client-auth-bypass
+  - browser-automation-security
   - api-security-testing
-  - parallel-intel
   - ctf-playbook
-  skill_md_bytes: 88477
+  skill_md_bytes: 88466
   reference_count: 90
   script_count: 1
 - id: web-security-advanced

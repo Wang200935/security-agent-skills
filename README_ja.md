@@ -111,34 +111,41 @@ cd security-agent-skills
 <a id="skill-categories"></a>
 ## 技能カテゴリ
 
-### 🔍 偵察・OSINT (12 skills)
-`osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
+<!-- BEGIN INVENTORY -->
 
-### 🌐 Web ペネトレーションテスト (14 skills)
-`web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
+### 🔍 偵察 & OSINT (12 スキル)
+`chatgpt-web-relay` · `darkweb-research` · `email-osint-investigation` · `local-network-recon` · `network-device-recon` · `osint-framework` · `osint-recon-model` · `parallel-intel-gathering` · `reconnaissance-ops` · `spiderfoot-automation` · `username-scanner` · `vulnerability-discovery`
 
-### 🖥️ ネットワーク・ペネトレーションテスト (6 skills)
-`network-pentest` · `advanced-pentest` · `pentest-tool-setup` · `pentest-workflow` · `pentest-tool-reference` · `pentest-quick-checklist`
+### 🌐 Web ペンテスト (13 スキル)
+`android-pentest` · `api-security-testing` · `browser-automation-security` · `client-auth-bypass` · `client-reverse-engineering` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `waf-bypass-techniques` · `web-app-assessment` · `web-app-pentest` · `web-security-advanced`
 
-### 💥 エクスプロイト開発 (10 skills)
-`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `exploit-poc-builder` · `crypto-toolkit` · `crypto-ctf-attacks` · `cryptography-fundamentals` · `crypto-attack-patterns` · `encoding-realignment` · `binary-exploitation`
+### 🖥️ ネットワークペンテスト (6 スキル)
+`advanced-pentest` · `network-pentest` · `pentest-quick-checklist` · `pentest-tool-reference` · `pentest-tool-setup` · `pentest-workflow`
 
-### 🔧 リバースエンジニアリング (3 skills)
-`reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
+### 💥 エクスプロイト開発 (10 スキル)
+`binary-exploitation` · `crypto-attack-patterns` · `crypto-ctf-attacks` · `crypto-toolkit` · `cryptography-fundamentals` · `encoding-realignment` · `exploit-development` · `exploit-poc-builder` · `kernel-exploitation` · `zero-day-hunting`
 
-### 🚩 CTF (12 skills)
-`ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
+### 🔧 リバースエンジニアリング (3 スキル)
+`ctf-reverse-engineering` · `digital-forensics` · `reverse-engineering`
 
-### 🎯 ポストエクスプロイト (6 skills)
-`post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
+### 🚩 CTF (10 スキル)
+`ctf-jail-escape` · `ctf-kernel-exploitation` · `ctf-misc-toolkit` · `ctf-orchestrator` · `ctf-playbook` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots`
 
-### ☁️ クラウド・AI セキュリティ (7 skills)
-`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
+### 🎯 ポストエクスプロイト (6 スキル)
+`advanced-attack-chains` · `autonomous-pentest-scanner` · `intranet-pentest-advanced` · `pentest-report-generator` · `post-exploitation-ops` · `professional-pentest-guide`
 
-### 🔌 ハードウェア・IoT (12 skills)
-`hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
+### ☁️ クラウド & AI セキュリティ (6 スキル)
+`ai-mcp-security` · `modern-attack-surfaces` · `offensive-toolkit` · `security-and-hardening` · `security-audit` · `security-code-review`
 
----
+### 🔌 ハードウェア & IoT (12 スキル)
+`bluetooth-jammer-sweep` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `hardware-iot-hacking` · `nrf24-bitbang-spi` · `rf-jammer-firmware-port` · `rf-multi-protocol-jammer` · `smart-card-driver-debug` · `smart-card-usb-direct` · `wifi-deauth-jammer` · `wifi-dualband-jammer`
+
+### 🧭 オーケストレーター (1 スキル)
+`security-orchestrator`
+
+**合計：79 スキル**（+ 1 オーケストレーター）
+<!-- END INVENTORY -->
+
 
 <a id="usage"></a>
 ## 使い方

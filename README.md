@@ -6,7 +6,7 @@
 
 <h3 align="center">Cybersecurity Skills Router · 資安技能路由包</h3>
 
-<p align="center"><em>79 skills · 9 domains · 8 agents — built from real engagements, not theory.</em></p>
+<p align="center"><em>79 skills · 9 domains · 8 agent platforms — installable as Agent Skills</em></p>
 
 <p align="center">
   <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/badge/release-v2.0.0-blue" alt="release"></a>
@@ -108,10 +108,12 @@ cd security-agent-skills
 
 ## Skill Categories
 
+<!-- BEGIN INVENTORY -->
+
 ### 🔍 Recon & OSINT (12 skills)
 `osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
 
-### 🌐 Web Pentest (14 skills)
+### 🌐 Web Pentest (13 skills)
 `web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
 
 ### 🖥️ Network Pentest (6 skills)
@@ -123,17 +125,20 @@ cd security-agent-skills
 ### 🔧 Reverse Engineering (3 skills)
 `reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
 
-### 🚩 CTF (12 skills)
+### 🚩 CTF (10 skills)
 `ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
 
 ### 🎯 Post-Exploitation (6 skills)
 `post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
 
-### ☁️ Cloud & AI Security (7 skills)
-`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
+### ☁️ Cloud & AI Security (6 skills)
+`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-audit` · `offensive-toolkit`
 
 ### 🔌 Hardware & IoT (12 skills)
 `hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
+
+**Total: 79 skills** (+ 1 orchestrator)
+<!-- END INVENTORY -->
 
 ---
 
@@ -141,8 +146,12 @@ cd security-agent-skills
 
 ### The Orchestrator
 
-`security-orchestrator` is the master router. When a user asks about any security task, it:
-1. Analyzes intent
+`security-orchestrator` is an optional cross-domain router. It is **not** a
+mandatory first-load skill — for single-domain tasks, let native skill
+discovery handle routing. Use the orchestrator only when a task spans multiple
+security domains and needs coordination.
+
+1. Analyzes intent across domains
 2. Routes to the right specialized skill(s)
 3. Can trigger parallel skill loading for speed
 

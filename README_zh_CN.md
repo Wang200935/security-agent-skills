@@ -108,34 +108,41 @@ cd security-agent-skills
 
 ## 技能分类
 
-### 🔍 侦察 & OSINT（12 个技能）
-`osint-framework` · `username-scanner` · `email-osint-investigation` · `spiderfoot-automation` · `parallel-intel-gathering` · `osint-recon-model` · `reconnaissance-ops` · `darkweb-research` · `vulnerability-discovery` · `chatgpt-web-relay` · `local-network-recon` · `network-device-recon`
+<!-- BEGIN INVENTORY -->
 
-### 🌐 Web 渗透测试（14 个技能）
-`web-app-pentest` · `api-security-testing` · `client-auth-bypass` · `web-app-assessment` · `web-security-advanced` · `waf-bypass-techniques` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `client-reverse-engineering` · `android-pentest` · `browser-automation-security`
+### 🔍 侦察 & OSINT (12 个技能)
+`chatgpt-web-relay` · `darkweb-research` · `email-osint-investigation` · `local-network-recon` · `network-device-recon` · `osint-framework` · `osint-recon-model` · `parallel-intel-gathering` · `reconnaissance-ops` · `spiderfoot-automation` · `username-scanner` · `vulnerability-discovery`
 
-### 🖥️ 网络渗透测试（6 个技能）
-`network-pentest` · `advanced-pentest` · `pentest-tool-setup` · `pentest-workflow` · `pentest-tool-reference` · `pentest-quick-checklist`
+### 🌐 Web 渗透测试 (13 个技能)
+`android-pentest` · `api-security-testing` · `browser-automation-security` · `client-auth-bypass` · `client-reverse-engineering` · `ctf-web-attacks` · `ctf-web-pwn-methodology` · `framework-vulnerability-research` · `sql-server-exploitation` · `waf-bypass-techniques` · `web-app-assessment` · `web-app-pentest` · `web-security-advanced`
 
-### 💥 漏洞开发（10 个技能）
-`exploit-development` · `zero-day-hunting` · `kernel-exploitation` · `exploit-poc-builder` · `crypto-toolkit` · `crypto-ctf-attacks` · `cryptography-fundamentals` · `crypto-attack-patterns` · `encoding-realignment` · `binary-exploitation`
+### 🖥️ 网络渗透测试 (6 个技能)
+`advanced-pentest` · `network-pentest` · `pentest-quick-checklist` · `pentest-tool-reference` · `pentest-tool-setup` · `pentest-workflow`
 
-### 🔧 逆向工程（3 个技能）
-`reverse-engineering` · `ctf-reverse-engineering` · `digital-forensics`
+### 💥 漏洞开发 (10 个技能)
+`binary-exploitation` · `crypto-attack-patterns` · `crypto-ctf-attacks` · `crypto-toolkit` · `cryptography-fundamentals` · `encoding-realignment` · `exploit-development` · `exploit-poc-builder` · `kernel-exploitation` · `zero-day-hunting`
 
-### 🚩 CTF（12 个技能）
-`ctf-playbook` · `ctf-orchestrator` · `ctf-misc-toolkit` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots` · `ctf-kernel-exploitation` · `ctf-jail-escape`
+### 🔧 逆向工程 (3 个技能)
+`ctf-reverse-engineering` · `digital-forensics` · `reverse-engineering`
 
-### 🎯 后渗透（6 个技能）
-`post-exploitation-ops` · `intranet-pentest-advanced` · `advanced-attack-chains` · `professional-pentest-guide` · `autonomous-pentest-scanner` · `pentest-report-generator`
+### 🚩 CTF (10 个技能)
+`ctf-jail-escape` · `ctf-kernel-exploitation` · `ctf-misc-toolkit` · `ctf-orchestrator` · `ctf-playbook` · `ctf-technique-atlas` · `ctf-training-loop` · `ctf-web-exploitation` · `ctf-writeup-discipline` · `ctf-writeup-screenshots`
 
-### ☁️ 云 & AI 安全（7 个技能）
-`ai-ml-security-assessment` · `ai-mcp-security` · `modern-attack-surfaces` · `security-and-hardening` · `security-code-review` · `security-audit` · `offensive-toolkit`
+### 🎯 后渗透 (6 个技能)
+`advanced-attack-chains` · `autonomous-pentest-scanner` · `intranet-pentest-advanced` · `pentest-report-generator` · `post-exploitation-ops` · `professional-pentest-guide`
 
-### 🔌 硬件 & IoT（12 个技能）
-`hardware-iot-hacking` · `bluetooth-jammer-sweep` · `wifi-deauth-jammer` · `nrf24-bitbang-spi` · `rf-multi-protocol-jammer` · `wifi-dualband-jammer` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `rf-jammer-firmware-port` · `smart-card-driver-debug` · `smart-card-usb-direct`
+### ☁️ 云端 & AI 安全 (6 个技能)
+`ai-mcp-security` · `modern-attack-surfaces` · `offensive-toolkit` · `security-and-hardening` · `security-audit` · `security-code-review`
 
----
+### 🔌 硬件 & IoT (12 个技能)
+`bluetooth-jammer-sweep` · `esp32-serial-diag` · `flipper-zero-backup` · `flipper-zero-firmware` · `hardware-iot-hacking` · `nrf24-bitbang-spi` · `rf-jammer-firmware-port` · `rf-multi-protocol-jammer` · `smart-card-driver-debug` · `smart-card-usb-direct` · `wifi-deauth-jammer` · `wifi-dualband-jammer`
+
+### 🧭 路由器 (1 个技能)
+`security-orchestrator`
+
+**合计：79 个技能**（+ 1 路由器）
+<!-- END INVENTORY -->
+
 
 ## 使用说明
 

@@ -20,7 +20,16 @@ jobs:
         run: pip install pyyaml
       
       - name: Generate catalog
-        run: python scripts/generate_catalog.py
+        run: python3 scripts/generate_catalog.py
+      
+      - name: Check README inventory drift
+        run: |
+          python3 scripts/generate_readme.py all
+          if ! git diff --quiet README*.md; then
+            echo "::error::README inventory is stale. Run: python3 scripts/generate_readme.py all"
+            git diff README*.md
+            exit 1
+          fi
       
       - name: Validate skills
         run: python scripts/validate.py

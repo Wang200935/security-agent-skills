@@ -9,16 +9,16 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - cloud
-    - aws
-    - azure
-    - gcp
-    - kubernetes
-    - offensive
-    - toolkit
-    related_skills: []
     origin: import
+tags:
+- cloud
+- aws
+- azure
+- gcp
+- kubernetes
+- offensive
+- toolkit
+related_skills: []
 ---
 
 # HackingTool — Offensive Security Suite

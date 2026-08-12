@@ -9,18 +9,18 @@ category: hardware
 license: MIT
 metadata:
   hermes:
-    tags:
-    - flipper
-    - firmware
-    - flash
-    - dfu
-    - momentum
-    - unleashed
-    - qflipper
-    related_skills:
-    - flipper-zero-backup
-    - hardware-iot-hacking
     origin: import
+tags:
+- flipper
+- firmware
+- flash
+- dfu
+- momentum
+- unleashed
+- qflipper
+related_skills:
+- flipper-zero-backup
+- hardware-iot-hacking
 ---
 
 # Flipper Zero Firmware Modification

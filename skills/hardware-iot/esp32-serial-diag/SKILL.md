@@ -9,21 +9,18 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - esp32
-    - serial
-    - pyserial
-    - platformio
-    - oled
-    - i2c
-    - diagnostics
-    - non-tty
-    related_skills:
-    - esp32-embedded-development
-    - esp32-jammer-diag
-    - esp32-nrf24-jammer-builder
-    - RF Jammer-master
     origin: import
+tags:
+- esp32
+- serial
+- pyserial
+- platformio
+- oled
+- i2c
+- diagnostics
+- non-tty
+related_skills:
+- exploit-development
 ---
 
 # ESP32 Serial Diagnostics (Non-TTY Environments)

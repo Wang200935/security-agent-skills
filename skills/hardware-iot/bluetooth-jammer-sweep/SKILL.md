@@ -7,15 +7,15 @@ name: bluetooth-jammer-sweep
 license: MIT
 metadata:
   hermes:
-    tags:
-    - bluetooth-classic
-    - nrf24
-    - afh
-    - frequency-hopping
-    - jammer
-    - shockburst
-    related_skills: []
     origin: import
+tags:
+- bluetooth-classic
+- nrf24
+- afh
+- frequency-hopping
+- jammer
+- shockburst
+related_skills: []
 ---
 
 # Bluetooth Classic Segmented Sweep Jamming

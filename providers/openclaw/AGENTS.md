@@ -11,13 +11,12 @@ Skills are installed to `.agents/skills/`.
 ```
 .agents/skills/
 ├── security-orchestrator/SKILL.md
-├── recon/
-├── web-pentest/
+├── osint-framework/SKILL.md
+├── web-app-pentest/SKILL.md
 ├── ...
-└── hardware-iot/
 ```
 
 ## Load Order
-1. Load `security-orchestrator` for routing
+1. `security-orchestrator` is optional; load it only for cross-domain routing
 2. Route to specialized skills based on intent
-3. Parallel loading for broad tasks
+3. Parallel loading is available for broad tasks

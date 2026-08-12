@@ -10,22 +10,22 @@ platforms:
 - windows
 metadata:
   hermes:
-    tags:
-    - red-teaming
-    - penetration-testing
-    - security
-    - imported
     homepage: https://
-    related_skills:
-    - -pentest-flow
-    - -rapid-checklist
-    - pentest-tools
-    - ctf-web
     origin: import
   upstream:
     repo: https://
     source_path: /skills/specialized/osint-recon/SKILL.md
     original_name: osint-recon
+tags:
+- red-teaming
+- penetration-testing
+- security
+- imported
+related_skills:
+- pentest-workflow
+- pentest-quick-checklist
+- pentest-tool-setup
+- ctf-web-attacks
 ---
 
 # OSINT 开源情报收集知识库

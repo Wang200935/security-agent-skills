@@ -139,7 +139,7 @@ cd security-agent-skills
 ### 🧭 Orchestrator (1 个技能)
 `security-orchestrator`
 
-**Total: 79 skills** (+ 1 orchestrator)
+**Total: 79 skills**
 <!-- END INVENTORY -->
 
 
@@ -161,14 +161,14 @@ cd security-agent-skills
 "CTF challenge"            → ctf (ctf-orchestrator routes further)
 "enumerate network"        → network-pentest
 "OSINT on person/domain"   → recon (osint-framework)
-"bypass WAF"              → web-advanced-pentest (waf-bypass-techniques)
+"bypass WAF"              → web-app-pentest (waf-bypass-techniques)
 "privilege escalation"     → post-exploitation
 "audit this code"          → cloud-security (security-audit)
 "hack IoT device"          → hardware-iot
 "AI security / MCP"        → cloud-security (ai-mcp-security)
 "fuzz this target"         → exploit-dev (zero-day-hunting)
 "crack this hash"          → exploit-dev (cryptography-fundamentals)
-"advanced-pentest report"           → post-exploitation (pentest-report-generator)
+"pentest report"           → post-exploitation (pentest-report-generator)
 ```
 
 ### 并行执行
@@ -183,14 +183,14 @@ cd security-agent-skills
 ### 选择性安装
 
 ```bash
-# 只安装特定领域
-./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
+# 只安装特定代理
+./install.sh --agent claude-code
 
 # 只安装 CTF 技能
-./install.sh --agent claude-code --domains ctf
+./install.sh --agent claude-code
 
 # 只安装路由器
-./install.sh --agent claude-code --skills security-orchestrator
+./install.sh --agent claude-code --agent openclaw
 ```
 
 ### 技能结构

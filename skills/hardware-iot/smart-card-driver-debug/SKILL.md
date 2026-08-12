@@ -36,17 +36,17 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - hardware
-    - iot
-    - embedded
-    - firmware
-    - smart
-    - card
-    - driver
-    - debug
-    related_skills: []
     origin: import
+tags:
+- hardware
+- iot
+- embedded
+- firmware
+- smart
+- card
+- driver
+- debug
+related_skills: []
 ---
 
 # Smart Card Reader Driver Debugging (Windows)

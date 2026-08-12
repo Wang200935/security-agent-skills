@@ -88,10 +88,9 @@ def get_tags(skill_id, domain, description):
     return tags[:8]
 
 
-def get_related(skill_id):
+def get_related(skill_id, valid_ids):
     related = RELATED_MAP.get(skill_id, [])
-    # Validate that referenced skills exist
-    return [r for r in related if (SKILLS / "..").exists()]  # placeholder
+    return [r for r in related if r in valid_ids and r != skill_id]
 
 
 def main():
@@ -124,40 +123,35 @@ def main():
                 hermes = {}
             
             # Populate tags
-            current_tags = hermes.get('tags', [])
+            current_tags = fm.get('tags', [])
             if isinstance(current_tags, str):
                 current_tags = [current_tags]
             if not current_tags:
                 new_tags = get_tags(skill_id, domain, fm.get('description', ''))
-                hermes['tags'] = new_tags
+                fm['tags'] = new_tags
                 changed = True
             
             # Populate related_skills
-            current_related = hermes.get('related_skills', [])
+            current_related = fm.get('related_skills', [])
             if isinstance(current_related, str):
                 current_related = [current_related]
             if not current_related:
-                related = RELATED_MAP.get(skill_id, [])
-                # Validate
-                valid_related = [r for r in related if r in valid_ids and r != skill_id]
-                if valid_related:
-                    hermes['related_skills'] = valid_related
-                    changed = True
-                else:
-                    hermes['related_skills'] = []
-            
-            if changed:
-                hermes['origin'] = hermes.get('origin', 'import')
-                hermes['tags'] = hermes.get('tags', [])
-                hermes['related_skills'] = hermes.get('related_skills', [])
-                metadata['hermes'] = hermes
-                fm['metadata'] = metadata
-                
-                new_fm = yaml.dump(fm, allow_unicode=True, default_flow_style=False, sort_keys=False)
-                new_content = '---\n' + new_fm + '---\n' + body
-                path.write_text(new_content)
-                print(f"  updated: {skill_id} tags={len(hermes['tags'])} related={len(hermes['related_skills'])}")
-                updated += 1
+                related = get_related(skill_id, valid_ids)
+                fm['related_skills'] = related
+                changed = True
+
+            # Keep legacy metadata.hermes mirror for compatibility, but only if needed
+            metadata = fm.get('metadata', {})
+            if not isinstance(metadata, dict):
+                metadata = {}
+            hermes = metadata.get('hermes', {})
+            if not isinstance(hermes, dict):
+                hermes = {}
+            hermes['tags'] = fm.get('tags', [])
+            hermes['related_skills'] = fm.get('related_skills', [])
+            hermes['origin'] = hermes.get('origin', 'import')
+            metadata['hermes'] = hermes
+            fm['metadata'] = metadata
     
     print(f"\nUpdated: {updated}")
 

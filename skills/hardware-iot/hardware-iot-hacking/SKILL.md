@@ -8,24 +8,24 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - hardware
-    - iot
-    - firmware
-    - UART
-    - JTAG
-    - SPI
-    - SDR
-    - side-channel
-    - flash-dump
-    - embedded
-    related_skills:
-    - security-orchestrator
-    - reverse-engineering
-    - network-pentest
-    - pentest-workflow
-    - zero-day-hunting
     origin: import
+tags:
+- hardware
+- iot
+- firmware
+- UART
+- JTAG
+- SPI
+- SDR
+- side-channel
+- flash-dump
+- embedded
+related_skills:
+- security-orchestrator
+- reverse-engineering
+- network-pentest
+- pentest-workflow
+- zero-day-hunting
 ---
 
 # Hardware & IoT Hacking — Complete Methodology

@@ -9,17 +9,17 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - playwright
-    - browser
-    - automation
-    - chatgpt
-    - relay
-    - web-ui
-    related_skills:
-    - browser-automation-security
-    - web-app-pentest
     origin: import
+tags:
+- playwright
+- browser
+- automation
+- chatgpt
+- relay
+- web-ui
+related_skills:
+- browser-automation-security
+- web-app-pentest
 ---
 
 # ChatGPT Web Relay for Hermes

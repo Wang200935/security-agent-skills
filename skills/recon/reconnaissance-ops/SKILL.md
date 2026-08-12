@@ -10,21 +10,21 @@ platforms:
 - windows
 metadata:
   hermes:
-    tags:
-    - red-teaming
-    - penetration-testing
-    - security
-    - imported
     homepage: https://
-    related_skills:
-    - -pentest-flow
-    - -web-security-advanced
-    - -osint-recon
     origin: import
   upstream:
     repo: https://
     source_path: /skills/core/recon.md
     original_name: recon
+tags:
+- red-teaming
+- penetration-testing
+- security
+- imported
+related_skills:
+- pentest-workflow
+- web-security-advanced
+- osint-recon-model
 ---
 
 # 信息收集 Skill

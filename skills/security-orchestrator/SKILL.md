@@ -19,15 +19,15 @@ metadata:
   - one-off payload
   - specific tool usage
   hermes:
-    tags:
-    - security
-    - orchestrator
-    related_skills:
-    - ctf-orchestrator
-    - advanced-pentest
-    - osint-framework
     origin: import
 license: MIT
+tags:
+- security
+- orchestrator
+related_skills:
+- ctf-orchestrator
+- advanced-pentest
+- osint-framework
 ---
 
 # Security Orchestrator — Cross-Domain Router

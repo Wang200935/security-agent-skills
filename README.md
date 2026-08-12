@@ -139,7 +139,7 @@ cd security-agent-skills
 ### 🧭 Orchestrator (1 skills)
 `security-orchestrator`
 
-**Total: 79 skills** (+ 1 orchestrator)
+**Total: 79 skills**
 <!-- END INVENTORY -->
 
 ---
@@ -166,14 +166,14 @@ security domains and needs coordination.
 "CTF challenge"            → ctf (ctf-orchestrator routes further)
 "enumerate network"        → network-pentest
 "OSINT on person/domain"   → recon (osint-framework)
-"bypass WAF"              → web-advanced-pentest (waf-bypass-techniques)
+"bypass WAF"              → web-app-pentest (waf-bypass-techniques)
 "privilege escalation"     → post-exploitation
 "audit this code"          → cloud-security (security-audit)
 "hack IoT device"          → hardware-iot
 "AI security / MCP"        → cloud-security (ai-mcp-security)
 "fuzz this target"         → exploit-dev (zero-day-hunting)
 "crack this hash"          → exploit-dev (cryptography-fundamentals)
-"advanced-pentest report"           → post-exploitation (pentest-report-generator)
+"pentest report"           → post-exploitation (pentest-report-generator)
 ```
 
 ### Parallel Execution
@@ -188,14 +188,14 @@ For maximum speed, load multiple skills in parallel:
 ### Selective Install
 
 ```bash
-# Install only specific domains
-./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
+# Install specific agents
+./install.sh --agent claude-code
 
 # Install only CTF skills
-./install.sh --agent claude-code --domains ctf
+./install.sh --agent claude-code
 
 # Install only the orchestrator
-./install.sh --agent claude-code --skills security-orchestrator
+./install.sh --agent claude-code --agent openclaw
 ```
 
 ### Skill Structure

@@ -86,14 +86,21 @@ def check_skill_md(path, all_skill_names):
     elif len(str(desc)) > 500:
         warn(f"{path}: description very long ({len(str(desc))} chars)")
     
-    # 6. related_skills reference existing skills
+    # 6. related_skills reference existing skills (top-level schema)
     related = fm.get('related_skills', [])
     if not isinstance(related, list):
         related = [related] if related else []
     for r in related:
         r = str(r).strip()
         if r and r not in all_skill_names:
-            warn(f"{path}: related_skill '{r}' not found in skills tree (ghost reference)")
+            err(f"{path}: related_skill '{r}' not found in skills tree (ghost reference)")
+
+    # 6b. nested metadata.hermes is legacy and should not be the canonical source
+    meta = fm.get('metadata', {})
+    if isinstance(meta, dict) and isinstance(meta.get('hermes'), dict):
+        hermes = meta['hermes']
+        if hermes.get('tags') or hermes.get('related_skills'):
+            warn(f"{path}: metadata.hermes contains tags/related_skills; use top-level tags/related_skills for catalog")
     
     # 8. No hardcoded absolute home paths
     if '/Users/' in content or '/home/' in content:

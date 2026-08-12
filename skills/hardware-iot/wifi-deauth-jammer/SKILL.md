@@ -9,20 +9,20 @@ category: embedded-security
 license: MIT
 metadata:
   hermes:
-    tags:
-    - esp32
-    - nrf24
-    - wifi
-    - deauth
-    - jamming
-    - penetration-testing
-    - bt-classic
-    - ble-injection
-    related_skills:
-    - wifi-dualband-jammer
-    - rf-multi-protocol-jammer
-    - bluetooth-jammer-sweep
     origin: import
+tags:
+- esp32
+- nrf24
+- wifi
+- deauth
+- jamming
+- penetration-testing
+- bt-classic
+- ble-injection
+related_skills:
+- wifi-dualband-jammer
+- rf-multi-protocol-jammer
+- bluetooth-jammer-sweep
 ---
 
 # ESP32 Time-Division WiFi Killer v12 (v2.0)

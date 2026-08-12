@@ -11,22 +11,22 @@ platforms:
 - windows
 metadata:
   hermes:
-    tags:
-    - red-teaming
-    - penetration-testing
-    - security
-    - imported
     homepage: https://
-    related_skills:
-    - -pentest-flow
-    - -rapid-checklist
-    - pentest-tools
-    - ctf-web
     origin: import
   upstream:
     repo: https://
     source_path: /skills/specialized/ctf-misc/SKILL.md
     original_name: ctf-misc
+tags:
+- red-teaming
+- penetration-testing
+- security
+- imported
+related_skills:
+- pentest-workflow
+- pentest-quick-checklist
+- pentest-tool-setup
+- ctf-web-attacks
 ---
 
 # CTF 杂项知识库

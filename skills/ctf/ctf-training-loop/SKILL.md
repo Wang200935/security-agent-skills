@@ -6,14 +6,14 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - competition
-    - challenge
-    - training
-    - loop
-    related_skills: []
     origin: import
+tags:
+- ctf
+- competition
+- challenge
+- training
+- loop
+related_skills: []
 ---
 
 # CTF Training Loop

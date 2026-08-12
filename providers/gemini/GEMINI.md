@@ -11,14 +11,14 @@
 Skills are installed to `.gemini/skills/`.
 
 ## Load Order
-1. Load `security-orchestrator` first for routing
-2. Orchestrator routes to specialized skills based on intent
-3. Parallel loading for broad tasks
+1. `security-orchestrator` is optional; use it only when a task spans multiple domains
+2. Route to specialized skills based on intent
+3. Parallel loading is available for broad tasks
 
 ## Skill Paths
 ```
 .gemini/skills/security-orchestrator/SKILL.md
-.gemini/skills/recon/*/SKILL.md
-.gemini/skills/web-pentest/*/SKILL.md
+.gemini/skills/osint-framework/SKILL.md
+.gemini/skills/web-app-pentest/SKILL.md
 ...
 ```

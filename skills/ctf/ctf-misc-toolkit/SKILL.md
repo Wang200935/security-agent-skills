@@ -8,22 +8,20 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - misc
-    - pyjail
-    - osint
-    - puzzle
-    - encoding
-    - sandbox
-    - protocols
-    related_skills:
-    - ctf-general
-    - ctf-web-exploitation
-    - ctf-forensics
-    - ctf-reverse-engineering
-    - ctf-cryptography
     origin: import
+tags:
+- ctf
+- misc
+- pyjail
+- osint
+- puzzle
+- encoding
+- sandbox
+- protocols
+related_skills:
+- ctf-web-exploitation
+- digital-forensics
+- ctf-reverse-engineering
 ---
 
 # CTF Misc

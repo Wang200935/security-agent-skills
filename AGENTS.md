@@ -5,7 +5,7 @@
 This project contains 79 security skills organized into 9 domains under `skills/`.
 
 ### Load Order
-1. Always load `skills/security-orchestrator/SKILL.md` first — it routes to specialized skills
+1. Load `skills/security-orchestrator/SKILL.md` only for cross-domain routing
 2. The orchestrator analyzes user intent and loads the right skill(s)
 3. Multiple skills can load in parallel for speed
 

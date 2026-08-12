@@ -8,14 +8,14 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - osint
-    - recon
-    - information-gathering
-    - local
-    - network
-    related_skills: []
     origin: import
+tags:
+- osint
+- recon
+- information-gathering
+- local
+- network
+related_skills: []
 ---
 
 # Local Network Reconnaissance & Device Control

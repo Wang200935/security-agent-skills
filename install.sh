@@ -99,15 +99,14 @@ has_existing_content() {
   return 1
 }
 
-# Is this path managed by us? Check for our manifest marker.
+# Is a skill managed by us? The manifest lives at DEST_ROOT, not the skill dir.
+# Usage: is_managed_by_us <skill_path> <dest_root>
+# Or:   is_managed_by_us <dest_root> <dest_root>  (check root itself)
 is_managed_by_us() {
   local path="$1"
-  local manifest_file="${path%/}.security-agent-skills-manifest"
-  if [[ -d "$path" ]]; then
-    [[ -f "${path}/.security-agent-skills-manifest" ]]
-    return $?
-  fi
-  return 1
+  local dest_root="${2:-$path}"
+  local manifest="${dest_root}/.security-agent-skills-manifest"
+  [[ -f "$manifest" ]]
 }
 
 # Timestamped backup
@@ -165,7 +164,7 @@ install_single_skill() {
   #   --force: backup + replace
   #   else: skip with warning
   if has_existing_content "$dest"; then
-    if is_managed_by_us "$dest"; then
+    if is_managed_by_us "$dest" "$dest_root"; then
       # Our own previous install — safe to replace
       if [[ $DRY_RUN -eq 1 ]]; then
         echo "[dry-run] Would update managed skill: $skill_name"
@@ -217,6 +216,30 @@ install_single_skill() {
   return 0
 }
 
+# Enumerate all skill directories — handles both skills/<category>/<skill>/ and skills/<skill>/
+# Echoes absolute paths, one per line.
+enumerate_skills() {
+  shopt -s nullglob
+  # First: top-level skills (skills/<skill>/SKILL.md)
+  for skill_dir in "$SOURCE_SKILLS_DIR"/*/; do
+    [[ -d "$skill_dir" ]] || continue
+    if [[ -f "$skill_dir/SKILL.md" ]]; then
+      echo "$skill_dir"
+    fi
+  done
+  # Second: nested skills (skills/<category>/<skill>/SKILL.md)
+  for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
+    [[ -d "$category_dir" ]] || continue
+    # Skip if category_dir itself is a skill (already handled above)
+    [[ -f "$category_dir/SKILL.md" ]] && continue
+    for skill_dir in "$category_dir"*/; do
+      [[ -d "$skill_dir" ]] || continue
+      echo "$skill_dir"
+    done
+  done
+  shopt -u nullglob
+}
+
 # Install all skills additively into dest root
 install_skills_additive() {
   local dest_root="$1"
@@ -228,7 +251,7 @@ install_skills_additive() {
   fi
 
   # Check if dest_root itself exists with non-managed content
-  if has_existing_content "$dest_root" && ! is_managed_by_us "$dest_root"; then
+  if has_existing_content "$dest_root" && ! is_managed_by_us "$dest_root" "$dest_root"; then
     if [[ $FORCE -eq 1 ]]; then
       echo "[warn] $label: destination has existing non-managed content. --force will backup conflicts per-skill, not nuke the root."
     elif [[ $NON_INTERACTIVE -eq 1 ]]; then
@@ -246,22 +269,16 @@ install_skills_additive() {
   local skipped=0
   local total=0
 
-  shopt -s nullglob
-  for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
-    [[ -d "$category_dir" ]] || continue
-    for skill_dir in "$category_dir"*/; do
-      [[ -d "$skill_dir" ]] || continue
-      local skill_name
-      skill_name="$(basename "$skill_dir")"
-      total=$((total + 1))
-      if install_single_skill "$skill_dir" "$dest_root" "$skill_name"; then
-        installed=$((installed + 1))
-      else
-        skipped=$((skipped + 1))
-      fi
-    done
-  done
-  shopt -u nullglob
+  while IFS= read -r skill_dir; do
+    local skill_name
+    skill_name="$(basename "$skill_dir")"
+    total=$((total + 1))
+    if install_single_skill "$skill_dir" "$dest_root" "$skill_name"; then
+      installed=$((installed + 1))
+    else
+      skipped=$((skipped + 1))
+    fi
+  done < <(enumerate_skills)
 
   if [[ $DRY_RUN -eq 0 ]]; then
     echo "[ok] $label: $installed installed, $skipped skipped, $total total"
@@ -292,60 +309,55 @@ install_skills_gemini() {
   local skipped=0
   local total=0
 
-  shopt -s nullglob
-  for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
-    [[ -d "$category_dir" ]] || continue
-    for skill_dir in "$category_dir"*/; do
-      [[ -d "$skill_dir" ]] || continue
-      local skill_name
-      skill_name="$(basename "$skill_dir")"
-      total=$((total + 1))
+  while IFS= read -r skill_dir; do
+    local skill_name
+    skill_name="$(basename "$skill_dir")"
+    total=$((total + 1))
 
-      local dest="$dest_root/$skill_name"
+    local dest="$dest_root/$skill_name"
 
-      if has_existing_content "$dest"; then
-        if is_managed_by_us "$dest"; then
-          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
-        elif [[ $FORCE -eq 1 ]]; then
-          backup_path "$dest"
-          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
-        elif [[ $NON_INTERACTIVE -eq 1 ]]; then
-          echo "[skip] $skill_name (Gemini) — existing at $dest"
+    if has_existing_content "$dest"; then
+      if is_managed_by_us "$dest" "$dest_root"; then
+        if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
+      elif [[ $FORCE -eq 1 ]]; then
+        backup_path "$dest"
+        if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
+      elif [[ $NON_INTERACTIVE -eq 1 ]]; then
+        echo "[skip] $skill_name (Gemini) — existing at $dest"
+        skipped=$((skipped + 1))
+        continue
+      else
+        local reply
+        read -r -p "Skill '$skill_name' exists at $dest (Gemini). Overwrite? [y/N] " reply
+        if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
+          echo "[skip] $skill_name (Gemini)"
           skipped=$((skipped + 1))
           continue
-        else
-          local reply
-          read -r -p "Skill '$skill_name' exists at $dest (Gemini). Overwrite? [y/N] " reply
-          if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
-            echo "[skip] $skill_name (Gemini)"
-            skipped=$((skipped + 1))
-            continue
-          fi
-          backup_path "$dest"
-          if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
         fi
+        backup_path "$dest"
+        if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
       fi
+    fi
 
-      if [[ $DRY_RUN -eq 1 ]]; then
-        echo "[dry-run] Would install (flattened): $skill_name -> $dest"
+    if [[ $DRY_RUN -eq 1 ]]; then
+      echo "[dry-run] Would install (flattened): $skill_name -> $dest"
+    else
+      if [[ "$MODE" == "symlink" ]]; then
+        ln -s "$skill_dir" "$dest"
       else
-        if [[ "$MODE" == "symlink" ]]; then
-          ln -s "$skill_dir" "$dest"
+        if command -v rsync >/dev/null 2>&1; then
+          rsync -a "$skill_dir/" "$dest/"
         else
-          if command -v rsync >/dev/null 2>&1; then
-            rsync -a "$skill_dir/" "$dest/"
-          else
-            cp -R "$skill_dir" "$dest"
-          fi
+          cp -R "$skill_dir" "$dest"
         fi
       fi
-      installed=$((installed + 1))
-    done
-  done
-  shopt -u nullglob
+      # Append to manifest for uninstall tracking
+      echo "$skill_name" >> "${dest_root}/.security-agent-skills-manifest"
+    fi
+    installed=$((installed + 1))
+  done < <(enumerate_skills)
 
   if [[ $DRY_RUN -eq 0 ]]; then
-    touch "${dest_root}/.security-agent-skills-manifest"
     echo "[ok] $label (Gemini flattened): $installed installed, $skipped skipped, $total total"
   fi
 }
@@ -441,25 +453,56 @@ list_skills() {
   echo "Available skills in $SOURCE_SKILLS_DIR"
   echo
 
+  # Group by category for readability
+  declare -A cat_skills
+  declare -a cat_order
+
   shopt -s nullglob
+  # Top-level skills (no category)
+  local top_level=()
+  for skill_dir in "$SOURCE_SKILLS_DIR"/*/; do
+    [[ -d "$skill_dir" ]] || continue
+    if [[ -f "$skill_dir/SKILL.md" ]]; then
+      top_level+=("$(basename "$skill_dir")")
+      total=$((total + 1))
+    fi
+  done
+  # Nested skills
   for category_dir in "$SOURCE_SKILLS_DIR"/*/; do
     [[ -d "$category_dir" ]] || continue
+    [[ -f "$category_dir/SKILL.md" ]] && continue  # skip top-level skills
     local category
     category="$(basename "$category_dir")"
-    local -a skills=("$category_dir"*/)
-    local count=0
-    printf '%s\n' "[$category]"
-    for skill_dir in "${skills[@]}"; do
+    cat_order+=("$category")
+    local -a slist=()
+    for skill_dir in "$category_dir"*/; do
       [[ -d "$skill_dir" ]] || continue
-      local skill_name
-      skill_name="$(basename "$skill_dir")"
-      printf '  - %s\n' "$skill_name"
-      count=$((count + 1))
+      slist+=("$(basename "$skill_dir")")
       total=$((total + 1))
+    done
+    cat_skills["$category"]="${slist[*]}"
+  done
+  shopt -u nullglob
+
+  # Print top-level skills first
+  if [[ ${#top_level[@]} -gt 0 ]]; then
+    printf '%s\n' "[standalone]"
+    for name in "${top_level[@]}"; do
+      printf '  - %s\n' "$name"
+    done
+    printf '  (%d skills)\n\n' "${#top_level[@]}"
+  fi
+
+  # Print categorized skills
+  for category in "${cat_order[@]}"; do
+    printf '%s\n' "[$category]"
+    local count=0
+    for name in ${cat_skills[$category]}; do
+      printf '  - %s\n' "$name"
+      count=$((count + 1))
     done
     printf '  (%d skills)\n\n' "$count"
   done
-  shopt -u nullglob
 
   echo "Total: $total skills"
 }
@@ -471,14 +514,47 @@ uninstall_agent() {
   local target
   target="$(skills_root_for_agent "$agent")"
 
-  if [[ ! -d "$target" ]]; then
-    # Check for copilot instructions file
-    if [[ "$agent" == "github-copilot" && -f "$target" ]]; then
-      backup_path "$target"
-      echo "[ok] Removed $label instructions"
-    else
-      echo "[skip] $label — nothing installed at $target"
+  # GitHub Copilot has two install targets: instruction file + .agents/skills/
+  if [[ "$agent" == "github-copilot" ]]; then
+    local removed=0
+    # Remove instruction file
+    if [[ -f "$target" ]]; then
+      if [[ $DRY_RUN -eq 1 ]]; then
+        echo "[dry-run] Would remove: $target"
+      else
+        backup_path "$target"
+      fi
+      removed=$((removed + 1))
     fi
+    # Remove native skills from .agents/skills/
+    local agents_target="$REPO_ROOT/.agents/skills"
+    local agents_manifest="${agents_target}/.security-agent-skills-manifest"
+    if [[ -f "$agents_manifest" ]]; then
+      while IFS= read -r skill_name; do
+        local skill_path="$agents_target/$skill_name"
+        if [[ -e "$skill_path" || -L "$skill_path" ]]; then
+          if [[ $DRY_RUN -eq 1 ]]; then
+            echo "[dry-run] Would remove: $skill_path"
+          else
+            rm -f "$skill_path"
+            rm -rf "$skill_path"
+          fi
+          removed=$((removed + 1))
+        fi
+      done < "$agents_manifest"
+      if [[ $DRY_RUN -eq 0 ]]; then
+        rm -f "$agents_manifest"
+      fi
+    elif [[ $FORCE -eq 1 ]] && [[ -d "$agents_target" ]]; then
+      backup_path "$agents_target"
+      removed=$((removed + 1))
+    fi
+    echo "[ok] $label: $removed items removed"
+    return 0
+  fi
+
+  if [[ ! -d "$target" ]]; then
+    echo "[skip] $label — nothing installed at $target"
     return 0
   fi
 

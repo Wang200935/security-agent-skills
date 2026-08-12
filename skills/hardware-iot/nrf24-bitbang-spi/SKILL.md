@@ -8,15 +8,15 @@ name: nrf24-bitbang-spi
 license: MIT
 metadata:
   hermes:
-    tags:
-    - nrf24
-    - esp32
-    - bit-bang
-    - spi
-    - shockburst
-    - wireless-jamming
-    related_skills: []
     origin: import
+tags:
+- nrf24
+- esp32
+- bit-bang
+- spi
+- shockburst
+- wireless-jamming
+related_skills: []
 ---
 
 # nRF24L01+ Bit-Bang SPI Driver with Verified Writes & Auto-Repair

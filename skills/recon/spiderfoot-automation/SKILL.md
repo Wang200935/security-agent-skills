@@ -9,22 +9,22 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - OSINT
-    - spiderfoot
-    - intelligence
-    - reconnaissance
-    - email
-    - domain
-    - SOCMINT
-    - breach
-    - HIBP
-    - Shodan
-    - darkweb
-    related_skills:
-    - security-orchestrator
-    - username-scanner
     origin: import
+tags:
+- OSINT
+- spiderfoot
+- intelligence
+- reconnaissance
+- email
+- domain
+- SOCMINT
+- breach
+- HIBP
+- Shodan
+- darkweb
+related_skills:
+- security-orchestrator
+- username-scanner
 ---
 
 # SpiderFoot OSINT — One Seed → Full Digital Footprint
@@ -183,7 +183,7 @@ If no API keys configured, `scripts/sfo.py` automatically falls back to a parall
 - GHunt (Google account OSINT for Gmail addresses)
 - holehe (100+ services account presence check)
 - theHarvester (email enumeration from search engines)
-- Yahoo TW search (CJK real-person — see `references/cjk-real-person-osint-playbook.md`)
+- Yahoo TW search (CJK real-person — see `references/api-keys-full.md`)
 
 Fallback command:
 ```bash
@@ -388,7 +388,7 @@ Cross-reference table:
 | SpiderFoot execution (CLI/HX2/wrapper) | this skill |
 | Multi-engine parallel search (Shodan + Bing + Yandex) | `parallel-intel` |
 | Username scanning quality (840+ platforms, ML detection) | `username-scanner` skill |
-| CJK real-person OSINT (Chinese names that scanners miss) | `osint/references/cjk-real-person-osint-playbook.md` |
+| CJK real-person OSINT (Chinese names that scanners miss) | `references/api-keys-full.md` |
 
 ---
 

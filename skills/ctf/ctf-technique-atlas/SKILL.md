@@ -9,23 +9,21 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - technique-atlas
-    - training
-    - triage
-    - exploitation
-    - writeups
-    related_skills:
-    - ctf-general
-    - ctf-web-exploitation
-    - ctf-cryptography
-    - ctf-forensics
-    - ctf-reverse-engineering
-    - ctf-pwn-binary-exploitation
-    - ctf-kernel-exploitation
-    - ctf-misc
     origin: import
+tags:
+- ctf
+- technique-atlas
+- training
+- triage
+- exploitation
+- writeups
+related_skills:
+- ctf-web-exploitation
+- digital-forensics
+- ctf-reverse-engineering
+- binary-exploitation
+- ctf-kernel-exploitation
+- ctf-misc-toolkit
 ---
 
 # CTF Technique Atlas

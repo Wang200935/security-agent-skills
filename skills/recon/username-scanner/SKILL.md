@@ -8,18 +8,18 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - OSINT
-    - username-scanner
-    - social-media
-    - reconnaissance
-    - account-discovery
-    - username-scanner
-    related_skills:
-    - security-orchestrator
-    - pentest-workflow
-    - browser-automation-security
     origin: import
+tags:
+- OSINT
+- username-scanner
+- social-media
+- reconnaissance
+- account-discovery
+- username-scanner
+related_skills:
+- security-orchestrator
+- pentest-workflow
+- browser-automation-security
 ---
 
 # Username Scanner — AI-Powered OSINT Username Scanner

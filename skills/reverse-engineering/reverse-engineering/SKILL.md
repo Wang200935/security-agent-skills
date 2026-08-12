@@ -8,22 +8,22 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - reverse-engineering
-    - ghidra
-    - angr
-    - ida
-    - radare2
-    - malware
-    - deobfuscation
-    - binary-analysis
-    - firmware
-    - mobile
-    related_skills:
-    - ctf-playbook
-    - security-orchestrator
-    - network-pentest
     origin: import
+tags:
+- reverse-engineering
+- ghidra
+- angr
+- ida
+- radare2
+- malware
+- deobfuscation
+- binary-analysis
+- firmware
+- mobile
+related_skills:
+- ctf-playbook
+- security-orchestrator
+- network-pentest
 ---
 
 # Reverse Engineering — Complete Framework

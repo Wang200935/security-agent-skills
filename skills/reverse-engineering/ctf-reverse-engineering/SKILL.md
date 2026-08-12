@@ -8,21 +8,17 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - reverse-engineering
-    - binary
-    - crackme
-    - ghidra
-    - angr
-    - apk
-    - wasm
-    related_skills:
-    - ctf-general
-    - hackingtool
-    - python-debugpy
-    - systematic-debugging
     origin: import
+tags:
+- ctf
+- reverse-engineering
+- binary
+- crackme
+- ghidra
+- angr
+- apk
+- wasm
+related_skills: []
 ---
 
 # CTF Reverse Engineering

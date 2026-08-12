@@ -9,18 +9,18 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - OSINT
-    - reconnaissance
-    - intelligence
-    - information-gathering
-    - parallel-search
-    - web-scraping
-    - dorking
-    related_skills:
-    - browser-automation-security
-    - security-orchestrator
     origin: import
+tags:
+- OSINT
+- reconnaissance
+- intelligence
+- information-gathering
+- parallel-search
+- web-scraping
+- dorking
+related_skills:
+- browser-automation-security
+- security-orchestrator
 ---
 
 # Parallel Intelligence Gathering

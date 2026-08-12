@@ -8,16 +8,16 @@ category: hardware
 license: MIT
 metadata:
   hermes:
-    tags:
-    - flipper
-    - backup
-    - firmware
-    - qflipper
-    - hardware
-    related_skills:
-    - flipper-zero-firmware
-    - hardware-iot-hacking
     origin: import
+tags:
+- flipper
+- backup
+- firmware
+- qflipper
+- hardware
+related_skills:
+- flipper-zero-firmware
+- hardware-iot-hacking
 ---
 
 # Flipper Zero Complete Backup

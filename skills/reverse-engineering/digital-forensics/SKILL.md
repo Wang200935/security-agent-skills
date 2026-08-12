@@ -10,16 +10,16 @@ version: 2.1.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - forensics
-    - steganography
-    - pcap
-    - memory
-    - disk
-    - reversing
-    related_skills: []
     origin: import
+tags:
+- ctf
+- forensics
+- steganography
+- pcap
+- memory
+- disk
+- reversing
+related_skills: []
 ---
 
 # CTF Forensics Skill

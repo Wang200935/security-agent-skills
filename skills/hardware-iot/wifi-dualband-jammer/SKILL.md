@@ -8,23 +8,23 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - esp32
-    - esp32-c6
-    - esp32-s3
-    - nRF24L01
-    - wifi-jammer
-    - beacon-flood
-    - cw-jamming
-    - dual-band
-    - 2.4ghz
-    - 5ghz
-    - esp-idf
-    related_skills:
-    - wifi-deauth-jammer
-    - rf-multi-protocol-jammer
-    - rf-jammer-firmware-port
     origin: import
+tags:
+- esp32
+- esp32-c6
+- esp32-s3
+- nRF24L01
+- wifi-jammer
+- beacon-flood
+- cw-jamming
+- dual-band
+- 2.4ghz
+- 5ghz
+- esp-idf
+related_skills:
+- wifi-deauth-jammer
+- rf-multi-protocol-jammer
+- rf-jammer-firmware-port
 ---
 
 # ESP32 雙頻 WiFi 干擾器完整實作指南

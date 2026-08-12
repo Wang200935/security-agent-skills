@@ -9,14 +9,14 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - osint
-    - recon
-    - information-gathering
-    - darkweb
-    - research
-    related_skills: []
     origin: import
+tags:
+- osint
+- recon
+- information-gathering
+- darkweb
+- research
+related_skills: []
 ---
 
 # 暗網研究環境 (本機 macOS)
@@ -33,7 +33,7 @@ metadata:
 - daemon: `brew services start tor` (已 launchd 啟動)
 - SOCKS5: `127.0.0.1:9050` (socks5h, Tor 端 DNS 解 .onion)
 - Control: `127.0.0.1:9051` (cookie auth)
-- torrc: `/Users/wang/homebrew/etc/tor/torrc`
+- torrc: `~/.homebrew/etc/tor/torrc`
 - 硬化: StrictNodes=1, ExcludeNodes 擋五眼+TW+CN/RU/IR/KP/SA/SY, ExitNodes 限定 {nl},{de},{ch},{se},{ro},{is},{fi},{no},{fr},{be},{at}
   - **⚠ 語法陷阱**: torrc 不接受 `ExitNodes {nl,de,ch}` (單一大括號逗號串)。必須每國各一 `{}` 再以逗號串連: `ExitNodes {nl},{de},{ch}`。錯誤寫法會被靜默丟棄 → Tor fallback 到「任意 exit」,安全回退!改完一律 `brew services restart tor` + 重跑 `check.torproject.org/api/ip` 對照 exit 國家。詳見 `references/pitfalls-and-sources.md`。
 - IsolateDestAddr: 每站獨立 circuit
@@ -177,7 +177,7 @@ bridge: `scripts/snapwonders_mcp_bridge.py` —
 ```yaml
   snapwonders:
     command: "python3"
-    args: ["/Users/wang/Documents/darkweb-research/tools/snapwonders_mcp_bridge.py"]
+    args: ["$HOME/Documents/darkweb-research/tools/snapwonders_mcp_bridge.py"]
     env:
       SW_API_KEY: "你的-key"
     timeout: 180

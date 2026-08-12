@@ -8,21 +8,19 @@ version: 1.1.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - triage
-    - writeups
-    - training
-    related_skills:
-    - ctf-web-exploitation
-    - ctf-cryptography
-    - ctf-forensics
-    - ctf-reverse-engineering
-    - ctf-pwn-binary-exploitation
-    - ctf-misc
-    - ctf-kernel-exploitation
-    - hackingtool
     origin: import
+tags:
+- ctf
+- triage
+- writeups
+- training
+related_skills:
+- ctf-web-exploitation
+- digital-forensics
+- ctf-reverse-engineering
+- binary-exploitation
+- ctf-misc-toolkit
+- ctf-kernel-exploitation
 ---
 
 # CTF General Solver

@@ -7,18 +7,16 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - RF Jammer
-    - esp32
-    - nrf24
-    - jammer
-    - multi-protocol
-    - oled
-    - 移植
-    related_skills:
-    - esp32-nrf24-jammer-builder
-    - ctf-general
     origin: import
+tags:
+- RF Jammer
+- esp32
+- nrf24
+- jammer
+- multi-protocol
+- oled
+- 移植
+related_skills: []
 ---
 
 # RF Jammer v2 完整移植技術手冊

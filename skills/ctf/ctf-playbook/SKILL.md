@@ -8,23 +8,23 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - CTF
-    - capture-the-flag
-    - crypto
-    - reversing
-    - pwn
-    - binary-exploitation
-    - forensics
-    - steganography
-    - OSINT
-    - web-exploitation
-    related_skills:
-    - web-app-pentest
-    - client-auth-bypass
-    - security-orchestrator
-    - network-pentest
     origin: import
+tags:
+- CTF
+- capture-the-flag
+- crypto
+- reversing
+- pwn
+- binary-exploitation
+- forensics
+- steganography
+- OSINT
+- web-exploitation
+related_skills:
+- web-app-pentest
+- client-auth-bypass
+- security-orchestrator
+- network-pentest
 ---
 
 # CTF Playbook

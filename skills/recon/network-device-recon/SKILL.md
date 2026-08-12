@@ -6,14 +6,14 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - osint
-    - recon
-    - information-gathering
-    - network
-    - device
-    related_skills: []
     origin: import
+tags:
+- osint
+- recon
+- information-gathering
+- network
+- device
+related_skills: []
 ---
 
 # Network Device Recon & NAS Connection

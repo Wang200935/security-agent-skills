@@ -62,7 +62,7 @@ def generate_inventory(lang="en"):
         lines.append("")
     
     total = catalog["total_skills"]
-    lines.append(f"**Total: {total} skills** (+ 1 orchestrator)")
+    lines.append(f"**Total: {total} skills**")
     lines.append("<!-- END INVENTORY -->")
     
     return "\n".join(lines)

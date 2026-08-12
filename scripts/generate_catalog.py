@@ -72,6 +72,17 @@ def scan_skills():
                 'script_count': script_count,
             })
     
+    # Normalize tag/related fields to lists for downstream consumers
+    for s in skills:
+        if isinstance(s['tags'], str):
+            s['tags'] = [s['tags']]
+        elif not isinstance(s['tags'], list):
+            s['tags'] = []
+        if isinstance(s['related_skills'], str):
+            s['related_skills'] = [s['related_skills']]
+        elif not isinstance(s['related_skills'], list):
+            s['related_skills'] = []
+    
     skills.sort(key=lambda s: (s['domain'], s['id']))
     return skills
 

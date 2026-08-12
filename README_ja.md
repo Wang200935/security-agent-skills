@@ -142,7 +142,7 @@ cd security-agent-skills
 ### 🧭 Orchestrator (1 スキル)
 `security-orchestrator`
 
-**Total: 79 skills** (+ 1 orchestrator)
+**Total: 79 skills**
 <!-- END INVENTORY -->
 
 
@@ -165,14 +165,14 @@ cd security-agent-skills
 "CTF challenge"            → ctf (ctf-orchestrator routes further)
 "enumerate network"        → network-pentest
 "OSINT on person/domain"   → recon (osint-framework)
-"bypass WAF"              → web-advanced-pentest (waf-bypass-techniques)
+"bypass WAF"              → web-app-pentest (waf-bypass-techniques)
 "privilege escalation"     → post-exploitation
 "audit this code"          → cloud-security (security-audit)
 "hack IoT device"          → hardware-iot
 "AI security / MCP"        → cloud-security (ai-mcp-security)
 "fuzz this target"         → exploit-dev (zero-day-hunting)
 "crack this hash"          → exploit-dev (cryptography-fundamentals)
-"advanced-pentest report"           → post-exploitation (pentest-report-generator)
+"pentest report"           → post-exploitation (pentest-report-generator)
 ```
 
 ### 並列実行
@@ -187,14 +187,14 @@ cd security-agent-skills
 ### 選択的インストール
 
 ```bash
-# 特定のドメインだけをインストール
-./install.sh --agent claude-code --domains web-advanced-pentest,exploit-dev
+# 特定のエージェントだけをインストール
+./install.sh --agent claude-code
 
 # CTF skill だけをインストール
-./install.sh --agent claude-code --domains ctf
+./install.sh --agent claude-code
 
 # オーケストレーターだけをインストール
-./install.sh --agent claude-code --skills security-orchestrator
+./install.sh --agent claude-code --agent openclaw
 ```
 
 ### Skill 構成

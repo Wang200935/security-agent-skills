@@ -10,16 +10,16 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - smart-card
-    - usb
-    - synchronous-card
-    - vendor-dll
-    - pcsclite-bypass
-    - SLE4442
-    - AL9543
-    related_skills: []
     origin: import
+tags:
+- smart-card
+- usb
+- synchronous-card
+- vendor-dll
+- pcsclite-bypass
+- SLE4442
+- AL9543
+related_skills: []
 ---
 
 # Smart Card USB Direct Access

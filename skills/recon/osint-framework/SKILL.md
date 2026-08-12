@@ -8,24 +8,24 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - OSINT
-    - intelligence
-    - reconnaissance
-    - SOCMINT
-    - geolocation
-    - dorking
-    - Shodan
-    - darkweb
-    - crypto
-    - blockchain
-    related_skills:
-    - web-app-pentest
-    - ctf-playbook
-    - security-orchestrator
-    - username-scanner
-    - spiderfoot-osint-automation
     origin: import
+tags:
+- OSINT
+- intelligence
+- reconnaissance
+- SOCMINT
+- geolocation
+- dorking
+- Shodan
+- darkweb
+- crypto
+- blockchain
+related_skills:
+- web-app-pentest
+- ctf-playbook
+- security-orchestrator
+- username-scanner
+- spiderfoot-automation
 ---
 
 # OSINT — Complete Open Source Intelligence

@@ -7,18 +7,16 @@ description: Capture and organize natural-looking screenshots for CTF re-solve w
 version: 1.0.0
 metadata:
   hermes:
-    tags:
-    - ctf
-    - writeup
-    - screenshots
-    - macos
-    - evidence
-    related_skills:
-    - ctf-general
-    - ctf-writeup-artifact-discipline
-    - macos-computer-use
     origin: import
 license: MIT
+tags:
+- ctf
+- writeup
+- screenshots
+- macos
+- evidence
+related_skills:
+- ctf-writeup-discipline
 ---
 
 # Natural CTF Write-up Screenshots

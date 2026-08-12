@@ -11,17 +11,17 @@ category: red-teaming
 license: MIT
 metadata:
   hermes:
-    tags:
-    - OSINT
-    - email-intelligence
-    - breach
-    - infostealer
-    - identity-resolution
-    - SOCMINT
-    related_skills:
-    - username-scanner
-    - spiderfoot-osint-automation
     origin: import
+tags:
+- OSINT
+- email-intelligence
+- breach
+- infostealer
+- identity-resolution
+- SOCMINT
+related_skills:
+- username-scanner
+- spiderfoot-automation
 ---
 
 # Email-First OSINT — 7-Track Parallel Investigation

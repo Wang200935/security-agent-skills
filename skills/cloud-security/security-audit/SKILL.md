@@ -8,19 +8,18 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - security
-    - audit
-    - penetration-testing
-    - vulnerability-research
-    - red-teaming
     homepage: https://github.com/cloudflare/security-audit-skill
-    related_skills:
-    - cybersecurity
-    - web-app-pentest
-    - ctf-playbook
-    - ai-mcp-security
     origin: import
+tags:
+- security
+- audit
+- penetration-testing
+- vulnerability-research
+- red-teaming
+related_skills:
+- ai-mcp-security
+- web-app-pentest
+- ctf-playbook
 ---
 
 # Security Audit

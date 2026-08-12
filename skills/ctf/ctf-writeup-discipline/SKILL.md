@@ -8,19 +8,17 @@ version: 1.0.0
 license: MIT
 metadata:
   hermes:
-    tags:
-    - ctf
-    - writeup
-    - screenshots
-    - evidence
-    - packaging
-    related_skills:
-    - ctf-general
-    - ctf-cryptography
-    - ctf-forensics
-    - ctf-reverse-engineering
-    - ctf-pwn-binary-exploitation
     origin: import
+tags:
+- ctf
+- writeup
+- screenshots
+- evidence
+- packaging
+related_skills:
+- digital-forensics
+- ctf-reverse-engineering
+- binary-exploitation
 ---
 
 # CTF Write-up Artifact Discipline

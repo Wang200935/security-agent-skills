@@ -1,14 +1,28 @@
 ---
 name: ai-mcp-security
-description: "AI 与 MCP 安全评估 — Prompt 注入、工具滥用、MCP 信任边界、Agent 权限逃逸、数据泄露、模型风险、GAARM 风险矩阵。Use when testing LLM-based applications, MCP servers, agent orchestration systems, AI plugins, RAG pipelines, or any system where an LLM acts on untrusted inputs or tool calls."
+description: AI 与 MCP 安全评估 — Prompt 注入、工具滥用、MCP 信任边界、Agent 权限逃逸、数据泄露、模型风险、GAARM 风险矩阵。Use
+  when testing LLM-based applications, MCP servers, agent orchestration systems, AI
+  plugins, RAG pipelines, or any system where an LLM acts on untrusted inputs or tool
+  calls.
 version: 2.0.0
 license: MIT
-platforms: [linux, macos, windows]
+platforms:
+- linux
+- macos
+- windows
 metadata:
   hermes:
-    tags: [red-teaming, ai-security, mcp-security, llm-security, prompt-injection, agent-security]
-    related_skills: [cybersecurity, web-app-pentest, pentest, reverse-engineering]
     origin: import
+tags:
+- red-teaming
+- ai-security
+- mcp-security
+- llm-security
+- prompt-injection
+- agent-security
+related_skills:
+- web-app-pentest
+- reverse-engineering
 ---
 
 # AI 与 MCP 安全评估 Skill

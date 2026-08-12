@@ -10,4 +10,5 @@ build/
 sdkconfig
 .sdkconfig.old
 .install-test/
+dist/
 *.backup-*

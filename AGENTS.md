@@ -21,12 +21,7 @@ This project contains 79 security skills organized into 9 domains under `skills/
 - `skills/hardware-iot/` — UART/JTAG/SPI, firmware, SDR, Flipper Zero, ESP32
 
 ### Rules Library
-Shared knowledge in `rules/` is loaded across skills:
-- `payloads.md` — Attack payloads (XSS, SSRF, SQLi, etc.)
-- `techniques.md` — Proven attack techniques
-- `waf-bypass-protocol.md` — WAF bypass ladder
-- `hunting.md` — Hunting rules with harm checks
-- `mistakes.md` — Common mistakes to avoid
+Shared knowledge in `rules/security-rules.md` is loaded across skills for attack payloads, techniques, WAF bypass patterns, hunting rules, and common mistakes.
 
 ## Authorized Use Only
 These skills are for authorized security testing only. The user is responsible for obtaining proper authorization before testing any system.

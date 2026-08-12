@@ -6,8 +6,7 @@ description: Hardens code against vulnerabilities. Use when handling user input,
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - cloud
 - aws

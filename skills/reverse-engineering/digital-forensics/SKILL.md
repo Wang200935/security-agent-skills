@@ -9,8 +9,7 @@ description: 'Comprehensive CTF forensics workflows covering file type identific
 version: 2.1.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - forensics

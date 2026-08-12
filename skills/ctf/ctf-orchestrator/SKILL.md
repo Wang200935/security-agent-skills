@@ -7,8 +7,7 @@ description: Orchestrate Capture-the-Flag challenge solving across Web Exploitat
 version: 1.1.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - triage

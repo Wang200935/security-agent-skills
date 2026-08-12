@@ -5,9 +5,8 @@ description: Review code in Hermes with a Claude-Code-style security-focused fin
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    homepage: https://github.com/Piebald-AI/claude-code-system-prompts
-    origin: import
+  hermes_homepage: https://github.com/Piebald-AI/claude-code-system-prompts
+  hermes_origin: import
 tags:
 - claude-code
 - security

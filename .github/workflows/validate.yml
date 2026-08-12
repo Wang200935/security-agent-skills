@@ -17,7 +17,9 @@ jobs:
           python-version: '3.11'
       
       - name: Install dependencies
-        run: pip install pyyaml
+        run: |
+          pip install pyyaml
+          sudo apt-get update && sudo apt-get install -y shellcheck
       
       - name: Generate catalog
         run: python3 scripts/generate_catalog.py
@@ -32,7 +34,7 @@ jobs:
           fi
       
       - name: Validate skills
-        run: python scripts/validate.py
+        run: python3 scripts/validate.py
       
       - name: Check catalog is up to date
         run: |
@@ -41,22 +43,38 @@ jobs:
             exit 1
           fi
       
-      - name: Lint shell scripts
+      - name: ShellCheck install.sh (blocking)
+        run: shellcheck install.sh
+      
+      - name: ShellCheck build.sh (blocking)
         run: |
-          if [ -f install.sh ]; then
-            shellcheck install.sh || true
+          if [ -f build.sh ]; then
+            shellcheck build.sh
           fi
       
       - name: Check for secrets
         run: |
-          # Basic secret scanning
           ! grep -rE '(sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36,}|AKIA[A-Z0-9]{16})' skills/ --include='*.md' || {
             echo "::error::Potential secrets detected in skill files"
             exit 1
           }
       
-      - name: Check for empty reference files
+      - name: Check for empty reference files (blocking)
         run: |
-          find skills/ -name '*.md' -size 0 -print | while read f; do
-            echo "::warning file=$f::Empty reference file"
-          done
+          found=0
+          while IFS= read -r f; do
+            echo "::error file=$f::Empty reference file (0 bytes)"
+            found=1
+          done < <(find skills/ -name '*.md' -size 0 -print)
+          if [ "$found" -eq 1 ]; then
+            exit 1
+          fi
+
+      - name: Installer smoke test — dry-run
+        run: |
+          chmod +x install.sh
+          ./install.sh --agent claude-code --dry-run 2>&1 | head -50
+
+      - name: Installer smoke test — selective install (--domain)
+        run: |
+          ./install.sh --agent claude-code --domain ctf --dry-run 2>&1 | grep -q "ctf-" && echo "OK: domain filter working"

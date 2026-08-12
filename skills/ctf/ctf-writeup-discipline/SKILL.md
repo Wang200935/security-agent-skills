@@ -7,8 +7,7 @@ description: Produce CTF write-ups with authentic solve evidence, scripts, scree
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - writeup

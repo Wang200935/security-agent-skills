@@ -6,8 +6,7 @@ description: Fast segmented sweep technique for Bluetooth Classic (BR/EDR) jammi
 name: bluetooth-jammer-sweep
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - bluetooth-classic
 - nrf24

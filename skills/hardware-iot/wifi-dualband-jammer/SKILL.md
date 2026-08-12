@@ -7,8 +7,7 @@ category: hardware
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - esp32
 - esp32-c6

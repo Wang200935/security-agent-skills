@@ -8,8 +8,7 @@ description: 'ESP32 Time-Division WiFi Killer v12 - Targeted deauth + nRF24 CW j
 category: embedded-security
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - esp32
 - nrf24

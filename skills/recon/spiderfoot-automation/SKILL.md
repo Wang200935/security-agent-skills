@@ -8,8 +8,7 @@ version: 1.0.0
 category: red-teaming
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - OSINT
 - spiderfoot
@@ -379,14 +378,14 @@ Before declaring scan complete:
 
 ## Integration with Existing osint Skill
 
-This skill is a **specialized module** under the `osint` umbrella. For OSINT methodology framework, see `osint` skill. For SpiderFoot-specific automation + wrapper scripts, this skill. For parallel-multi-source search discipline, see `parallel-intel`.
+This skill is a **specialized module** under the `osint` umbrella. For OSINT methodology framework, see `osint` skill. For SpiderFoot-specific automation + wrapper scripts, this skill. For parallel-multi-source search discipline, see `parallel-intel-gathering`.
 
 Cross-reference table:
 | Need | Use |
 |---|---|
 | Full OSINT methodology (planning → reporting) | `osint` skill |
 | SpiderFoot execution (CLI/HX2/wrapper) | this skill |
-| Multi-engine parallel search (Shodan + Bing + Yandex) | `parallel-intel` |
+| Multi-engine parallel search (Shodan + Bing + Yandex) | `parallel-intel-gathering` |
 | Username scanning quality (840+ platforms, ML detection) | `username-scanner` skill |
 | CJK real-person OSINT (Chinese names that scanners miss) | `references/api-keys-full.md` |
 

@@ -8,8 +8,7 @@ description: Use hackingtool — a 21-category, 173-tool offensive security and 
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - cloud
 - aws

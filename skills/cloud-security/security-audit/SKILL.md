@@ -7,9 +7,8 @@ description: Security audit of a codebase — web apps, APIs, services, CLI tool
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    homepage: https://github.com/cloudflare/security-audit-skill
-    origin: import
+  hermes_homepage: https://github.com/cloudflare/security-audit-skill
+  hermes_origin: import
 tags:
 - security
 - audit

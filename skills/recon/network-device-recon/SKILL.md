@@ -5,8 +5,7 @@ description: Recon local network devices — scan ports, identify NAS/router typ
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - osint
 - recon

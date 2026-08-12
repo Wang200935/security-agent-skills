@@ -8,18 +8,7 @@ version: 3.0.0
 category: orchestrator
 metadata:
   role: orchestrator
-  triggers:
-  - full pentest workflow
-  - multi-domain attack chain
-  - CTF orchestration
-  - parallel reconnaissance
-  - cross-domain security task
-  negative-triggers:
-  - single bug class
-  - one-off payload
-  - specific tool usage
-  hermes:
-    origin: import
+  hermes_origin: import
 license: MIT
 tags:
 - security

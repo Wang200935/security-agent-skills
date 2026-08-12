@@ -11,8 +11,7 @@ platforms:
 - macos
 - windows
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - red-teaming
 - ai-security
@@ -29,7 +28,7 @@ related_skills:
 
 当目标包含 LLM、Agent、MCP 工具、Skills、RAG、Memory、Plugin 或模型服务组件时使用本 Skill。
 
-**前置条件**：如果 AI 表面只是展示层，真正的阻塞仍是客户端签名或加密协议，先回到 `client-side-auth-bypass` 与 `web-app-pentest` Skill。
+**前置条件**：如果 AI 表面只是展示层，真正的阻塞仍是客户端签名或加密协议，先回到 `client-auth-bypass` 与 `web-app-pentest` Skill。
 
 ## 场景路由
 
@@ -176,7 +175,7 @@ AI_RED_TEAM_2025 = """
 | `web-app-pentest` | When AI surface is exposed via web frontend (OWASP Top 10 web vulnerabilities |
 | `api-security-testing` | When testing MCP-as-API or LLM-powered REST/GraphQL endpoints |
 | `pentest` | Post-exploitation: AI model theft, prompt extraction, supply chain |
-| `ctf-misc` | When CTF challenge involves AI/LLM/prompt injection in lab environment |
+| `ctf-misc-toolkit` | When CTF challenge involves AI/LLM/prompt injection in lab environment |
 
 ### Practical AI/MCP Testing Workflow (2025-2026)
 

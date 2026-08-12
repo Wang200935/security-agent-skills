@@ -6,8 +6,7 @@ description: RF Jammer v2 完整移植技術手冊 — 從 RF Jammer 3×nRF24 �
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - RF Jammer
 - esp32

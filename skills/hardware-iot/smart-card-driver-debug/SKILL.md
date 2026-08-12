@@ -35,8 +35,7 @@ triggers:
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - hardware
 - iot

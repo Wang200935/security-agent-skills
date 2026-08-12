@@ -8,8 +8,7 @@ version: 1.0.0
 category: hardware
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - flipper
 - firmware

@@ -13,6 +13,8 @@ DRY_RUN=0
 NON_INTERACTIVE=0
 SHOW_LIST=0
 INSTALL_ALL=0
+FILTER_DOMAIN=""
+FILTER_SKILL=""
 
 REQUESTED_AGENTS=()
 
@@ -99,14 +101,24 @@ has_existing_content() {
   return 1
 }
 
-# Is a skill managed by us? The manifest lives at DEST_ROOT, not the skill dir.
-# Usage: is_managed_by_us <skill_path> <dest_root>
-# Or:   is_managed_by_us <dest_root> <dest_root>  (check root itself)
+# Is a skill managed by us? Check if this specific skill is listed in the manifest.
+# Usage: is_managed_by_us <skill_name_or_path> <dest_root>
+# If first arg is a skill name, grep for it in the manifest.
+# If first arg == dest_root, just check manifest existence (for root-level checks).
 is_managed_by_us() {
-  local path="$1"
-  local dest_root="${2:-$path}"
+  local arg="$1"
+  local dest_root="${2:-$arg}"
   local manifest="${dest_root}/.security-agent-skills-manifest"
-  [[ -f "$manifest" ]]
+  [[ -f "$manifest" ]] || return 1
+  # If arg is the same as dest_root, we're checking the root itself
+  if [[ "$arg" == "$dest_root" ]]; then
+    return 0
+  fi
+  # Extract skill name: if arg is a path, basename it; otherwise use as-is
+  local skill_name
+  skill_name="$(basename "$arg")"
+  # Check if this specific skill is listed in the manifest
+  grep -Fxq "$skill_name" "$manifest"
 }
 
 # Timestamped backup
@@ -164,7 +176,7 @@ install_single_skill() {
   #   --force: backup + replace
   #   else: skip with warning
   if has_existing_content "$dest"; then
-    if is_managed_by_us "$dest" "$dest_root"; then
+    if is_managed_by_us "$skill_name" "$dest_root"; then
       # Our own previous install — safe to replace
       if [[ $DRY_RUN -eq 1 ]]; then
         echo "[dry-run] Would update managed skill: $skill_name"
@@ -218,13 +230,14 @@ install_single_skill() {
 
 # Enumerate all skill directories — handles both skills/<category>/<skill>/ and skills/<skill>/
 # Echoes absolute paths, one per line.
+# Respects FILTER_DOMAIN and FILTER_SKILL if set.
 enumerate_skills() {
   shopt -s nullglob
   # First: top-level skills (skills/<skill>/SKILL.md)
   for skill_dir in "$SOURCE_SKILLS_DIR"/*/; do
     [[ -d "$skill_dir" ]] || continue
     if [[ -f "$skill_dir/SKILL.md" ]]; then
-      echo "$skill_dir"
+      _emit_if_filtered "$skill_dir" ""
     fi
   done
   # Second: nested skills (skills/<category>/<skill>/SKILL.md)
@@ -232,12 +245,32 @@ enumerate_skills() {
     [[ -d "$category_dir" ]] || continue
     # Skip if category_dir itself is a skill (already handled above)
     [[ -f "$category_dir/SKILL.md" ]] && continue
+    local category_name
+    category_name="$(basename "$category_dir")"
+    # Domain filter: skip entire category if it doesn't match
+    if [[ -n "$FILTER_DOMAIN" && "$category_name" != "$FILTER_DOMAIN" ]]; then
+      continue
+    fi
     for skill_dir in "$category_dir"*/; do
       [[ -d "$skill_dir" ]] || continue
-      echo "$skill_dir"
+      _emit_if_filtered "$skill_dir" "$category_name"
     done
   done
   shopt -u nullglob
+}
+
+# Helper: echo skill_dir if it passes the skill filter
+_emit_if_filtered() {
+  local skill_dir="$1"
+  local category_name="$2"
+  local skill_name
+  skill_name="$(basename "$skill_dir")"
+  if [[ -n "$FILTER_SKILL" ]]; then
+    if [[ "$skill_name" != "$FILTER_SKILL" ]]; then
+      return
+    fi
+  fi
+  echo "${skill_dir}"
 }
 
 # Install all skills additively into dest root
@@ -317,7 +350,7 @@ install_skills_gemini() {
     local dest="$dest_root/$skill_name"
 
     if has_existing_content "$dest"; then
-      if is_managed_by_us "$dest" "$dest_root"; then
+      if is_managed_by_us "$skill_name" "$dest_root"; then
         if [[ $DRY_RUN -eq 0 ]]; then rm -rf "$dest"; fi
       elif [[ $FORCE -eq 1 ]]; then
         backup_path "$dest"
@@ -604,6 +637,8 @@ Usage:
 Options:
   --agent NAME           Agent to install (repeatable)
                          claude-code | codex | cursor | gemini-cli | windsurf | github-copilot | openclaw | hermes-agent
+  --domain DOMAIN        Only install skills from the given domain (e.g. ctf, web-pentest)
+  --skill SKILL_ID       Only install a single skill by its ID
   --all                  Install every supported agent
   --list                 Show available skills by category
   --copy                 Copy the skills directory instead of symlinking
@@ -620,7 +655,8 @@ Safety:
   are left alone unless --force is given (a .backup-<timestamp> is created first).
 
   A manifest file (.security-agent-skills-manifest) tracks which skills this
-  tool installed, enabling clean --uninstall.
+  tool installed, enabling clean --uninstall. The manifest stores one skill ID
+  per line — a skill is only treated as "managed" if its ID appears in the manifest.
 
   Gemini CLI: skills are flattened to a single-level directory for proper
   discovery (Gemini only discovers skills one level deep).
@@ -645,6 +681,16 @@ parse_args() {
       --list)
         SHOW_LIST=1
         shift
+        ;;
+      --domain)
+        [[ $# -ge 2 ]] || { echo "[error] --domain requires a value" >&2; exit 1; }
+        FILTER_DOMAIN="$2"
+        shift 2
+        ;;
+      --skill)
+        [[ $# -ge 2 ]] || { echo "[error] --skill requires a value" >&2; exit 1; }
+        FILTER_SKILL="$2"
+        shift 2
         ;;
       --copy)
         MODE="copy"

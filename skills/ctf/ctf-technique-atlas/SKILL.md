@@ -8,8 +8,7 @@ description: Deep CTF technique atlas for mapping challenge clues to concrete at
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - technique-atlas

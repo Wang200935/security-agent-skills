@@ -7,8 +7,7 @@ description: Bit-bang SPI driver for nRF24L01+ on ESP32 with verified writes, Sh
 name: nrf24-bitbang-spi
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - nrf24
 - esp32

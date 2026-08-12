@@ -7,8 +7,7 @@ version: 1.0.0
 category: hardware
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - flipper
 - backup
@@ -273,7 +272,7 @@ Backup contents:
 - **Stale qFlipper-cli process = serial lock = next run fails with "Permission error while locking the device"**. After ANY timeout/abort, run `pkill -9 -f qFlipper` before the next attempt. If lock persists, unplug/replug USB.
 - **GitHub releases don't have prebuilt firmware binaries**. The `flipperdevices/flipperzero-firmware` repo releases contain only source tarballs. The actual `.tgz`/`.dfu` files live on the `update.flipperzero.one` CDN, fetched via the directory.json manifest.
 - **SD card format**: Must be FAT32 or exFAT. If formatted on PC, make sure it's one of these — `exFAT` is preferred for cards >32GB.
-- **During a firmware flash, `/ext` SD card data is preserved as-is** — confirmed live with Momentum-CN flash over Official 1.4.3. Don't waste user time planning to migrate BadUSB scripts or other plain-text files: they're already there after the flash, because the flash only replaces `/int` and the bootloader. Custom forks share the same `/ext/{subghz,nfc,badusb,infrared,u2f,lfrfid,ibutton,dolphin}` layout. (The actual flash workflow lives in `flipper-zero-firmware-modification`.)
+- **During a firmware flash, `/ext` SD card data is preserved as-is** — confirmed live with Momentum-CN flash over Official 1.4.3. Don't waste user time planning to migrate BadUSB scripts or other plain-text files: they're already there after the flash, because the flash only replaces `/int` and the bootloader. Custom forks share the same `/ext/{subghz,nfc,badusb,infrared,u2f,lfrfid,ibutton,dolphin}` layout. (The actual flash workflow lives in `flipper-zero-firmware`.)
 - **DFU mode is always safe**: The USB DFU bootloader lives in protected ROM and cannot be overwritten by any firmware. It's the ultimate recovery mechanism — even a complete firmware brick is recoverable via DFU.
 - **Serial port conflict**: Only one app can use the serial port at a time. Close qFlipper GUI before using `qFlipper-cli` or `screen` or pyserial.
 - **macOS qFlipper**: Install via `brew install --cask qflipper`. The CLI symlink lives in `~/homebrew/bin/`.
@@ -351,7 +350,7 @@ After plugging in Flipper:
 
 ## See also
 
-- `flipper-zero-firmware-modification` skill — flash/reflash workflow (run this skill first as pre-flight before any firmware change)
+- `flipper-zero-firmware` skill — flash/reflash workflow (run this skill first as pre-flight before any firmware change)
 - `references/research-notes.md` — verified CDN URLs, JSON schema, CLI command reference, Chinese firmware fork info
 - `references/no-sd-card-mode.md` — full no-SD backup workflow + failure modes
 - `references/url-discovery-from-source.md` — technique for finding internal API URLs by reading client source
@@ -395,7 +394,7 @@ s.close()
 PY
 ```
 
-For full fork detection rules + diagnostic decision tree see `flipper-zero-firmware-modification` skill section "Is this Momentum or Official?".
+For full fork detection rules + diagnostic decision tree see `flipper-zero-firmware` skill section "Is this Momentum or Official?".
 
 ## Flipper CLI Commands (verified against firmware 1.4.3 source)
 

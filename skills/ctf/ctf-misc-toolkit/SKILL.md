@@ -7,8 +7,7 @@ description: Solve CTF Misc challenges including pyjails/sandboxes, OSINT, puzzl
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - misc

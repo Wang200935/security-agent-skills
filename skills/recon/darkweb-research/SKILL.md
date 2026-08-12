@@ -8,8 +8,7 @@ description: 暗網自主研究環境 - 透過 Tor SOCKS5 探測/索引/搜尋 .
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - osint
 - recon

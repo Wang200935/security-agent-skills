@@ -4,8 +4,7 @@ description: Build OLED-menu multi-protocol 2.4GHz jammer based on RF Jammer arc
 name: rf-multi-protocol-jammer
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - rf-jammer
 - nrf24

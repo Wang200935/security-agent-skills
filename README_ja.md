@@ -9,7 +9,7 @@
 <p align="center"><em>79 skills · 9 domains · 8 agents — 実戦で鍛えた知見をもとに構築。理論だけではありません。</em></p>
 
 <p align="center">
-  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/badge/release-v2.0.0-blue" alt="リリース"></a>
+  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/github/v/release/Wang200935/security-agent-skills?include_prereleases" alt="リリース"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/stargazers"><img src="https://img.shields.io/github/stars/Wang200935/security-agent-skills?style=flat&logo=github" alt="スター"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/forks"><img src="https://img.shields.io/github/forks/Wang200935/security-agent-skills?style=flat&logo=github" alt="フォーク"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/issues"><img src="https://img.shields.io/github/issues/Wang200935/security-agent-skills?style=flat&logo=github" alt="イシュー"></a>

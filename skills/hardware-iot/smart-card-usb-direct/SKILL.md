@@ -9,8 +9,7 @@ description: 'Bypass PC/SC/CCID middleware and communicate directly with USB sma
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - smart-card
 - usb
@@ -348,7 +347,7 @@ print(f"Read: {r}")
 
 ## 8. RELATED SKILLS
 
-- `ctf-forensics` — when the challenge involves smart card data extraction
+- `digital-forensics` — when the challenge involves smart card data extraction
 - `flipper-zero-backup` — Flipper can also read SLE4442 via GPIO/UART
 - `hardware/esp32-nrf24-jammer-builder` — RF side-channel perspective
 

@@ -5,8 +5,7 @@ description: Practical CTF training workflow for systematically learning challen
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - ctf
 - competition

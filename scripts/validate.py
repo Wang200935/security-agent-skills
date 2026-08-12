@@ -118,7 +118,7 @@ def check_skill_md(path, all_skill_names):
         warn(f"{path}: SKILL.md is {size} bytes (>50KB — consider splitting)")
     
     # 7. Internal markdown path references resolve
-    md_refs = re.findall(r'\[.+?\\]\((?!https?://)(?!mailto:)(.+?\.md)\)', content)
+    md_refs = re.findall(r'\[.+?\\\]\((?!https?://)(?!mailto:)(.+?\.md)\)', content)
     for ref in md_refs:
         ref_path = (path.parent / ref).resolve()
         if not ref_path.exists():
@@ -132,6 +132,45 @@ def check_skill_md(path, all_skill_names):
         ref_path = (path.parent / ref).resolve()
         if not ref_path.exists():
             warn(f"{path}: inline path reference '{ref}' does not resolve")
+    
+    # 7b. Validate body backtick skill ID references
+    # Tokens in backticks that look like skill IDs (kebab-case, 2+ words) and aren't in the canonical set
+    BODY_SKILL_IGNORE = {
+        # External skills referenced but not part of this repo
+        'esp32-embedded-development', 'esp32-jammer-diag', 'esp32-nrf24-jammer-builder',
+        'smart-card-reader-sle4442', 'esp32-wifi-deauth', 'playwright-cli',
+        'deep-research', 'claude-code-coding-executor', 'claude-code-pr-executor',
+        'claude-code-review-executor', 'esp32-wifi-killer',
+        # Tool names / packages (not skill IDs)
+        'rw-p', 'qemu-system-x86', 'extract-vmlinux', 'connect-src', 'img-src',
+        'script-src', 'easy-session', 'apfs-fuse', 'minidump-stackwalk',
+        'nbd-client', 'qemu-nbd', 'qflipper-cli', 'bose-ctl',
+        'document-format-supported', 'dhcpv6-discover', 'ipv6-neighbor-discovery',
+        'targets-ipv6-map4to6', 'targets-ipv6-multicast-mld', 'port-scanner',
+        'impacket-psexec', 'impacket-secretsdump', 'cross-env', 'react-dom',
+        'ssrf-req-filter', 'request-filtering-agent', 'factordb-python',
+        'spiderfoot-venv', 'owl-alpha', 'gpt-4o', 'gpt-4o-mini', 'o1-pro',
+        'playwright-stealth', 'playwright-with-fingerprints',
+    }
+    # Extract body (after frontmatter)
+    lines = content.split('\n')
+    fm_end = -1
+    in_fm = False
+    for i, line in enumerate(lines):
+        if line.strip() == '---':
+            if not in_fm:
+                in_fm = True
+            elif fm_end == -1:
+                fm_end = i
+                break
+    body_text = '\n'.join(lines[fm_end+1:]) if fm_end >= 0 else ''
+    
+    for m in re.finditer(r'`([a-z][a-z0-9]*(?:-[a-z0-9]+)+)`', body_text):
+        token = m.group(1)
+        if token in BODY_SKILL_IGNORE:
+            continue
+        if token not in all_skill_names:
+            err(f"{path}: body references skill ID `{token}` which is not in the skills tree (ghost reference)")
 
 def check_references(path):
     ref_dir = path / 'references'

@@ -38,11 +38,9 @@ skills:
   - prompt-injection
   - agent-security
   related_skills:
-  - cybersecurity
   - web-app-pentest
-  - pentest
   - reverse-engineering
-  skill_md_bytes: 11182
+  skill_md_bytes: 11154
   reference_count: 10
   script_count: 0
 - id: modern-attack-surfaces
@@ -68,7 +66,7 @@ skills:
   - api-security-testing
   - zero-day-hunting
   - pentest-workflow
-  skill_md_bytes: 13654
+  skill_md_bytes: 13649
   reference_count: 1
   script_count: 0
 - id: offensive-toolkit
@@ -87,7 +85,7 @@ skills:
   - offensive
   - toolkit
   related_skills: []
-  skill_md_bytes: 5965
+  skill_md_bytes: 5960
   reference_count: 0
   script_count: 0
 - id: security-and-hardening
@@ -107,7 +105,7 @@ skills:
   - and
   - hardening
   related_skills: []
-  skill_md_bytes: 19044
+  skill_md_bytes: 19020
   reference_count: 0
   script_count: 0
 - id: security-audit
@@ -124,11 +122,10 @@ skills:
   - vulnerability-research
   - red-teaming
   related_skills:
-  - cybersecurity
+  - ai-mcp-security
   - web-app-pentest
   - ctf-playbook
-  - ai-mcp-security
-  skill_md_bytes: 11762
+  skill_md_bytes: 11746
   reference_count: 2
   script_count: 0
 - id: security-code-review
@@ -144,11 +141,8 @@ skills:
   - findings
   - auth
   - injection
-  related_skills:
-  - claude-code-review-executor
-  - claude-code-pr-executor
-  - claude-code-coding-executor
-  skill_md_bytes: 3747
+  related_skills: []
+  skill_md_bytes: 3664
   reference_count: 0
   script_count: 0
 - id: ctf-jail-escape
@@ -164,11 +158,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 3087
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 3065
   reference_count: 9
   script_count: 0
 - id: ctf-kernel-exploitation
@@ -185,10 +179,9 @@ skills:
   - linux-kernel
   - pwn
   related_skills:
-  - ctf-general
-  - ctf-pwn-binary-exploitation
+  - binary-exploitation
   - ctf-reverse-engineering
-  skill_md_bytes: 21607
+  skill_md_bytes: 21580
   reference_count: 8
   script_count: 0
 - id: ctf-misc-toolkit
@@ -208,12 +201,10 @@ skills:
   - sandbox
   - protocols
   related_skills:
-  - ctf-general
   - ctf-web-exploitation
-  - ctf-forensics
+  - digital-forensics
   - ctf-reverse-engineering
-  - ctf-cryptography
-  skill_md_bytes: 11183
+  skill_md_bytes: 11149
   reference_count: 9
   script_count: 1
 - id: ctf-orchestrator
@@ -230,14 +221,12 @@ skills:
   - training
   related_skills:
   - ctf-web-exploitation
-  - ctf-cryptography
-  - ctf-forensics
+  - digital-forensics
   - ctf-reverse-engineering
-  - ctf-pwn-binary-exploitation
-  - ctf-misc
+  - binary-exploitation
+  - ctf-misc-toolkit
   - ctf-kernel-exploitation
-  - hackingtool
-  skill_md_bytes: 4035
+  skill_md_bytes: 4001
   reference_count: 40
   script_count: 1
 - id: ctf-playbook
@@ -263,7 +252,7 @@ skills:
   - client-auth-bypass
   - security-orchestrator
   - network-pentest
-  skill_md_bytes: 10610
+  skill_md_bytes: 10605
   reference_count: 34
   script_count: 0
 - id: ctf-technique-atlas
@@ -281,15 +270,13 @@ skills:
   - exploitation
   - writeups
   related_skills:
-  - ctf-general
   - ctf-web-exploitation
-  - ctf-cryptography
-  - ctf-forensics
+  - digital-forensics
   - ctf-reverse-engineering
-  - ctf-pwn-binary-exploitation
+  - binary-exploitation
   - ctf-kernel-exploitation
-  - ctf-misc
-  skill_md_bytes: 5791
+  - ctf-misc-toolkit
+  skill_md_bytes: 5757
   reference_count: 5
   script_count: 1
 - id: ctf-training-loop
@@ -305,7 +292,7 @@ skills:
   - training
   - loop
   related_skills: []
-  skill_md_bytes: 2768
+  skill_md_bytes: 2763
   reference_count: 0
   script_count: 0
 - id: ctf-web-exploitation
@@ -327,11 +314,8 @@ skills:
   - upload
   - ssti
   related_skills:
-  - ctf-general
-  - hackingtool
-  - authenticated-web-crawling
-  - cua-browser-automation
-  skill_md_bytes: 24858
+  - browser-automation-security
+  skill_md_bytes: 24582
   reference_count: 27
   script_count: 1
 - id: ctf-writeup-discipline
@@ -348,12 +332,10 @@ skills:
   - evidence
   - packaging
   related_skills:
-  - ctf-general
-  - ctf-cryptography
-  - ctf-forensics
+  - digital-forensics
   - ctf-reverse-engineering
-  - ctf-pwn-binary-exploitation
-  skill_md_bytes: 8601
+  - binary-exploitation
+  skill_md_bytes: 8559
   reference_count: 0
   script_count: 0
 - id: ctf-writeup-screenshots
@@ -370,10 +352,8 @@ skills:
   - macos
   - evidence
   related_skills:
-  - ctf-general
-  - ctf-writeup-artifact-discipline
-  - macos-computer-use
-  skill_md_bytes: 5882
+  - ctf-writeup-discipline
+  skill_md_bytes: 5833
   reference_count: 0
   script_count: 0
 - id: binary-exploitation
@@ -393,10 +373,8 @@ skills:
   - ret2libc
   - shellcode
   related_skills:
-  - ctf-general
   - ctf-reverse-engineering
-  - systematic-debugging
-  skill_md_bytes: 42093
+  skill_md_bytes: 42051
   reference_count: 19
   script_count: 6
 - id: crypto-attack-patterns
@@ -417,12 +395,8 @@ skills:
   - hash
   - prng
   related_skills:
-  - ctf-general
-  - cryptography
-  - hackingtool
-  - python-debugpy
-  - systematic-debugging
-  skill_md_bytes: 43152
+  - cryptography-fundamentals
+  skill_md_bytes: 43092
   reference_count: 26
   script_count: 5
 - id: crypto-ctf-attacks
@@ -438,11 +412,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 3949
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 3935
   reference_count: 9
   script_count: 0
 - id: crypto-toolkit
@@ -457,11 +431,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 6816
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 6858
   reference_count: 6
   script_count: 0
 - id: cryptography-fundamentals
@@ -479,11 +453,8 @@ skills:
   - pki
   - pqc
   - protocols
-  related_skills:
-  - llm-wiki
-  - knowledge-note-crafting
-  - deepseek-api
-  skill_md_bytes: 10952
+  related_skills: []
+  skill_md_bytes: 10898
   reference_count: 12
   script_count: 11
 - id: encoding-realignment
@@ -501,10 +472,8 @@ skills:
   - custom-base64
   - triage
   related_skills:
-  - ctf-general
-  - ctf-cryptography
   - ctf-technique-atlas
-  skill_md_bytes: 7811
+  skill_md_bytes: 7773
   reference_count: 0
   script_count: 0
 - id: exploit-development
@@ -531,7 +500,7 @@ skills:
   - pentest-workflow
   - kernel-exploitation
   - ctf-playbook
-  skill_md_bytes: 18734
+  skill_md_bytes: 18729
   reference_count: 3
   script_count: 0
 - id: exploit-poc-builder
@@ -546,10 +515,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 2386
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 2348
   reference_count: 3
   script_count: 0
 - id: kernel-exploitation
@@ -574,7 +543,7 @@ skills:
   - zero-day-hunting
   - reverse-engineering
   - pentest-workflow
-  skill_md_bytes: 14171
+  skill_md_bytes: 14166
   reference_count: 2
   script_count: 0
 - id: zero-day-hunting
@@ -602,7 +571,7 @@ skills:
   - binary-exploitation
   - ctf-playbook
   - hardware-iot-hacking
-  skill_md_bytes: 21918
+  skill_md_bytes: 21913
   reference_count: 2
   script_count: 0
 - id: bluetooth-jammer-sweep
@@ -620,7 +589,7 @@ skills:
   - jammer
   - shockburst
   related_skills: []
-  skill_md_bytes: 5204
+  skill_md_bytes: 5199
   reference_count: 0
   script_count: 0
 - id: esp32-serial-diag
@@ -640,11 +609,8 @@ skills:
   - diagnostics
   - non-tty
   related_skills:
-  - esp32-embedded-development
-  - esp32-jammer-diag
-  - esp32-nrf24-jammer-builder
-  - RF Jammer-master
-  skill_md_bytes: 11798
+  - exploit-development
+  skill_md_bytes: 11718
   reference_count: 1
   script_count: 1
 - id: flipper-zero-backup
@@ -663,7 +629,7 @@ skills:
   related_skills:
   - flipper-zero-firmware
   - hardware-iot-hacking
-  skill_md_bytes: 25939
+  skill_md_bytes: 25895
   reference_count: 5
   script_count: 2
 - id: flipper-zero-firmware
@@ -684,7 +650,7 @@ skills:
   related_skills:
   - flipper-zero-backup
   - hardware-iot-hacking
-  skill_md_bytes: 23976
+  skill_md_bytes: 23971
   reference_count: 3
   script_count: 3
 - id: hardware-iot-hacking
@@ -711,7 +677,7 @@ skills:
   - network-pentest
   - pentest-workflow
   - zero-day-hunting
-  skill_md_bytes: 14595
+  skill_md_bytes: 14590
   reference_count: 1
   script_count: 0
 - id: nrf24-bitbang-spi
@@ -729,7 +695,7 @@ skills:
   - shockburst
   - wireless-jamming
   related_skills: []
-  skill_md_bytes: 12334
+  skill_md_bytes: 12329
   reference_count: 0
   script_count: 0
 - id: rf-jammer-firmware-port
@@ -747,18 +713,14 @@ skills:
   - multi-protocol
   - oled
   - 移植
-  related_skills:
-  - esp32-nrf24-jammer-builder
-  - ctf-general
-  skill_md_bytes: 19761
+  related_skills: []
+  skill_md_bytes: 19716
   reference_count: 0
   script_count: 0
 - id: rf-multi-protocol-jammer
   path: skills/hardware-iot/rf-multi-protocol-jammer/SKILL.md
   domain: hardware-iot
   description: Build OLED-menu multi-protocol 2.4GHz jammer based on RF Jammer architecture
-    (cifertech/rf-jammer). Covers ESP32 + 3×nRF24L01+PA+LNA on shared SPI bus with
-    SoftNRF bit-bang driver, 8 jamming modes (Wi
   version: '1.0'
   tags:
   - rf-jammer
@@ -771,7 +733,7 @@ skills:
   - wifi-jamming
   - ble-jamming
   related_skills: []
-  skill_md_bytes: 13824
+  skill_md_bytes: 13309
   reference_count: 2
   script_count: 0
 - id: smart-card-driver-debug
@@ -791,7 +753,7 @@ skills:
   - driver
   - debug
   related_skills: []
-  skill_md_bytes: 11045
+  skill_md_bytes: 11040
   reference_count: 5
   script_count: 1
 - id: smart-card-usb-direct
@@ -810,7 +772,7 @@ skills:
   - SLE4442
   - AL9543
   related_skills: []
-  skill_md_bytes: 12880
+  skill_md_bytes: 12879
   reference_count: 1
   script_count: 1
 - id: wifi-deauth-jammer
@@ -833,7 +795,7 @@ skills:
   - wifi-dualband-jammer
   - rf-multi-protocol-jammer
   - bluetooth-jammer-sweep
-  skill_md_bytes: 3887
+  skill_md_bytes: 3882
   reference_count: 1
   script_count: 2
 - id: wifi-dualband-jammer
@@ -859,7 +821,7 @@ skills:
   - wifi-deauth-jammer
   - rf-multi-protocol-jammer
   - rf-jammer-firmware-port
-  skill_md_bytes: 21791
+  skill_md_bytes: 21786
   reference_count: 0
   script_count: 0
 - id: advanced-pentest
@@ -884,7 +846,7 @@ skills:
   - network-pentest
   - security-orchestrator
   - api-security-testing
-  skill_md_bytes: 26177
+  skill_md_bytes: 26172
   reference_count: 60
   script_count: 4
 - id: network-pentest
@@ -906,7 +868,7 @@ skills:
   related_skills:
   - security-orchestrator
   - web-app-pentest
-  skill_md_bytes: 29601
+  skill_md_bytes: 29596
   reference_count: 5
   script_count: 0
 - id: pentest-quick-checklist
@@ -922,12 +884,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 4416
-  reference_count: 6
+  - pentest-workflow
+  - pentest-tool-setup
+  - ctf-web-exploitation
+  skill_md_bytes: 4553
+  reference_count: 12
   script_count: 0
 - id: pentest-tool-reference
   path: skills/network-pentest/pentest-tool-reference/SKILL.md
@@ -942,11 +903,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 3377
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 3355
   reference_count: 20
   script_count: 0
 - id: pentest-tool-setup
@@ -963,7 +924,7 @@ skills:
   - tool
   - setup
   related_skills: []
-  skill_md_bytes: 3917
+  skill_md_bytes: 3912
   reference_count: 0
   script_count: 0
 - id: pentest-workflow
@@ -978,10 +939,9 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 11095
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 11038
   reference_count: 10
   script_count: 0
 - id: security-orchestrator
@@ -998,7 +958,7 @@ skills:
   - ctf-orchestrator
   - advanced-pentest
   - osint-framework
-  skill_md_bytes: 5736
+  skill_md_bytes: 5496
   reference_count: 0
   script_count: 0
 - id: advanced-attack-chains
@@ -1024,15 +984,14 @@ skills:
   - pentest-workflow
   - web-app-pentest
   - network-pentest
-  skill_md_bytes: 29644
+  skill_md_bytes: 29613
   reference_count: 1
   script_count: 0
 - id: autonomous-pentest-scanner
   path: skills/post-exploitation/autonomous-pentest-scanner/SKILL.md
   domain: post-exploitation
   description: Open-source AI multi-agent pentesting tool — wraps the `strix` CLI
-    for autonomous security scans of authorized targets. Produces validated findings
-    + working PoCs + compliance reports. Use when the us
+    for autonomous security scans of authorized targets.
   version: 1.0.0
   tags:
   - strix
@@ -1055,7 +1014,7 @@ skills:
   - pentest-workflow
   - network-pentest
   - security-audit
-  skill_md_bytes: 14057
+  skill_md_bytes: 13595
   reference_count: 6
   script_count: 0
 - id: intranet-pentest-advanced
@@ -1071,11 +1030,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 4295
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 4273
   reference_count: 17
   script_count: 0
 - id: pentest-report-generator
@@ -1090,10 +1049,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 4738
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 4700
   reference_count: 13
   script_count: 0
 - id: post-exploitation-ops
@@ -1108,10 +1067,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 2273
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 2235
   reference_count: 3
   script_count: 0
 - id: professional-pentest-guide
@@ -1135,7 +1094,7 @@ skills:
   - web-app-pentest
   - network-pentest
   - reverse-engineering
-  skill_md_bytes: 32453
+  skill_md_bytes: 32485
   reference_count: 10
   script_count: 0
 - id: chatgpt-web-relay
@@ -1155,7 +1114,7 @@ skills:
   related_skills:
   - browser-automation-security
   - web-app-pentest
-  skill_md_bytes: 8291
+  skill_md_bytes: 8286
   reference_count: 0
   script_count: 1
 - id: darkweb-research
@@ -1172,7 +1131,7 @@ skills:
   - darkweb
   - research
   related_skills: []
-  skill_md_bytes: 9242
+  skill_md_bytes: 9222
   reference_count: 4
   script_count: 6
 - id: email-osint-investigation
@@ -1191,8 +1150,8 @@ skills:
   - SOCMINT
   related_skills:
   - username-scanner
-  - spiderfoot-osint-automation
-  skill_md_bytes: 12003
+  - spiderfoot-automation
+  skill_md_bytes: 11992
   reference_count: 2
   script_count: 0
 - id: local-network-recon
@@ -1209,7 +1168,7 @@ skills:
   - local
   - network
   related_skills: []
-  skill_md_bytes: 16125
+  skill_md_bytes: 16120
   reference_count: 5
   script_count: 0
 - id: network-device-recon
@@ -1225,7 +1184,7 @@ skills:
   - network
   - device
   related_skills: []
-  skill_md_bytes: 14240
+  skill_md_bytes: 14235
   reference_count: 4
   script_count: 0
 - id: osint-framework
@@ -1251,8 +1210,8 @@ skills:
   - ctf-playbook
   - security-orchestrator
   - username-scanner
-  - spiderfoot-osint-automation
-  skill_md_bytes: 9234
+  - spiderfoot-automation
+  skill_md_bytes: 9223
   reference_count: 26
   script_count: 4
 - id: osint-recon-model
@@ -1267,11 +1226,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 9360
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 9342
   reference_count: 10
   script_count: 0
 - id: parallel-intel-gathering
@@ -1292,7 +1251,7 @@ skills:
   related_skills:
   - browser-automation-security
   - security-orchestrator
-  skill_md_bytes: 9690
+  skill_md_bytes: 9694
   reference_count: 0
   script_count: 0
 - id: reconnaissance-ops
@@ -1307,10 +1266,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 9508
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 9470
   reference_count: 5
   script_count: 0
 - id: spiderfoot-automation
@@ -1335,7 +1294,7 @@ skills:
   related_skills:
   - security-orchestrator
   - username-scanner
-  skill_md_bytes: 18556
+  skill_md_bytes: 18531
   reference_count: 2
   script_count: 1
 - id: username-scanner
@@ -1356,7 +1315,7 @@ skills:
   - security-orchestrator
   - pentest-workflow
   - browser-automation-security
-  skill_md_bytes: 17216
+  skill_md_bytes: 17211
   reference_count: 1
   script_count: 1
 - id: vulnerability-discovery
@@ -1371,10 +1330,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 3009
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 2971
   reference_count: 3
   script_count: 0
 - id: ctf-reverse-engineering
@@ -1393,12 +1352,8 @@ skills:
   - angr
   - apk
   - wasm
-  related_skills:
-  - ctf-general
-  - hackingtool
-  - python-debugpy
-  - systematic-debugging
-  skill_md_bytes: 19377
+  related_skills: []
+  skill_md_bytes: 19307
   reference_count: 8
   script_count: 4
 - id: digital-forensics
@@ -1417,7 +1372,7 @@ skills:
   - disk
   - reversing
   related_skills: []
-  skill_md_bytes: 33417
+  skill_md_bytes: 33412
   reference_count: 11
   script_count: 1
 - id: reverse-engineering
@@ -1442,7 +1397,7 @@ skills:
   - ctf-playbook
   - security-orchestrator
   - network-pentest
-  skill_md_bytes: 35948
+  skill_md_bytes: 35943
   reference_count: 9
   script_count: 0
 - id: android-pentest
@@ -1457,11 +1412,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 4026
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 4004
   reference_count: 13
   script_count: 0
 - id: api-security-testing
@@ -1484,7 +1439,7 @@ skills:
   - web-app-pentest
   - browser-automation-security
   - security-orchestrator
-  skill_md_bytes: 11902
+  skill_md_bytes: 11897
   reference_count: 17
   script_count: 0
 - id: browser-automation-security
@@ -1506,7 +1461,7 @@ skills:
   - web-app-pentest
   - client-auth-bypass
   - security-orchestrator
-  skill_md_bytes: 44858
+  skill_md_bytes: 44847
   reference_count: 2
   script_count: 2
 - id: client-auth-bypass
@@ -1527,7 +1482,7 @@ skills:
   - client-reverse-engineering
   - web-app-pentest
   - browser-automation-security
-  skill_md_bytes: 17001
+  skill_md_bytes: 16996
   reference_count: 11
   script_count: 0
 - id: client-reverse-engineering
@@ -1543,11 +1498,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 4831
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 4809
   reference_count: 23
   script_count: 0
 - id: ctf-web-attacks
@@ -1563,11 +1518,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 10378
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  skill_md_bytes: 10338
   reference_count: 12
   script_count: 0
 - id: ctf-web-pwn-methodology
@@ -1590,7 +1544,7 @@ skills:
   - gdb
   - exploit-development
   related_skills: []
-  skill_md_bytes: 5944
+  skill_md_bytes: 5939
   reference_count: 4
   script_count: 0
 - id: framework-vulnerability-research
@@ -1607,10 +1561,10 @@ skills:
   - full-stack
   - cve-analysis
   related_skills:
-  - -web-security-advanced
-  - -web-pentest
-  - -ctf-web
-  skill_md_bytes: 5956
+  - web-security-advanced
+  - web-app-pentest
+  - ctf-web-attacks
+  skill_md_bytes: 5960
   reference_count: 3
   script_count: 0
 - id: sql-server-exploitation
@@ -1633,7 +1587,7 @@ skills:
   - web-app-pentest
   - exploit-development
   - api-security-testing
-  skill_md_bytes: 16738
+  skill_md_bytes: 16733
   reference_count: 3
   script_count: 1
 - id: waf-bypass-techniques
@@ -1648,10 +1602,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -web-security-advanced
-  - -osint-recon
-  skill_md_bytes: 4268
+  - pentest-workflow
+  - web-security-advanced
+  - osint-recon-model
+  skill_md_bytes: 4230
   reference_count: 3
   script_count: 0
 - id: web-app-assessment
@@ -1666,11 +1620,11 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 5098
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 5076
   reference_count: 8
   script_count: 0
 - id: web-app-pentest
@@ -1697,7 +1651,7 @@ skills:
   - browser-automation-security
   - api-security-testing
   - ctf-playbook
-  skill_md_bytes: 7114
+  skill_md_bytes: 7109
   reference_count: 128
   script_count: 1
 - id: web-security-advanced
@@ -1713,10 +1667,10 @@ skills:
   - security
   - imported
   related_skills:
-  - -pentest-flow
-  - -rapid-checklist
-  - pentest-tools
-  - ctf-web
-  skill_md_bytes: 12396
+  - pentest-workflow
+  - pentest-quick-checklist
+  - pentest-tool-setup
+  - ctf-web-attacks
+  skill_md_bytes: 12374
   reference_count: 50
   script_count: 0

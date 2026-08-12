@@ -10,13 +10,9 @@ platforms:
 - macos
 - windows
 metadata:
-  hermes:
-    homepage: https://
-    origin: import
-  upstream:
-    repo: https://
-    source_path: /skills/specialized/ctf-misc/SKILL.md
-    original_name: ctf-misc
+  hermes_origin: import
+  upstream_source_path: /skills/specialized/ctf-misc/SKILL.md
+  upstream_original_name: ctf-misc
 tags:
 - red-teaming
 - penetration-testing

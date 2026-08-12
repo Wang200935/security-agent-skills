@@ -93,6 +93,12 @@ def get_related(skill_id, valid_ids):
     return [r for r in related if r in valid_ids and r != skill_id]
 
 
+def serialize_frontmatter(fm, body):
+    """Serialize frontmatter + body back to text, preserving body exactly."""
+    fm_text = yaml.dump(fm, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    return f"---\n{fm_text}---\n{body}"
+
+
 def main():
     # Build set of valid skill IDs
     valid_ids = set()
@@ -115,13 +121,7 @@ def main():
                 continue
             
             changed = False
-            metadata = fm.get('metadata', {})
-            if not isinstance(metadata, dict):
-                metadata = {}
-            hermes = metadata.get('hermes', {})
-            if not isinstance(hermes, dict):
-                hermes = {}
-            
+
             # Populate tags
             current_tags = fm.get('tags', [])
             if isinstance(current_tags, str):
@@ -140,18 +140,11 @@ def main():
                 fm['related_skills'] = related
                 changed = True
 
-            # Keep legacy metadata.hermes mirror for compatibility, but only if needed
-            metadata = fm.get('metadata', {})
-            if not isinstance(metadata, dict):
-                metadata = {}
-            hermes = metadata.get('hermes', {})
-            if not isinstance(hermes, dict):
-                hermes = {}
-            hermes['tags'] = fm.get('tags', [])
-            hermes['related_skills'] = fm.get('related_skills', [])
-            hermes['origin'] = hermes.get('origin', 'import')
-            metadata['hermes'] = hermes
-            fm['metadata'] = metadata
+            if changed:
+                # Re-serialize and write
+                new_text = serialize_frontmatter(fm, body)
+                path.write_text(new_text)
+                updated += 1
     
     print(f"\nUpdated: {updated}")
 

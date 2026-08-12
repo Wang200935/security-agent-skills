@@ -29,7 +29,4 @@ skills/hardware-iot/*/SKILL.md
 
 ## Rules
 
-Load `rules/` for shared knowledge:
-- `rules/payloads.md` — Attack payloads
-- `rules/techniques.md` — Proven techniques
-- `rules/hunting.md` — Hunting rules
+Shared knowledge in `rules/security-rules.md` covers attack payloads, proven techniques, WAF bypass patterns, and hunting rules.

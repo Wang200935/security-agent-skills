@@ -8,8 +8,7 @@ version: 1.0.0
 category: red-teaming
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - OSINT
 - reconnaissance
@@ -136,7 +135,7 @@ def search_security_papers(topic: str) -> list:
 
 ## Method 3: Playwright Browser Intel
 
-Use `playwright-browser` skill for:
+Use `browser-automation-security` skill for:
 - **JavaScript-rendered pages**: Sites that need JS to load content
 - **Login-gated content**: Automate login to access protected pages
 - **Dynamic scraping**: Infinite scroll, lazy loading, SPAs

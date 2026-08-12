@@ -8,8 +8,7 @@ description: ESP32 serial diagnostics in non-TTY environments — pyserial worka
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - esp32
 - serial

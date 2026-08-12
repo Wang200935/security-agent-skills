@@ -6,8 +6,7 @@ description: Capture and organize natural-looking screenshots for CTF re-solve w
   when the user asks for screenshots like another write-up.
 version: 1.0.0
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 license: MIT
 tags:
 - ctf

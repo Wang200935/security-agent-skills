@@ -9,7 +9,7 @@
 <p align="center"><em>79 skills · 9 domains · 8 agent platforms — installable as Agent Skills</em></p>
 
 <p align="center">
-  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/badge/release-v2.0.0-blue" alt="release"></a>
+  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/github/v/release/Wang200935/security-agent-skills?include_prereleases" alt="release"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/stargazers"><img src="https://img.shields.io/github/stars/Wang200935/security-agent-skills?style=flat&logo=github" alt="stars"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/forks"><img src="https://img.shields.io/github/forks/Wang200935/security-agent-skills?style=flat&logo=github" alt="forks"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/issues"><img src="https://img.shields.io/github/issues/Wang200935/security-agent-skills?style=flat&logo=github" alt="issues"></a>
@@ -37,7 +37,7 @@
 
 ## About
 
-When an AI agent (Claude Code, Codex, Cursor, Gemini CLI, Windsurf, GitHub Copilot, OpenClaw, or Hermes Agent) encounters a security task — an APK to reverse, a web app to advanced-pentest, a CTF challenge to solve, or a binary to analyze — this pack routes it to the right methodology, payloads, and commands instead of guessing.
+When an AI agent (Claude Code, Codex, Cursor, Gemini CLI, Windsurf, GitHub Copilot, OpenClaw, or Hermes Agent) encounters a security task — an APK to reverse, a web app to penetration-test, a CTF challenge to solve, or a binary to analyze — this pack routes it to the right methodology, payloads, and commands instead of guessing.
 
 ```
 User task → security-orchestrator (master router · intent analysis)
@@ -179,10 +179,10 @@ security domains and needs coordination.
 ### Parallel Execution
 
 For maximum speed, load multiple skills in parallel:
-- **Full advanced-pentest**: recon + web-app-pentest + network-pentest + post-exploitation
+- **Full penetration test**: recon + web-app-pentest + network-pentest + post-exploitation
 - **Bug bounty**: recon + web-app-pentest + exploit-dev + waf-bypass-techniques
 - **CTF solve**: ctf-orchestrator → routes to ctf-web / ctf-crypto / ctf-misc-toolkit / ctf-reverse as needed
-- **Internal advanced-pentest**: network-pentest + post-exploitation + intranet-pentest-advanced
+- **Internal penetration test**: network-pentest + post-exploitation + intranet-pentest-advanced
 - **Hardware assessment**: hardware-iot-hacking + reverse-engineering
 
 ### Selective Install

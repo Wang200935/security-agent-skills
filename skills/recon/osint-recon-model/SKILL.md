@@ -9,13 +9,9 @@ platforms:
 - macos
 - windows
 metadata:
-  hermes:
-    homepage: https://
-    origin: import
-  upstream:
-    repo: https://
-    source_path: /skills/specialized/osint-recon/SKILL.md
-    original_name: osint-recon
+  hermes_origin: import
+  upstream_source_path: /skills/specialized/osint-recon/SKILL.md
+  upstream_original_name: osint-recon
 tags:
 - red-teaming
 - penetration-testing
@@ -34,7 +30,7 @@ related_skills:
 
 **与 `recon` Skill 的区别**：
 - `recon` → 技术层面侦察（端口扫描、DNS、目录枚举）— 基础版
-- `osint-recon` → 全维度侦察（服务器 + 网站 + 域名 + 人员/社会工程）— 深度版
+- `osint-framework` → 全维度侦察（服务器 + 网站 + 域名 + 人员/社会工程）— 深度版
 
 ## 核心原则
 

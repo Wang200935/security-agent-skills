@@ -9,13 +9,9 @@ platforms:
 - macos
 - windows
 metadata:
-  hermes:
-    homepage: https://
-    origin: import
-  upstream:
-    repo: https://
-    source_path: /skills/core/recon.md
-    original_name: recon
+  hermes_origin: import
+  upstream_source_path: /skills/core/recon.md
+  upstream_original_name: recon
 tags:
 - red-teaming
 - penetration-testing

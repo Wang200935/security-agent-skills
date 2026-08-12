@@ -7,8 +7,7 @@ description: Comprehensive local network device discovery, identification, and i
 version: 1.0.0
 license: MIT
 metadata:
-  hermes:
-    origin: import
+  hermes_origin: import
 tags:
 - osint
 - recon

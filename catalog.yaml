@@ -138,8 +138,8 @@ skills:
   version: 1.1.0
   tags: []
   related_skills: []
-  skill_md_bytes: 59062
-  reference_count: 14
+  skill_md_bytes: 4091
+  reference_count: 40
   script_count: 1
 - id: ctf-playbook
   path: skills/ctf/ctf-playbook/SKILL.md
@@ -150,8 +150,8 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 96117
-  reference_count: 4
+  skill_md_bytes: 10674
+  reference_count: 34
   script_count: 0
 - id: ctf-technique-atlas
   path: skills/ctf/ctf-technique-atlas/SKILL.md
@@ -483,8 +483,8 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 72583
-  reference_count: 40
+  skill_md_bytes: 26237
+  reference_count: 60
   script_count: 4
 - id: network-pentest
   path: skills/network-pentest/network-pentest/SKILL.md
@@ -693,8 +693,8 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 51605
-  reference_count: 12
+  skill_md_bytes: 9302
+  reference_count: 26
   script_count: 4
 - id: osint-recon-model
   path: skills/recon/osint-recon-model/SKILL.md
@@ -821,8 +821,8 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 61156
-  reference_count: 1
+  skill_md_bytes: 11954
+  reference_count: 17
   script_count: 0
 - id: browser-automation-security
   path: skills/web-pentest/browser-automation-security/SKILL.md
@@ -939,8 +939,8 @@ skills:
   version: 1.0.0
   tags: []
   related_skills: []
-  skill_md_bytes: 88586
-  reference_count: 90
+  skill_md_bytes: 7182
+  reference_count: 128
   script_count: 1
 - id: web-security-advanced
   path: skills/web-pentest/web-security-advanced/SKILL.md

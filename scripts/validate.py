@@ -73,18 +73,25 @@ def check_skill_md(path, all_skill_names):
         # 3. name matches directory
         if fm_name != skill_name:
             err(f"{path}: name '{fm_name}' != directory '{skill_name}'")
-        # 4. name syntax
-        if not re.match(r'^[a-z][a-z0-9-]{0,63}$', str(fm_name)):
-            err(f"{path}: name '{fm_name}' invalid syntax (lowercase, hyphens, max 64)")
+        # 4. name syntax — official Agent Skills grammar
+        # [a-z][a-z0-9]*(-[a-z0-9]+)* , 1-64 chars, no trailing/leading/double hyphens
+        name_str = str(fm_name)
+        if len(name_str) > 64:
+            err(f"{path}: name '{fm_name}' exceeds 64 chars ({len(name_str)})")
+        elif not re.match(r'^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$', name_str):
+            err(f"{path}: name '{fm_name}' invalid syntax (lowercase, hyphens, no trailing/double hyphens, max 64)")
     
-    # 5. description exists
+    # 5. description exists — official hard limit is 1024 chars
     desc = fm.get('description', '')
+    desc_len = len(str(desc)) if desc else 0
     if not desc:
         err(f"{path}: missing 'description' field")
-    elif len(str(desc)) < 10:
-        warn(f"{path}: description very short ({len(str(desc))} chars)")
-    elif len(str(desc)) > 500:
-        warn(f"{path}: description very long ({len(str(desc))} chars)")
+    elif desc_len < 10:
+        warn(f"{path}: description very short ({desc_len} chars)")
+    elif desc_len > 1024:
+        err(f"{path}: description exceeds 1024 chars ({desc_len} chars — hardcoded limit)")
+    elif desc_len > 500:
+        warn(f"{path}: description very long ({desc_len} chars)")
     
     # 6. related_skills reference existing skills (top-level schema)
     related = fm.get('related_skills', [])
@@ -102,13 +109,21 @@ def check_skill_md(path, all_skill_names):
         if hermes.get('tags') or hermes.get('related_skills'):
             warn(f"{path}: metadata.hermes contains tags/related_skills; use top-level tags/related_skills for catalog")
     
-    # 8. No hardcoded absolute home paths
-    if '/Users/' in content or '/home/' in content:
-        # Check if it's in a code block (sometimes legitimate in examples)
-        lines = content.split('\n')
-        for i, line in enumerate(lines, 1):
-            if '/Users/' in line and 'example' not in line.lower() and '<' not in line:
-                warn(f"{path}:{i}: hardcoded home path: {line.strip()[:100]}")
+    # 8. No hardcoded absolute home paths (macOS /Users/ and Linux /home/)
+    home_patterns = ['/Users/', '/home/']
+    lines = content.split('\n')
+    for i, line in enumerate(lines, 1):
+        for pat in home_patterns:
+            if pat in line:
+                # Skip code blocks and examples
+                stripped = line.strip()
+                if stripped.startswith('|') or stripped.startswith('```'):
+                    continue
+                if 'example' in line.lower() or '<' in line:
+                    continue
+                # Skip if it's inside a backtick code span on the same line
+                # (common in inline code examples)
+                warn(f"{path}:{i}: hardcoded home path: {stripped[:100]}")
     
     # 12. Oversized SKILL.md
     size = path.stat().st_size
@@ -161,9 +176,12 @@ def check_skill_md(path, all_skill_names):
     all_valid = all_skill_names | set(LEGACY_SKILL_ALIASES.keys()) | EXTERNAL_SKILL_IDS
     
     # 7. Internal markdown path references resolve
-    md_refs = re.findall(r'\[.+?\\\]\((?!https?://)(?!mailto:)(.+?\.md)\)', content)
-    for ref in md_refs:
+    # Match [text](path.md) where path is not http/mailto
+    md_refs = re.findall(r'\[([^\]]*)\]\((?!https?://)(?!mailto:)([^)]+\.md)\)', content)
+    for link_text, ref in md_refs:
         ref_path = (path.parent / ref).resolve()
+        if not ref_path.exists():
+            err(f"{path}: markdown link '{link_text}' → '{ref}' does not resolve (file not found)")
     
     # Check inline path references: `../../path.md` or `references/foo.md`
     inline_paths = re.findall(r'(?:^|\s)(?:→|see|See|see also)\s+[`"]?([a-z_./-]+\.md)[`"]?', content, re.I)

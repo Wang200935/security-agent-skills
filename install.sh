@@ -6,6 +6,29 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="${REPO_ROOT:-$SCRIPT_DIR}"
 SOURCE_SKILLS_DIR="$REPO_ROOT/skills"
 
+# Validate a skill name matches Agent Skills name grammar:
+# lowercase alphanumeric + hyphens, no leading/trailing hyphen, no consecutive --
+validate_skill_name() {
+  local name="$1"
+  [[ -z "$name" ]] && return 1
+  # No path components, no .., no /
+  [[ "$name" == */* ]] && return 1
+  [[ "$name" == ".." ]] && return 1
+  # Must match [a-z][a-z0-9-]*[a-z0-9] with no trailing/leading/double hyphens
+  [[ "$name" =~ ^[a-z][a-z0-9-]*[a-z0-9]$ ]] || return 1
+  [[ "$name" == *"--"* ]] && return 1
+  [[ "$name" == -* ]] && return 1
+  [[ "$name" == *- ]] && return 1
+  return 0
+}
+
+canonical_path() {
+  python3 - "$1" <<'PY'
+import os, sys
+print(os.path.realpath(sys.argv[1]))
+PY
+}
+
 MODE="symlink"           # symlink | copy
 CLAUDE_SCOPE="project"   # project | global
 FORCE=0
@@ -68,7 +91,7 @@ skills_root_for_claude() {
 skills_root_for_agent() {
   case "$1" in
     claude-code) skills_root_for_claude ;;
-    codex) printf '%s\n' "$REPO_ROOT/.codex/skills" ;;
+    codex) printf '%s\n' "$REPO_ROOT/.agents/skills" ;;
     cursor) printf '%s\n' "$REPO_ROOT/.cursor/skills" ;;
     gemini-cli) printf '%s\n' "$REPO_ROOT/.gemini/skills" ;;
     windsurf) printf '%s\n' "$REPO_ROOT/.windsurf/skills" ;;
@@ -159,7 +182,21 @@ confirm_overwrite() {
   [[ "${reply,,}" == "y" || "${reply,,}" == "yes" ]]
 }
 
+# Append skill to manifest with dedup (e4 fix)
+manifest_add() {
+  local dest_root="$1"
+  local skill_name="$2"
+  local manifest="${dest_root}/.security-agent-skills-manifest"
+
+  # Dedup: skip if already in manifest
+  if [[ -f "$manifest" ]] && grep -Fxq "$skill_name" "$manifest"; then
+    return 0
+  fi
+  echo "$skill_name" >> "$manifest"
+}
+
 # Install a single skill directory into dest root, additively.
+# Returns: 0=installed/updated, 1=error, 2=skipped
 # Usage: install_single_skill <source_skill_dir> <dest_root> <skill_name>
 install_single_skill() {
   local src="$1"
@@ -191,13 +228,13 @@ install_single_skill() {
       fi
     elif [[ $NON_INTERACTIVE -eq 1 ]]; then
       echo "[skip] $skill_name — existing non-managed data at $dest (use --force)"
-      return 0
+      return 2
     else
       local reply
       read -r -p "Skill '$skill_name' already exists at $dest (not ours). Overwrite? [y/N] " reply
       if [[ "${reply,,}" != "y" && "${reply,,}" != "yes" ]]; then
         echo "[skip] $skill_name"
-        return 0
+        return 2
       fi
       backup_path "$dest"
       if [[ $DRY_RUN -eq 0 ]]; then
@@ -223,9 +260,8 @@ install_single_skill() {
     fi
   fi
 
-  # Write manifest marker so we can identify our installs later
-  touch "${dest_root}/.security-agent-skills-manifest"
-  echo "$skill_name" >> "${dest_root}/.security-agent-skills-manifest"
+  # Write manifest marker with dedup (e4 fix)
+  manifest_add "$dest_root" "$skill_name"
   return 0
 }
 
@@ -260,17 +296,30 @@ enumerate_skills() {
   shopt -u nullglob
 }
 
-# Helper: echo skill_dir if it passes the skill filter
+# Helper: echo skill_dir if it passes the skill + domain filters
 _emit_if_filtered() {
   local skill_dir="$1"
   local category_name="$2"
   local skill_name
   skill_name="$(basename "$skill_dir")"
+
+  # Skill filter: exact match
   if [[ -n "$FILTER_SKILL" ]]; then
     if [[ "$skill_name" != "$FILTER_SKILL" ]]; then
       return
     fi
   fi
+
+  # Domain filter: must match the category directory name.
+  # For top-level skills (category_name=""), only include if:
+  #   - no domain filter is set (show everything), OR
+  #   - the skill's own directory name matches FILTER_DOMAIN (e.g. --domain security-orchestrator)
+  if [[ -n "$FILTER_DOMAIN" ]]; then
+    if [[ "$category_name" != "$FILTER_DOMAIN" && "$skill_name" != "$FILTER_DOMAIN" ]]; then
+      return
+    fi
+  fi
+
   echo "${skill_dir}"
 }
 
@@ -307,9 +356,16 @@ install_skills_additive() {
     local skill_name
     skill_name="$(basename "$skill_dir")"
     total=$((total + 1))
-    if install_single_skill "$skill_dir" "$dest_root" "$skill_name"; then
+    set +e
+    install_single_skill "$skill_dir" "$dest_root" "$skill_name"
+    local rc=$?
+    set -e
+    if [[ $rc -eq 0 ]]; then
       installed=$((installed + 1))
+    elif [[ $rc -eq 2 ]]; then
+      skipped=$((skipped + 1))
     else
+      echo "[error] Failed to install $skill_name (rc=$rc)" >&2
       skipped=$((skipped + 1))
     fi
   done < <(enumerate_skills)
@@ -385,8 +441,8 @@ install_skills_gemini() {
           cp -R "$skill_dir" "$dest"
         fi
       fi
-      # Append to manifest for uninstall tracking
-      echo "$skill_name" >> "${dest_root}/.security-agent-skills-manifest"
+      # Append to manifest for uninstall tracking (with dedup)
+      manifest_add "$dest_root" "$skill_name"
     fi
     installed=$((installed + 1))
   done < <(enumerate_skills)
@@ -564,8 +620,26 @@ uninstall_agent() {
     local agents_target="$REPO_ROOT/.agents/skills"
     local agents_manifest="${agents_target}/.security-agent-skills-manifest"
     if [[ -f "$agents_manifest" ]]; then
+      local removed=0
+      local skipped_invalid=0
       while IFS= read -r skill_name; do
+        # e1 fix: validate manifest entry
+        if ! validate_skill_name "$skill_name"; then
+          echo "[warn] Skipping invalid manifest entry: '$skill_name'" >&2
+          skipped_invalid=$((skipped_invalid + 1))
+          continue
+        fi
         local skill_path="$agents_target/$skill_name"
+        # e1 fix: canonical path containment
+        local canonical_target
+        canonical_target="$(canonical_path "$agents_target")"
+        local canonical_skill_path
+        canonical_skill_path="$(canonical_path "$skill_path")"
+        if [[ "$canonical_skill_path" != "$canonical_target"/* ]]; then
+          echo "[warn] Skipping '$skill_name': resolves outside target" >&2
+          skipped_invalid=$((skipped_invalid + 1))
+          continue
+        fi
         if [[ -e "$skill_path" || -L "$skill_path" ]]; then
           if [[ $DRY_RUN -eq 1 ]]; then
             echo "[dry-run] Would remove: $skill_path"
@@ -605,8 +679,26 @@ uninstall_agent() {
 
   # Read manifest and remove only our skills
   local removed=0
+  local skipped_invalid=0
   while IFS= read -r skill_name; do
+    # e1 fix: validate manifest entry against Agent Skills name grammar
+    if ! validate_skill_name "$skill_name"; then
+      echo "[warn] Skipping invalid manifest entry: '$skill_name' (not a valid skill ID)" >&2
+      skipped_invalid=$((skipped_invalid + 1))
+      continue
+    fi
+    # e1 fix: resolve canonical path and assert it's a child of target
     local skill_path="$target/$skill_name"
+    local canonical_target
+    canonical_target="$(canonical_path "$target")"
+    local canonical_skill_path
+    canonical_skill_path="$(canonical_path "$skill_path")"
+    # Containment check: resolved path must start with target
+    if [[ "$canonical_skill_path" != "$canonical_target"/* ]]; then
+      echo "[warn] Skipping '$skill_name': resolves outside target directory" >&2
+      skipped_invalid=$((skipped_invalid + 1))
+      continue
+    fi
     if [[ -e "$skill_path" || -L "$skill_path" ]]; then
       if [[ $DRY_RUN -eq 1 ]]; then
         echo "[dry-run] Would remove: $skill_path"
@@ -640,7 +732,7 @@ Options:
                          claude-code | codex | cursor | gemini-cli | windsurf | github-copilot | openclaw | hermes-agent
   --domain DOMAIN        Only install skills from the given domain (e.g. ctf, web-pentest)
   --skill SKILL_ID       Only install a single skill by its ID
-  --all                  Install every supported agent
+  --all                  Install to every supported agent (fixed list above)
   --list                 Show available skills by category
   --copy                 Copy the skills directory instead of symlinking
   --symlink              Symlink the skills directory (default)
@@ -711,6 +803,10 @@ parse_args() {
         ;;
       --dry-run)
         DRY_RUN=1
+        shift
+        ;;
+      --non-interactive)
+        NON_INTERACTIVE=1
         shift
         ;;
       --uninstall)

@@ -188,5 +188,4 @@ r = requests.get(f"https://crt.sh/?q={ip}&output=json")
 
 ## 來源與維護
 
-- Upstream: https://
 - 原始 skill 已保存於 `references/upstream-skill.md`；README/LICENSE 已保存於 `references/`。

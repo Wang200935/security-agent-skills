@@ -40,7 +40,7 @@ skills:
   related_skills:
   - web-app-pentest
   - reverse-engineering
-  skill_md_bytes: 11154
+  skill_md_bytes: 11133
   reference_count: 10
   script_count: 0
 - id: modern-attack-surfaces
@@ -162,7 +162,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 3065
+  skill_md_bytes: 3044
   reference_count: 9
   script_count: 0
 - id: ctf-kernel-exploitation
@@ -416,7 +416,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 3935
+  skill_md_bytes: 3914
   reference_count: 9
   script_count: 0
 - id: crypto-toolkit
@@ -435,7 +435,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 6858
+  skill_md_bytes: 6837
   reference_count: 6
   script_count: 0
 - id: cryptography-fundamentals
@@ -518,7 +518,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 2348
+  skill_md_bytes: 2327
   reference_count: 3
   script_count: 0
 - id: kernel-exploitation
@@ -887,7 +887,7 @@ skills:
   - pentest-workflow
   - pentest-tool-setup
   - ctf-web-exploitation
-  skill_md_bytes: 4553
+  skill_md_bytes: 4532
   reference_count: 12
   script_count: 0
 - id: pentest-tool-reference
@@ -907,7 +907,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 3355
+  skill_md_bytes: 3334
   reference_count: 20
   script_count: 0
 - id: pentest-tool-setup
@@ -941,7 +941,7 @@ skills:
   related_skills:
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 11038
+  skill_md_bytes: 11017
   reference_count: 10
   script_count: 0
 - id: security-orchestrator
@@ -1034,7 +1034,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 4273
+  skill_md_bytes: 4252
   reference_count: 17
   script_count: 0
 - id: pentest-report-generator
@@ -1052,7 +1052,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 4700
+  skill_md_bytes: 4679
   reference_count: 13
   script_count: 0
 - id: post-exploitation-ops
@@ -1070,7 +1070,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 2235
+  skill_md_bytes: 2214
   reference_count: 3
   script_count: 0
 - id: professional-pentest-guide
@@ -1230,7 +1230,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 9342
+  skill_md_bytes: 9321
   reference_count: 10
   script_count: 0
 - id: parallel-intel-gathering
@@ -1269,7 +1269,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 9470
+  skill_md_bytes: 9449
   reference_count: 5
   script_count: 0
 - id: spiderfoot-automation
@@ -1333,7 +1333,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 2971
+  skill_md_bytes: 2950
   reference_count: 3
   script_count: 0
 - id: ctf-reverse-engineering
@@ -1416,7 +1416,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 4004
+  skill_md_bytes: 3983
   reference_count: 13
   script_count: 0
 - id: api-security-testing
@@ -1502,7 +1502,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 4809
+  skill_md_bytes: 4788
   reference_count: 23
   script_count: 0
 - id: ctf-web-attacks
@@ -1521,7 +1521,7 @@ skills:
   - pentest-workflow
   - pentest-quick-checklist
   - pentest-tool-setup
-  skill_md_bytes: 10338
+  skill_md_bytes: 10317
   reference_count: 12
   script_count: 0
 - id: ctf-web-pwn-methodology
@@ -1605,7 +1605,7 @@ skills:
   - pentest-workflow
   - web-security-advanced
   - osint-recon-model
-  skill_md_bytes: 4230
+  skill_md_bytes: 4209
   reference_count: 3
   script_count: 0
 - id: web-app-assessment
@@ -1624,7 +1624,7 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 5076
+  skill_md_bytes: 5055
   reference_count: 8
   script_count: 0
 - id: web-app-pentest
@@ -1671,6 +1671,6 @@ skills:
   - pentest-quick-checklist
   - pentest-tool-setup
   - ctf-web-attacks
-  skill_md_bytes: 12374
+  skill_md_bytes: 12353
   reference_count: 50
   script_count: 0

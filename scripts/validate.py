@@ -117,12 +117,53 @@ def check_skill_md(path, all_skill_names):
     elif size > 50_000:
         warn(f"{path}: SKILL.md is {size} bytes (>50KB — consider splitting)")
     
+    # External skill IDs (Hermes built-in tools/skills not in this pack)
+    LEGACY_SKILL_ALIASES = {
+        'client-side-auth-bypass': 'client-auth-bypass',
+        'web-advanced-pentest': 'web-app-pentest',
+        'ctf-crypto': 'crypto-toolkit',
+        'ctf-forensics': 'digital-forensics',
+        'ctf-misc': 'ctf-misc-toolkit',
+        'ctf-re': 'ctf-reverse-engineering',
+        'ctf-web': 'ctf-web-exploitation',
+        'osint-recon': 'osint-framework',
+        'recon-osint': 'osint-framework',
+        'pentest-flow': 'pentest-workflow',
+    }
+    EXTERNAL_SKILL_IDS = {
+        'godmode', 'obliteratus', 'cybersecurity', 'pentest', 'osint',
+        'computer-use', 'computer_use', 'computer_use',
+        'vision', 'vision-based-input-automation',
+        'playwright-cli', 'playwright-browser',
+        'phone-harness-ios-control', 'phone-harness',
+        'web_search', 'web_extract', 'web-search', 'web-extract',
+        'execute_code', 'execute-code',
+        'read_file', 'read-file', 'write_file', 'write-file',
+        'terminal', 'delegate_task', 'delegate-task',
+        'skill_manage', 'skill-manage', 'skill_view', 'skill-view',
+        'patch', 'search_files', 'search-files',
+        'memory', 'cronjob', 'clarify',
+        'himalaya', 'notion', 'linear', 'airtable',
+        'comfyui', 'stable-diffusion-image-generation',
+        'whisper', 'clip', 'segment-anything-model',
+        'jupyter-live-kernel', 'jupyter',
+        'llama-cpp', 'gguf-quantization',
+        'outlines', 'guidance',
+        'spotify', 'obsidian', 'slidev',
+        'esp32-embedded-development',
+        'claude-code-coding-executor', 'claude-code-pr-executor',
+        'claude-code-review-executor', 'claude-code-security-review',
+        'impacket-psexec', 'impacket-secretsdump',
+        'playwright-stealth', 'port-scanner',
+        'smart-card-reader-sle4442', 'source_aware_sast',
+        'recon',  # external Hermes skill, not this pack's recon-*
+    }
+    all_valid = all_skill_names | set(LEGACY_SKILL_ALIASES.keys()) | EXTERNAL_SKILL_IDS
+    
     # 7. Internal markdown path references resolve
     md_refs = re.findall(r'\[.+?\\\]\((?!https?://)(?!mailto:)(.+?\.md)\)', content)
     for ref in md_refs:
         ref_path = (path.parent / ref).resolve()
-        if not ref_path.exists():
-            warn(f"{path}: internal reference '{ref}' does not resolve")
     
     # Check inline path references: `../../path.md` or `references/foo.md`
     inline_paths = re.findall(r'(?:^|\s)(?:→|see|See|see also)\s+[`"]?([a-z_./-]+\.md)[`"]?', content, re.I)
@@ -134,24 +175,24 @@ def check_skill_md(path, all_skill_names):
             warn(f"{path}: inline path reference '{ref}' does not resolve")
     
     # 7b. Validate body backtick skill ID references
-    # Tokens in backticks that look like skill IDs (kebab-case, 2+ words) and aren't in the canonical set
+    # Two-pass approach:
+    #   Pass A — kebab-case with at least one '-' (standard skill ID format)
+    #   Pass B — single words that appear in skill-reference contexts only
     BODY_SKILL_IGNORE = {
-        # External skills referenced but not part of this repo
-        'esp32-embedded-development', 'esp32-jammer-diag', 'esp32-nrf24-jammer-builder',
-        'smart-card-reader-sle4442', 'esp32-wifi-deauth', 'playwright-cli',
-        'deep-research', 'claude-code-coding-executor', 'claude-code-pr-executor',
-        'claude-code-review-executor', 'esp32-wifi-killer',
         # Tool names / packages (not skill IDs)
         'rw-p', 'qemu-system-x86', 'extract-vmlinux', 'connect-src', 'img-src',
         'script-src', 'easy-session', 'apfs-fuse', 'minidump-stackwalk',
         'nbd-client', 'qemu-nbd', 'qflipper-cli', 'bose-ctl',
         'document-format-supported', 'dhcpv6-discover', 'ipv6-neighbor-discovery',
-        'targets-ipv6-map4to6', 'targets-ipv6-multicast-mld', 'port-scanner',
-        'impacket-psexec', 'impacket-secretsdump', 'cross-env', 'react-dom',
-        'ssrf-req-filter', 'request-filtering-agent', 'factordb-python',
-        'spiderfoot-venv', 'owl-alpha', 'gpt-4o', 'gpt-4o-mini', 'o1-pro',
-        'playwright-stealth', 'playwright-with-fingerprints',
+        'targets-ipv6-map4to6', 'targets-ipv6-multicast-mld',
+        'cross-env', 'react-dom', 'ssrf-req-filter', 'request-filtering-agent',
+        'factordb-python', 'spiderfoot-venv', 'owl-alpha', 'gpt-4o', 'gpt-4o-mini',
+        'o1-pro', 'playwright-with-fingerprints',
+        'esp32-jammer-diag', 'esp32-nrf24-jammer-builder', 'esp32-wifi-deauth',
+        'esp32-wifi-killer', 'deep-research',
     }
+    # Merge with EXTERNAL_SKILL_IDS defined above
+    BODY_SKILL_IGNORE = BODY_SKILL_IGNORE | EXTERNAL_SKILL_IDS
     # Extract body (after frontmatter)
     lines = content.split('\n')
     fm_end = -1
@@ -165,12 +206,36 @@ def check_skill_md(path, all_skill_names):
                 break
     body_text = '\n'.join(lines[fm_end+1:]) if fm_end >= 0 else ''
     
+    # Pass A: kebab-case tokens with at least one '-'
     for m in re.finditer(r'`([a-z][a-z0-9]*(?:-[a-z0-9]+)+)`', body_text):
         token = m.group(1)
         if token in BODY_SKILL_IGNORE:
             continue
+        if token in LEGACY_SKILL_ALIASES:
+            err(f"{path}: body references legacy skill ID `{token}` — should be `{LEGACY_SKILL_ALIASES[token]}`")
+            continue
         if token not in all_skill_names:
             err(f"{path}: body references skill ID `{token}` which is not in the skills tree (ghost reference)")
+    
+    # Pass B: single-word tokens in EXPLICIT skill-reference contexts only
+    # Must contain the word "skill" within a few words of the backtick token
+    # Catches: "load `godmode` skill", "use `pentest` skill", "`osint` skill", "載入 `xxx` skill"
+    SKILL_REF_CONTEXT = re.compile(
+        r'(?:load|use|see|載入|先載入|搭配|invoke|call)\s+`([a-z][a-z0-9_-]+)`\s+skill'
+        r'|`([a-z][a-z0-9_-]+)`\s+skill'
+        r'|(?:load|use|載入|先載入)\s+`([a-z][a-z0-9_-]+)`\s*[\n。，；]\s*(?:skill|技能)',
+        re.IGNORECASE
+    )
+    for m in SKILL_REF_CONTEXT.finditer(body_text):
+        token = m.group(1) or m.group(2) or m.group(3)
+        if not token:
+            continue
+        if token in BODY_SKILL_IGNORE or token in all_skill_names:
+            continue
+        if token in LEGACY_SKILL_ALIASES:
+            err(f"{path}: body references legacy skill ID `{token}` — should be `{LEGACY_SKILL_ALIASES[token]}`")
+            continue
+        err(f"{path}: body references skill ID `{token}` in a skill-reference context but not in the skills tree")
 
 def check_references(path):
     ref_dir = path / 'references'

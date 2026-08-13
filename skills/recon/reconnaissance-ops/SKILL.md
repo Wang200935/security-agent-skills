@@ -114,5 +114,4 @@ Vuetify input 沒有 `name` 屬性，只有 v-model + auto id。使用 `#input-2
 
 ## 來源與維護
 
-- Upstream: https://
 - 原始 skill 已保存於 `references/upstream-skill.md`；README/LICENSE 已保存於 `references/`。

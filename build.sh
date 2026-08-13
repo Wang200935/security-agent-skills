@@ -36,7 +36,8 @@ build_flattened() {
     mkdir -p "$dest"
     
     for skill_dir in "${SKILL_DIRS[@]}"; do
-        local name="$(basename "$skill_dir")"
+        local name
+        name="$(basename "$skill_dir")"
         if [ -n "$ext" ]; then
             # Flat file format (cursor, windsurf)
             cp "$skill_dir/SKILL.md" "$dest/${name}${ext}"

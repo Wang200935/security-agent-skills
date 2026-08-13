@@ -127,7 +127,8 @@ backup_path() {
   if [[ ! -e "$path" && ! -L "$path" ]]; then
     return 0
   fi
-  local backup="${path}.backup-$(date +%Y%m%d-%H%M%S)"
+  local backup
+  backup="${path}.backup-$(date +%Y%m%d-%H%M%S)"
   if [[ $DRY_RUN -eq 1 ]]; then
     echo "[dry-run] Would backup $path -> $backup"
   else

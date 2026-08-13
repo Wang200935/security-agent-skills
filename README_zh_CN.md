@@ -9,7 +9,7 @@
 <p align="center"><em>79 个技能 · 9 大领域 · 8 个 AI 代理 — 来自真实攻防，而非纸上谈兵。</em></p>
 
 <p align="center">
-  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/github/v/release/Wang200935/security-agent-skills?include_prereleases" alt="release"></a>
+  <a href="https://github.com/Wang200935/security-agent-skills/releases"><img src="https://img.shields.io/github/v/release/Wang200935/security-agent-skills" alt="release"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/stargazers"><img src="https://img.shields.io/github/stars/Wang200935/security-agent-skills?style=flat&logo=github" alt="stars"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/forks"><img src="https://img.shields.io/github/forks/Wang200935/security-agent-skills?style=flat&logo=github" alt="forks"></a>
   <a href="https://github.com/Wang200935/security-agent-skills/issues"><img src="https://img.shields.io/github/issues/Wang200935/security-agent-skills?style=flat&logo=github" alt="issues"></a>
